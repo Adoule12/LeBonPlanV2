@@ -26,6 +26,9 @@ public interface DAOUtilisateur {
     List<List> getADInfo(Integer idAD);
 
     List<String> getOwnerInfoByIDOwner(Integer idOwner);
+
+    List<String> emailToInfo(String email);
+
 }
 
 
