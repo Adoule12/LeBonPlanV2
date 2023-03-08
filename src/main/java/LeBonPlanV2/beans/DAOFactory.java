@@ -36,7 +36,7 @@ public class DAOFactory {
     public DAOUtilisateur getUtilisateurDao(String type) {
         switch(type) {
             case "MariaDB":
-                setParamMariaDB("jdbc:mariadb://localhost:3306/lebonplandb", "root", "Repdom10");
+                setParamMariaDB("jdbc:mariadb://localhost:3306/lebonplandb", "root", "drowssap");
                 return new DAOUtilisateurMariaDB(this);
             default:
                 return null;
