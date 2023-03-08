@@ -24,7 +24,7 @@
     <input class = "button ButtonSignin" type="hidden" name="id" value="signin"><br><br>
     <input class = "button ButtonSignin" type="submit" value="Inscription"><br><br>
 </form>
-    <p>${info}</p>
+    <p class = "MsgError">${info}</p>
 <a id = "MenuHome" href="Controller?id=home" >Menu Home</a>
 </div>
 

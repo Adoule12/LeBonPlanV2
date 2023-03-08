@@ -52,7 +52,7 @@ html {
 }
 
 body{
-    background-color: #21d71b;
+    background-color: #ff691c;
 }
 
 /*jsp login*/
@@ -148,4 +148,12 @@ body{
     font-family: "Bebas";
     font-size: 125%;
     color: #000000;
+}
+
+/*error msg*/
+.MsgError {
+    font-family: "Bebas";
+    font-size: 150%;
+    color: #f50202;
+    width: auto;
 }

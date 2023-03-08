@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Connexion au compte</title>
-    <link href="css/homeer.css" type="text/css" rel="stylesheet"/>
+    <link href="css/home.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "LoginFrame">
@@ -20,7 +20,7 @@
     <input class = "button ButtonLogin" type="submit" value="Connexion"><br><br>
     <input class = "button" type="hidden" name="id" value="login"><br>
 </form>
-    <p>${info}</p>
+    <p class = "MsgError" >${info}</p>
 <a  id = "inscriptionLogin" href="Controller?id=signin" >Inscription</a>
 </div>
 </body>

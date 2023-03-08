@@ -22,7 +22,7 @@
         Vous êtes clients !
     </c:otherwise>
 </c:choose>
-<p>${content}</p>
+<p class = "MsgError">${content}</p>
 
 
 </body>

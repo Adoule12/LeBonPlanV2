@@ -23,7 +23,7 @@
     <input class = "button" type="submit" value="modifier">
     <input type="hidden" name="id" value="editUser">
 </form>
-    <p>${info}</p>
+    <p class = "MsgError">${info}</p>
 <a href="Controller?id=goViews" >Menu Home</a>
 </div>
 </body>

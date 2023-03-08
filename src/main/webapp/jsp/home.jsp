@@ -9,14 +9,14 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="css/homeer.css" type="text/css" rel="stylesheet"/>
+    <link href="css/home.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "HomeFrame">
     <h2 class = "title">LeBonPlan</h2>
     <section><a class = "button" id = "connexion" href="Controller?id=login" >Connexion</a></section> <br>
     <section><a class = "button" id = "inscription" href="Controller?id=signin">Inscription</a></section> <br>
-    <p>${content}</p>
+    <p class = "MsgError">${content}</p>
 </div>
 </body>
 </html>

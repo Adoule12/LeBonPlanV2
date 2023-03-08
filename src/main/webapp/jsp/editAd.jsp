@@ -53,7 +53,7 @@
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">
     </form>
-    <p>${info}</p>
+    <p class = "MsgError">${info}</p>
     <a href="Controller?id=goViews" >Menu Home</a>
   </div>
 </body>
