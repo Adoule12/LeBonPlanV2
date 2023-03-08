@@ -237,6 +237,31 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
         return id;
     }
+    @Override
+    public List<String> emailToInfo(String email){
+        List<String> info = new ArrayList<>();
+        try (Connection connexion = daoFactory.getConnection();
+             Statement statement = connexion.createStatement();
+             ResultSet resultat = statement.executeQuery(
+                     "SELECT mail,lastname,firstname,phoneNumber FROM user WHERE mail=?")){
+            while (resultat.next()) {
+                String mail = resultat.getString("mail");
+                String lastname = resultat.getString("lastname");
+                String firstname = resultat.getString("firstname");
+                String phoneNumber = resultat.getString("phoneNumber");
+                info.add(mail);
+                info.add(lastname);
+                info.add(firstname);
+                info.add(phoneNumber);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return info;
+    }
+
 
     @Override
     public boolean checkAdmin(String mail){
