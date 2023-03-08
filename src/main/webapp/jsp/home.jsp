@@ -14,7 +14,7 @@
 <body>
 <div class = "frame" id = "HomeFrame">
     <h2 class = "title">LeBonPlan</h2>
-    <section><a class = "button" id = "connexion" href="Controller?id=login" >Connvhbjhvgjbknexion</a></section> <br>
+    <section><a class = "button" id = "connexion" href="Controller?id=login" >Connexion</a></section> <br>
     <section><a class = "button" id = "inscription" href="Controller?id=signin">Inscription</a></section> <br>
     <p class = "MsgError">${content}</p>
 </div>
