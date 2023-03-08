@@ -115,7 +115,7 @@
             </li>
             <li class="menu"><a>Mon Compte</a>
                 <ul class="sousMenu">
-                    <li><a href="#">Profil</a></li>
+                    <li><a href="Controller?id=goProfil">Profil</a></li>
                     <li><a href="Controller?id=editUser">Modifier mon profil</a></li>
                 </ul>
             </li>

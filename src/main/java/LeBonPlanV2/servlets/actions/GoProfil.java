@@ -1,6 +1,6 @@
 package LeBonPlanV2.servlets.actions;
 
-import LebBonPlan.beans.DAOUtilisateur;
+import LeBonPlanV2.beans.DAOUtilisateur;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
