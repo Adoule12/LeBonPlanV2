@@ -29,11 +29,12 @@ public class Login implements Action{
                 }else{
                     System.out.println("CLients");
                     etat="client";
-                    listAd = daoBonPlan.filtreAd(null,null,null,null);
+                    listAd = daoBonPlan.filtreAd(null,null,null,null,null);
                     System.out.println(listAd);
                     session.setAttribute( "price", null );
                     session.setAttribute( "categorie", null );
                     session.setAttribute( "conditions", null );
+                    session.setAttribute( "tris", null );
                     request.setAttribute("listAd",listAd);
                     request.setAttribute("content",etat); // DEMANDER PROF SI CA LEGAL ET ACCEPTE
                     request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);

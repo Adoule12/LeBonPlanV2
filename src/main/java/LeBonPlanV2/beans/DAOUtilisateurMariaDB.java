@@ -42,15 +42,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "SELECT mail FROM user WHERE mail=?;")) {
-             preparedStatement.setString(1, mail);
-             ResultSet resultat = preparedStatement.executeQuery();
-             if(resultat.next()){
+            preparedStatement.setString(1, mail);
+            ResultSet resultat = preparedStatement.executeQuery();
+            if(resultat.next()){
                 if (resultat.getString("mail").equals(mail)) {
-                mailOk = false;
+                    mailOk = false;
                     erreur = erreur +"\n mail déja existant";
-             }
-             }
-             System.out.println("mail "+mailOk);
+                }
+            }
+            System.out.println("mail "+mailOk);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -290,7 +290,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     public boolean adGrade(String mail, Integer grade){
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
-             "UPDATE user SET grade =? WHERE mail=?;")){
+                     "UPDATE user SET grade =? WHERE mail=?;")){
             preparedStatement.setInt(1, grade);
             preparedStatement.setString(2,mail);
             preparedStatement.executeUpdate();
@@ -339,30 +339,40 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     @Override
     public boolean createAd(String title, Float price, String picture, String categorie, String city, String condition) {
         System.out.println("on est la createAD");
-            try (Connection connexion = daoFactory.getConnection();
-                 PreparedStatement preparedStatement = connexion.prepareStatement(
-                         "INSERT INTO user(mail, password,lastname,firstname,birthday,phoneNumber) VALUES(?, ?,?,?,?,?);")) {
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return false;
-            }
-            return true;
+        try (Connection connexion = daoFactory.getConnection();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "INSERT INTO user(mail, password,lastname,firstname,birthday,phoneNumber) VALUES(?, ?,?,?,?,?);")) {
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
+        return true;
+    }
 
 
     @Override
-    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition) {
+    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris) {
         List<List> listAd = new ArrayList<>();
         boolean priceOK = false;
         boolean categoryOK = false;
         boolean conditionsOK = false;
-
-
+        String sql="";
+        if(tris != null){
+            if(tris.equals("croissant")){
+                sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0 ORDER BY price ASC";
+            }
+            if (tris.equals("des_croissant")) {
+                sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0 ORDER BY price DESC";
+            }
+        }
+        else {
+            sql="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0";
+        }
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
-                     "SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0")){
+                     sql)){
             while (resultat.next()) {
                 priceOK = false;
                 categoryOK = false;
@@ -463,6 +473,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         System.out.println(listOwnerInfo);
         return listOwnerInfo;
     }
+
 }
 
 

@@ -6,12 +6,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Float.parseFloat;
 
 public class PostAd implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
+        List<List> listAd = new ArrayList<>();
         String title = request.getParameter("title");
         String priceEXTRACT = request.getParameter("price");
         Float price = null;
@@ -51,7 +54,8 @@ public class PostAd implements Action{
 
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }else{
-
+                listAd = daoBonPlan.filtreAd(null,null,null,null,null);
+                request.setAttribute("listAd",listAd);
                 request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
             }
         }
