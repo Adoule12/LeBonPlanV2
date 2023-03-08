@@ -1,0 +1,151 @@
+html {
+    scroll-behavior: smooth;
+}
+:root{
+    --hauteur-menu: 60px;
+
+}
+*{
+    padding: 0px;
+}
+
+/*jsp home*/
+.title {
+    font-family: "Bebas";
+    margin-top: 6%;
+    text-align: center;
+    font-size: 300%;
+
+}
+.frame{
+    background-color: #ffffff;
+    border-width:10px;
+    border-style:double;
+    border-color:black;
+    text-align: center;
+}
+
+#HomeFrame {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+.button {
+    font-family: "Bebas";
+    font-size: 175%;
+    border: groove 4px #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+
+}
+
+#connexion {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#inscription {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body{
+    background-color: #ff691c;
+}
+
+/*jsp login*/
+
+#LoginFrame {
+    margin-top: 10%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom:2%;
+}
+
+.ButtonLogin{
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+#inscriptionLogin{
+    font-family: "Bebas";
+    font-size: 100%;
+    color: #2169EC;
+}
+
+/*jsp signin*/
+#SigninFrame{
+    margin-top: 10%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom:2%;
+}
+.ButtonSignin {
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#MenuHome{
+    font-family: "Bebas";
+    font-size: 100%;
+    color: #2169EC;
+}
+
+/*jsp edit*/
+#editFrame {
+    margin-top: 12%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom:2%;
+    padding-top: 2%;
+
+}
+/*jsp postAdView*/
+#FrameAdView {
+    margin-top: 8%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom:2%;
+    padding-top: 2%;
+
+}
+.subtitle{
+    font-family: "Bebas";
+    font-size: 150%;
+    color: #000000;
+    width: auto;
+}
+.radio{
+    font-family: "Bebas";
+    font-size: 125%;
+    color: #000000;
+}
+/*jsp postAdView*/
+#FrameAdView {
+    margin-top: 8%;
+    margin-bottom: 15%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom:2%;
+    padding-top: 2%;
+
+}
+.subtitle{
+    font-family: "Bebas";
+    font-size: 150%;
+    color: #000000;
+    width: auto;
+}
+.radio{
+    font-family: "Bebas";
+    font-size: 125%;
+    color: #000000;
+}
