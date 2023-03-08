@@ -12,6 +12,7 @@ import java.util.List;
 public class ShowAd implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         List<List> listAd = new ArrayList<>();
+        String tris = request.getParameter("tris");
 
         String price=request.getParameter("price");
         Float priceMax =null;
@@ -31,6 +32,8 @@ public class ShowAd implements Action {
             session.setAttribute( "price", null );
             session.setAttribute( "categorie", null );
             session.setAttribute( "conditions", null );
+            session.setAttribute( "tris", null );
+
         }else{
             if(price != null){
                 HttpSession session = request.getSession( true );
@@ -61,8 +64,7 @@ public class ShowAd implements Action {
             }
         }
 
-
-        listAd = daoBonPlan.filtreAd(priceMax,categorie,null,conditions);
+        listAd = daoBonPlan.filtreAd(priceMax,categorie,null,conditions,tris);
         System.out.println(listAd);
         request.setAttribute("listAd",listAd);
         request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);

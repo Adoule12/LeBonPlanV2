@@ -17,7 +17,7 @@ public interface DAOUtilisateur {
 
     String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
 
-    List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition);
+    List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris);
 
     boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions);
 
