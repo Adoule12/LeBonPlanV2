@@ -13,6 +13,7 @@ public interface DAOUtilisateur {
 
     void deleteUser(String email);
 
+    void deleteAd(int id);
     boolean createAd(String title, Float price, String picture, String categorie, String city, String condition);
 
     String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
@@ -20,6 +21,7 @@ public interface DAOUtilisateur {
     List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris);
 
     boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions);
+    boolean editAd(int id,String title,float price, String picture,String description, String city, int category, int conditions);
 
     int emailToId(String email);
 

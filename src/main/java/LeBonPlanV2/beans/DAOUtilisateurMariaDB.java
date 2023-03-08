@@ -217,6 +217,96 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
         return true;
     }
+    @Override
+    public boolean editAd(int id,String title, float price,String picture,String description, String city, int category, int conditions){
+        
+        if(!title.isEmpty()) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listad SET title =? WHERE id=?;")) {
+                preparedStatement.setString(1, title);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(price >= 0 ) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listad SET price =? WHERE id=?;")) {
+                preparedStatement.setFloat(1, price);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(!picture.isEmpty()) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listAd SET picture =? WHERE id=?;")) {
+                preparedStatement.setString(1, picture);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(!description.isEmpty()) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listAd SET description =? WHERE id=?;")) {
+                preparedStatement.setString(1, description);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(!city.isEmpty()) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listAd SET city =? WHERE id=?;")) {
+                preparedStatement.setString(1, city);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(category !=0 ) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listAd SET category =? WHERE id=?;")) {
+                preparedStatement.setInt(1, category);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(category !=0 ) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listAd SET conditions =? WHERE id=?;")) {
+                preparedStatement.setInt(1, conditions);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return true;
+    }
 
     @Override
     public int emailToId(String email){
@@ -327,6 +417,17 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "DELETE FROM user WHERE mail = ? ;")) {
             preparedStatement.setString(1,email);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void deleteAd(int id) {
+        try (Connection connexion = daoFactory.getConnection();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "DELETE FROM listad WHERE id = ? ;")) {
+            preparedStatement.setInt(1,id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
