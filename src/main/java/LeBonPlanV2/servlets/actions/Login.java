@@ -24,12 +24,18 @@ public class Login implements Action{
                 if(daoBonPlan.checkAdmin(email) ){
                     System.out.println("admin");
                     etat="admin";
+                    listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
+                    session.setAttribute( "price", null );
+                    session.setAttribute( "categorie", null );
+                    session.setAttribute( "conditions", null );
+                    session.setAttribute( "tris", null );
+                    request.setAttribute("listAd",listAd);
                     request.setAttribute("content",etat); // DEMANDER PROF SI CA LEGAL ET ACCEPTE
                     request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
                 }else{
                     System.out.println("CLients");
                     etat="client";
-                    listAd = daoBonPlan.filtreAd(null,null,null,null,null);
+                    listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
                     System.out.println(listAd);
                     session.setAttribute( "price", null );
                     session.setAttribute( "categorie", null );

@@ -9,11 +9,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowAd implements Action {
+public class GoModerationAD implements Action{
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
+        HttpSession session = request.getSession( true );
+
         List<List> listAd = new ArrayList<>();
         String moderationStateEXTRACT = request.getParameter("moderationState");
         Integer moderationState=null;
+        session.setAttribute( "moderation", "1" );
+
 
         String tris = request.getParameter("tris");
 
@@ -31,7 +35,6 @@ public class ShowAd implements Action {
             resetEXTRACTJSP="";
         }
         if(resetEXTRACTJSP.equals("Reset")){
-            HttpSession session = request.getSession( true );
             session.setAttribute( "price", null );
             session.setAttribute( "categorie", null );
             session.setAttribute( "conditions", null );
@@ -39,23 +42,19 @@ public class ShowAd implements Action {
 
         }else{
             if(price != null){
-                HttpSession session = request.getSession( true );
                 session.setAttribute( "price", price );
                 priceMax= Float.parseFloat(session.getAttribute("price").toString());
 
             }
             if(categorieEXTRACT !=null){
-                HttpSession session = request.getSession( true );
                 session.setAttribute( "categorie", categorieEXTRACT );
                 categorie = Integer.parseInt(session.getAttribute("categorie").toString());
 
             }
             if(conditionsEXTRACT !=null){
-                HttpSession session = request.getSession( true );
                 session.setAttribute( "conditions", conditionsEXTRACT );
                 conditions = Integer.parseInt(session.getAttribute("conditions").toString());
             }
-            HttpSession session = request.getSession( true );
             if(session.getAttribute("price")!=null){
                 priceMax= Float.parseFloat(session.getAttribute("price").toString());
             }
@@ -80,14 +79,8 @@ public class ShowAd implements Action {
         System.out.println(listAd);
         String grade =   String.valueOf(request.getSession().getAttribute("email"));
         request.setAttribute("listAd",listAd);
-        if(daoBonPlan.checkAdmin(grade) ){
-            System.out.println("Admin");
-            request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
-        }else{
-            System.out.println("CLients");
-            request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
-        }
-
+        request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
         return "dfgh";
+
     }
 }

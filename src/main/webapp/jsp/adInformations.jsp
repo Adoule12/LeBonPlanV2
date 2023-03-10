@@ -22,8 +22,8 @@
 </c:forEach>
 
 <form action="Controller?id=login">
-        <input type="submit" name="infosButton" value="Retour">
-        <input type="hidden" name="id" value="showAd">
+    <input type="submit" name="infosButton" value="Retour">
+    <input type="hidden" name="id" value="goViews">
     </form>
 
 </body>

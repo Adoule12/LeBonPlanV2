@@ -53,7 +53,7 @@ public class PostAd implements Action{
 
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }else{
-                listAd = daoBonPlan.filtreAd(null,null,null,null,null);
+                listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
                 request.setAttribute("listAd",listAd);
                 request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
             }

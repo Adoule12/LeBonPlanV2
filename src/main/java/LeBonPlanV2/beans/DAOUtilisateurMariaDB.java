@@ -473,23 +473,39 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return listAd;
     }
     @Override
-    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris) {
+    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState) {
         List<List> listAd = new ArrayList<>();
         boolean priceOK = false;
         boolean categoryOK = false;
         boolean conditionsOK = false;
         String sql="";
-        if(tris != null){
-            if(tris.equals("croissant")){
-                sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0 ORDER BY price ASC";
+        if(moderationState!= null){
+            if(tris != null){
+                if(tris.equals("croissant")){
+                    sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price ASC";
+                }
+                if (tris.equals("des_croissant")) {
+                    sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price DESC";
+                }
             }
-            if (tris.equals("des_croissant")) {
-                sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0 ORDER BY price DESC";
+            else {
+                sql="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState;
             }
+        }else{
+            if(tris != null){
+                if(tris.equals("croissant")){
+                    sql ="SELECT title,price,id,category,conditions,owner FROM listad ORDER BY price ASC";
+                }
+                if (tris.equals("des_croissant")) {
+                    sql ="SELECT title,price,id,category,conditions,owner FROM listad ORDER BY price DESC";
+                }
+            }
+            else {
+                sql="SELECT title,price,id,category,conditions,owner FROM listad";
+            }
+
         }
-        else {
-            sql="SELECT title,price,id,category,conditions,owner FROM listad WHERE state!=0";
-        }
+
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
