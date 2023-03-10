@@ -14,12 +14,28 @@
 </head>
 <body>
   <div class = "frame" id = "editFrame">
-    <c:forEach var="mesAnnonces" items="${requestScope.list}">
-      ${mesAnnonces}<br>
+    <form action="Controller?id=editAd">
+    <c:forEach var="ad" items="${requestScope.listAd}">
+      <c:set var="compteur" value="0" scope="page" />
+      <c:forEach var="info" items="${ad}">
+        <c:if test="${compteur<1}"><br>
+          ${info}
+        </c:if>
+        <c:if test="${compteur == 1}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
+          <c:set var="idAD" value="${info}" scope="page" />
+
+        </c:if>
+        <c:set var="compteur" value="${compteur+1 }" scope="page" />
+      </c:forEach>
+
+        <input type="radio" name="a" value="${idAD}">
+      <label class = "radio" for="condi1">${idAD}</label>
+
     </c:forEach>
+
     <h2 class ="title">Modification d'une annonce</h2>
     <h1 class ="title">toucher que ce que vous voulez modifier</h1>
-    <form action="Controller?id=editAd">
+
       <input class = "button" type="text" name="title" placeholder="titre"><br><br>
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
       <input class = "button" type="text" name="picture" placeholder="adresse image"><br><br>
@@ -49,7 +65,7 @@
       <input type="radio" id="catego5" name="category" value="5" >
       <label class = "radio" for="catego5">Autre</label>
 
-      <input type="hidden" name="id" value="postAd">
+      <input type="hidden" name="id" value="editAd">
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">
     </form>

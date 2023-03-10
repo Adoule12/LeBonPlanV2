@@ -46,7 +46,6 @@ public class PostAd implements Action{
 
         if (title !=null){
             daoBonPlan.postAd(title,price,picture,description,city,owner,category,conditions);
-            System.out.println("Je suis bien rentré");
 
             String grade =   String.valueOf(request.getSession().getAttribute("email"));
 

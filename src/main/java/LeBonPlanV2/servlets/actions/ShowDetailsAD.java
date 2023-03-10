@@ -14,7 +14,6 @@ public class ShowDetailsAD implements Action{
         List<List> listInfoAd = new ArrayList<>();
         String idAD_STRING=request.getParameter("idAD");
         Integer idAD = Integer.parseInt(idAD_STRING);
-        System.out.println("icicicicicicicicic");
         listInfoAd = daoBonPlan.getADInfo(idAD);
         request.setAttribute("listInfoAd",listInfoAd);
         request.getRequestDispatcher("/jsp/adInformations.jsp").forward(request, response);

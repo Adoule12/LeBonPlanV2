@@ -127,7 +127,7 @@
         <li class="menu"><a>Annonce</a>
             <ul class="sousMenu">
                 <li><a href="Controller?id=postAd">Déposer une annonce</a></li>
-                <li><a href="#">Modifier une annonce</a></li>
+                <li><a href="Controller?id=editAd">Modifier une annonce</a></li>
             </ul>
         </li>
         <li class="menu"><a>Mon Compte</a>
@@ -156,7 +156,7 @@
     </form>
 </c:forEach>
 
-<a href="Controller?id=logout">quitter le jeu</a>
-<a href="Controller?id=deleteUser">rage quitte</a>
+<a href="Controller?id=logout">deconnexion</a>
+<a href="Controller?id=deleteUser">supprimer son compte</a>
 </body>
 </html>

@@ -29,11 +29,14 @@ public class Controller extends HttpServlet {
         actionMap.put("home", new Home());
         actionMap.put("postAd", new PostAd());
         actionMap.put("editAd", new EditAd());
+        actionMap.put("deleteAd", new DeleteAd());
         actionMap.put("switchL", new SwitchL());
         actionMap.put("switchR", new SwitchR());
         actionMap.put("adAdmin", new AdAdmin());
         actionMap.put("goViews", new GoViews());
         actionMap.put("showAd", new ShowAd());
+        actionMap.put("showDetailsAd", new ShowDetailsAD());
+
         actionMap.put("goProfil", new GoProfil());
 
         DAOFactory daoFactory = DAOFactory.getInstance();

@@ -11,7 +11,6 @@ import java.sql.Date;
 public class Signin implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
-        System.out.println("on est la");
         String etat ="";
         String date = request.getParameter("birthday");
         Date birthday = Date.valueOf("2023-02-27");

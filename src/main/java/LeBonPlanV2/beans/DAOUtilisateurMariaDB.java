@@ -218,8 +218,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return true;
     }
     @Override
-    public boolean editAd(int id,String title, float price,String picture,String description, String city, int category, int conditions){
-        
+    public boolean editAd(int id,String title, Float price,String picture,String description, String city, Integer category, Integer conditions){
         if(!title.isEmpty()) {
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -232,7 +231,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        if(price >= 0 ) {
+        if(price !=null ) {
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE listad SET price =? WHERE id=?;")) {
@@ -280,7 +279,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        if(category !=0 ) {
+        if(category !=null) {
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE listAd SET category =? WHERE id=?;")) {
@@ -292,7 +291,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        if(category !=0 ) {
+        if(conditions !=null ) {
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE listAd SET conditions =? WHERE id=?;")) {
@@ -451,7 +450,28 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return true;
     }
 
-
+    @Override
+    public List<List> myAd(int idOwner) {
+        List<List> listAd = new ArrayList<>();
+        try (Connection connexion = daoFactory.getConnection();
+             Statement statement = connexion.createStatement();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "SELECT title,id FROM listad WHERE owner=?")) {
+            preparedStatement.setInt(1, idOwner);
+            ResultSet resultat = preparedStatement.executeQuery();
+            while (resultat.next()) {
+                String titleEXTRACT = resultat.getString("title");
+                Integer id = resultat.getInt("id");
+                List<String > adInfo=new ArrayList<>();
+                adInfo.add(titleEXTRACT);
+                adInfo.add(id.toString());
+                listAd.add(adInfo);
+            }
+        } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        return listAd;
+    }
     @Override
     public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris) {
         List<List> listAd = new ArrayList<>();
