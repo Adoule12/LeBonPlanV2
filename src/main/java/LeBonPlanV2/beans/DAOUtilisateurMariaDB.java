@@ -635,21 +635,30 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
     }
     @Override
-    public boolean ban(int id,boolean ban){
-        int blacklist = 0;
-        if(ban)
-            blacklist =1;
-        try (Connection connexion = daoFactory.getConnection();
-             PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE user SET blacklisted =? WHERE id=?;")){
-            preparedStatement.setInt(1, blacklist);
-            preparedStatement.setInt(2,id);
-            preparedStatement.executeUpdate();
+    public boolean ban(int id,int ban){
+        if(ban<3) {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE user SET blacklisted =? WHERE id=?;")) {
+                preparedStatement.setInt(1, ban);
+                preparedStatement.setInt(2, id);
+                preparedStatement.executeUpdate();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "DELETE FROM user WHERE id=?;")) {
+                preparedStatement.setInt(1, id);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        return ban;
+        return true;
     }
     @Override
     public List<List> getADInfo(Integer idAD) {

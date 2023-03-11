@@ -30,7 +30,6 @@
     </c:forEach>
 
     <input type="submit" name="bannir" value="${idUser}" >
-    <label class = "radio" >${idUser}</label>
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>
@@ -52,7 +51,8 @@
     </c:forEach>
 
     <input type="submit" name="debannir" value="${idUser}">
-    <label class = "radio" >${idUser}</label>
+    <input class="delete" type="submit" name="deleteUser" value="${idUser}" >
+
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>

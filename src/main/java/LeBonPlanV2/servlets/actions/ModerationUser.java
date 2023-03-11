@@ -13,14 +13,19 @@ public class ModerationUser implements Action{
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         String idUserBan = request.getParameter("debannir");
         String idUserunBan = request.getParameter("bannir");
+        String idUserForDelete = request.getParameter("deleteUser");
         if(idUserunBan!=null) {
 
             System.out.println("iduser :" + idUserunBan+" a bannir");
-            daoBonPlan.ban(Integer.parseInt(idUserunBan),true);
+            daoBonPlan.ban(Integer.parseInt(idUserunBan),1);
         }
         if(idUserBan!=null) {
             System.out.println("iduser :" + idUserBan+" a débannir");
-            daoBonPlan.ban(Integer.parseInt(idUserBan),false);
+            daoBonPlan.ban(Integer.parseInt(idUserBan),0);
+        }
+        if(idUserForDelete!=null) {
+            System.out.println("iduser :" + idUserForDelete+" a delete");
+            daoBonPlan.ban(Integer.parseInt(idUserForDelete),3);
         }
         List<List> listban = daoBonPlan.userBan(true);
         List<List> listunban = daoBonPlan.userBan(false);
