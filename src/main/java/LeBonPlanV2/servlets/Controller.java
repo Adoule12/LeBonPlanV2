@@ -38,7 +38,7 @@ public class Controller extends HttpServlet {
         actionMap.put("showDetailsAd", new ShowDetailsAD());
         actionMap.put("goProfil", new GoProfil());
         actionMap.put("moderationAD", new GoModerationAD());
-
+        actionMap.put("moderationUser", new ModerationUser());
 
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoBonPlan = daoFactory.getUtilisateurDao("MariaDB");

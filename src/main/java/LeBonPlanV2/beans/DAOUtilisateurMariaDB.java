@@ -606,6 +606,51 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
         return listAd;
     }
+    public List<List> userBan(boolean ban) {
+        List<List> listUser = new ArrayList<>();
+        String sql ="";
+        if(ban){
+            sql ="SELECT mail,id FROM user WHERE blacklisted=1 AND grade=0";
+        }else{
+            sql ="SELECT mail,id FROM user WHERE blacklisted=0 AND grade=0";
+        }
+
+        try (Connection connexion = daoFactory.getConnection();
+             Statement statement = connexion.createStatement();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     sql)) {
+            ResultSet resultat = preparedStatement.executeQuery();
+            while (resultat.next()) {
+                String mailEXTRACT = resultat.getString("mail");
+                Integer id = resultat.getInt("id");
+                List<String > adInfo=new ArrayList<>();
+                adInfo.add(mailEXTRACT);
+                adInfo.add(id.toString());
+                listUser.add(adInfo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listUser;
+
+    }
+    @Override
+    public boolean ban(int id,boolean ban){
+        int blacklist = 0;
+        if(ban)
+            blacklist =1;
+        try (Connection connexion = daoFactory.getConnection();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "UPDATE user SET blacklisted =? WHERE id=?;")){
+            preparedStatement.setInt(1, blacklist);
+            preparedStatement.setInt(2,id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ban;
+    }
     @Override
     public List<List> getADInfo(Integer idAD) {
         List<String> listOwnerInfo = new ArrayList<>();
@@ -653,6 +698,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         System.out.println(listOwnerInfo);
         return listOwnerInfo;
     }
+
 
 }
 

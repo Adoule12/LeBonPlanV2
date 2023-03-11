@@ -12,12 +12,15 @@ public interface DAOUtilisateur {
     String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
     List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState);
     List<List> myAd(int idOwner);
+    List<List> userBan(boolean ban);
+    boolean ban(int id,boolean ban);
     boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions);
     boolean editAd(int id,String title,Float price, String picture,String description, String city, Integer category, Integer conditions);
     int emailToId(String email);
     List<List> getADInfo(Integer idAD);
     List<String> getOwnerInfoByIDOwner(Integer idOwner);
     List<String> emailToInfo(String email);
+
 
 }
 

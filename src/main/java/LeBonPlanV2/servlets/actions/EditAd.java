@@ -14,7 +14,7 @@ import java.util.List;
 public class EditAd implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
-        Object idAD = request.getParameter("a");
+        Object idAD = request.getParameter("annonce");
         if(idAD != null){
             int idAD_ext = Integer.parseInt(String.valueOf(idAD));
             System.out.println("cooolll : "+idAD_ext);

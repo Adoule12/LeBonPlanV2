@@ -28,7 +28,7 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
       </c:forEach>
 
-        <input type="radio" name="a" value="${idAD}" required>
+        <input type="radio" name="annonce" value="${idAD}" required>
       <label class = "radio" for="condi1">${idAD}</label>
 
     </c:forEach>
