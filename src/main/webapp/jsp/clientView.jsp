@@ -149,7 +149,7 @@
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-    <form action="Controller?id=login">
+    <form action="Controller?id=showDetailsAD">
         <input type="submit" name="infosButton" value="Informations annonce">
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">

@@ -195,12 +195,18 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
     @Override
     public boolean postAd(String title, float price,String picture,String description, String city,int owner, int category, int conditions){
+        long millis=System.currentTimeMillis();
+        Date actualDate = new Date(millis);
 
-        System.out.println("on ajoute");
+
+        Calendar c = Calendar.getInstance();
+        c.setTime(actualDate);
+        System.out.println("actual time "+actualDate);
+
 
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO listad(title,price, picture,description,city,owner,category,conditions) VALUES(?,?,?,?,?,?,?,?);")) {
+                     "INSERT INTO listad(title,price, picture,description,city,owner,category,conditions,releaseDate) VALUES(?,?,?,?,?,?,?,?,?);")) {
             preparedStatement.setString(1, title);
             preparedStatement.setFloat(2, price);
             preparedStatement.setString(3, picture);
@@ -209,6 +215,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             preparedStatement.setInt(6, owner);
             preparedStatement.setInt(7, category);
             preparedStatement.setInt(8, conditions);
+            preparedStatement.setDate(9,actualDate);
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -422,32 +429,60 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
     }
     @Override
-    public void deleteAd(int id) {
-        try (Connection connexion = daoFactory.getConnection();
-             PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "DELETE FROM listad WHERE id = ? ;")) {
-            preparedStatement.setInt(1,id);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void deleteAd(int id,boolean date) {
+        if(date){
+            long millis=System.currentTimeMillis();
+            Date actualDate = new Date(millis);
+            Date limiteDay = new Date(millis);
+            Calendar c = Calendar.getInstance();
+            c.setTime(actualDate);
+            c.add(Calendar.DATE, -30);
+            limiteDay.setTime( c.getTime().getTime() );
+            List<Integer> listAd = new ArrayList<>();
+
+            try (Connection connexion = daoFactory.getConnection();
+                 Statement statement = connexion.createStatement();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "SELECT id,releaseDate FROM listad")) {
+                ResultSet resultat = preparedStatement.executeQuery();
+                while (resultat.next()) {
+                    Date releaseDate = resultat.getDate("releaseDate");
+                    if(releaseDate.before(limiteDay)) {
+                        Integer Adid = resultat.getInt("id");
+                        listAd.add(Adid);
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            System.out.println("listeAd:"+listAd);
+            if(!listAd.isEmpty()){
+                System.out.println("non");
+                for (int i = 0; i<listAd.size(); i++){
+                    try (Connection connexion = daoFactory.getConnection();
+                         PreparedStatement preparedStatement = connexion.prepareStatement(
+                                 "DELETE FROM listad WHERE id = ? ;")) {
+                        preparedStatement.setInt(1, listAd.get(i));
+                        preparedStatement.executeUpdate();
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(listAd.get(i)+" reussi");
+                }
+
+            }
+        }else {
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "DELETE FROM listad WHERE id = ? ;")) {
+                preparedStatement.setInt(1, id);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-    }
 
-
-
-
-    @Override
-    public boolean createAd(String title, Float price, String picture, String categorie, String city, String condition) {
-        System.out.println("on est la createAD");
-        try (Connection connexion = daoFactory.getConnection();
-             PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO user(mail, password,lastname,firstname,birthday,phoneNumber) VALUES(?, ?,?,?,?,?);")) {
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
     }
 
     @Override

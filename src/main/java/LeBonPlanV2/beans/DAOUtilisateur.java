@@ -4,32 +4,19 @@ import java.util.List;
 public interface DAOUtilisateur {
     String create(String mail, String password, String lastname, String firstname, Date birthday, String phone);
     boolean read(String mail, String password);
-
     boolean checkAdmin(String mail);
-
     boolean adGrade(String mail, Integer grade);
-
     List<String> getClients();
-
     void deleteUser(String email);
-
-    void deleteAd(int id);
-    boolean createAd(String title, Float price, String picture, String categorie, String city, String condition);
-
+    void deleteAd(int id, boolean date);
     String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
-
     List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState);
     List<List> myAd(int idOwner);
-
     boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions);
     boolean editAd(int id,String title,Float price, String picture,String description, String city, Integer category, Integer conditions);
-
     int emailToId(String email);
-
     List<List> getADInfo(Integer idAD);
-
     List<String> getOwnerInfoByIDOwner(Integer idOwner);
-
     List<String> emailToInfo(String email);
 
 }

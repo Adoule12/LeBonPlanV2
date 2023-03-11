@@ -26,7 +26,6 @@ public class EditUser implements Action{
         String lastname = request.getParameter("lastname");
         String firstname = request.getParameter("firstname");
 
-        System.out.println("cool");
         if(emailM != null || lastname != null || firstname !=null ){
             System.out.println("cool2");
             erreur = daoBonPlan.editUser(email,emailM, lastname,firstname,birthday);

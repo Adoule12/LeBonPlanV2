@@ -28,13 +28,13 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
       </c:forEach>
 
-        <input type="radio" name="a" value="${idAD}">
+        <input type="radio" name="a" value="${idAD}" required>
       <label class = "radio" for="condi1">${idAD}</label>
 
     </c:forEach>
 
     <h2 class ="title">Modification d'une annonce</h2>
-    <h1 class ="title">toucher que ce que vous voulez modifier</h1>
+    <p class = "MsgError">toucher que ce que vous voulez modifier</p>
 
       <input class = "button" type="text" name="title" placeholder="titre"><br><br>
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
@@ -64,12 +64,13 @@
       <label class = "radio" for="catego4">Electronique</label>
       <input type="radio" id="catego5" name="category" value="5" >
       <label class = "radio" for="catego5">Autre</label>
-
+      <br><br>
+      <input type="checkbox" id="check" name="delete">
+      <label class = "radio" for="catego5">Suprimer l'annonce?</label>
       <input type="hidden" name="id" value="editAd">
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">
     </form>
-    <p class = "MsgError">${info}</p>
     <a href="Controller?id=goViews" >Menu Home</a>
   </div>
 </body>

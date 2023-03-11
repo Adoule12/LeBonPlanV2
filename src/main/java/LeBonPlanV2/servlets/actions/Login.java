@@ -19,6 +19,7 @@ public class Login implements Action{
         List<List> listAd = new ArrayList<>();
         if(email != null && mdp !=null){
             if(daoBonPlan.read(email,mdp)){
+                daoBonPlan.deleteAd(10,true);
                 HttpSession session = request.getSession( true );
                 session.setAttribute( "email", email );
                 if(daoBonPlan.checkAdmin(email) ){

@@ -13,7 +13,7 @@ public class DeleteAd implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         String id  = String.valueOf(request.getSession().getAttribute("id"));
         int Adid = Integer.parseInt(id);
-        daoBonPlan.deleteAd(Adid);
+        daoBonPlan.deleteAd(Adid, false);
         forward(request,response,"jsp/home.jsp");
         return null;
 
