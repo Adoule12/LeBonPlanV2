@@ -18,7 +18,8 @@ public class Login implements Action{
         String mdp = request.getParameter("password");
         List<List> listAd = new ArrayList<>();
         if(email != null && mdp !=null){
-            if(daoBonPlan.read(email,mdp)){
+            String login =daoBonPlan.read(email,mdp);
+            if(login.equals("ok")){
                 daoBonPlan.deleteAd(10,true);
                 HttpSession session = request.getSession( true );
                 session.setAttribute( "email", email );
@@ -50,7 +51,7 @@ public class Login implements Action{
                 request.getRequestDispatcher("/jsp/connected.jsp").forward(request, response);
             }else {
                 etat="erreur";
-                request.setAttribute("info","erreur de connexion");
+                request.setAttribute("info",login);
 
             }
         }

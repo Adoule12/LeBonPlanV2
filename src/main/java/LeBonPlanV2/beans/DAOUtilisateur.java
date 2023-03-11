@@ -3,7 +3,7 @@ import java.sql.Date;
 import java.util.List;
 public interface DAOUtilisateur {
     String create(String mail, String password, String lastname, String firstname, Date birthday, String phone);
-    boolean read(String mail, String password);
+    String read(String mail, String password);
     boolean checkAdmin(String mail);
     boolean adGrade(String mail, Integer grade);
     List<String> getClients();

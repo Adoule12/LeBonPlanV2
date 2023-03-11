@@ -106,10 +106,11 @@
                 </li>
             </ul>
         </li>
-        <li class="menu"><a>Annonce</a>
+        <li class="menu"><a>Modération</a>
             <ul class="sousMenu">
                 <li><a href="Controller?id=postAd">Déposer une annonc</a></li>
                 <li><a href="Controller?id=moderationAD">Modération des annonces</a></li>
+                <li><a href="Controller?id=moderationUser">Modération des Comptes</a></li>
             </ul>
         </li>
         <li class="menu"><a>Mon Compte</a>

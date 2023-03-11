@@ -89,15 +89,23 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     @Override
-    public boolean read(String mail, String password){
-        boolean login = false;
+    public String read(String mail, String password){
+        String login = "erreur de connexion";
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "SELECT * FROM user WHERE mail=?;")) {
             preparedStatement.setString(1, mail);
             ResultSet resultat = preparedStatement.executeQuery();
             if(resultat.next()) {
-                login = BCrypt.checkpw(password, resultat.getString("password"));
+                if(resultat.getInt("blacklisted") != 1) {
+                    if (BCrypt.checkpw(password, resultat.getString("password"))) {
+                        login = "ok";
+                    } else {
+                        login = "erreur de connexion";
+                    }
+                }else {
+                    login = "vous avez ete bani";
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
