@@ -149,8 +149,6 @@
     </div>
 </c:forEach>
 
-<a href="Controller?id=logout">quitter le jeu</a>
-<a href="Controller?id=deleteUser">rage quitte</a>
 <a href="Controller?id=goHome" >Menu Home</a>
 
 <footer>

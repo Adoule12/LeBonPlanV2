@@ -26,15 +26,12 @@ public class Controller extends HttpServlet {
         actionMap.put("login", new Login());
         actionMap.put("logout", new Logout());
         actionMap.put("signin", new Signin());
-        actionMap.put("buy", new Buy());
         actionMap.put("deleteUser", new DeleteUser());
         actionMap.put("editUser", new EditUser());
         actionMap.put("home", new Home());
         actionMap.put("postAd", new PostAd());
         actionMap.put("editAd", new EditAd());
         actionMap.put("deleteAd", new DeleteAd());
-        actionMap.put("switchL", new SwitchL());
-        actionMap.put("switchR", new SwitchR());
         actionMap.put("adAdmin", new AdAdmin());
         actionMap.put("goViews", new GoViews());
         actionMap.put("showAd", new ShowAd());
