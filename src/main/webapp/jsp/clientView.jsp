@@ -102,7 +102,7 @@
                 <li><a class = "title" href="#">Rafraichir filtres</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=login" method="post">
-                            <input class = "button" id = "reset" type="submit" name="resetButton" value="Rafraichir"><br>
+                            <input class = "button" id = "reset" type="submit" name="resetButton" value="Reset"><br>
                             <input type="hidden" name="id" value="showAd">
                         </form>
                         <form action="Controller?id=login" method="post">

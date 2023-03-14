@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class = "frame" id = "editFrame">
-    <form action="Controller?id=editAd" method="post">
+    <form method="post" action="Controller?id=editAd" enctype='multipart/form-data'>
     <c:forEach var="ad" items="${requestScope.listAd}">
       <c:set var="compteur" value="0" scope="page" />
       <c:forEach var="info" items="${ad}">
@@ -38,7 +38,10 @@
 
       <input class = "button" type="text" name="title" placeholder="titre"><br><br>
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
-      <input class = "button" type="text" name="picture" placeholder="adresse image"><br><br>
+
+      <p>Déposez votre image</p>
+      <input type="file" id="image_drop" name="image_drop" /><br>
+
       <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
       <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
       <br>
@@ -70,6 +73,8 @@
       <input type="hidden" name="id" value="editAd">
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">
+      <script src="js/edit.js" type="text/javascript"></script>
+
     </form>
     <a href="Controller?id=goViews" >Menu Home</a>
   </div>

@@ -46,7 +46,7 @@ public class PostAd implements Action{
             conditions = Integer.parseInt(request.getParameter("conditions"));
         }
 
-        if (title !=null){
+        if (title !=null) {
 
             String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\img";
             String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
@@ -55,13 +55,18 @@ public class PostAd implements Action{
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();
             }
-            Part part = request.getPart("image_drop");
             String fileName = "drapeau-ville-angers-logo-flagsonline.jpg";
-            if(!part.equals(null)) {
-                fileName = part.getSubmittedFileName();
-                part.write(uploadPath + File.separator + fileName);
-                part.write(uploadPathserver + File.separator + fileName);
-              }
+
+            Part part = request.getPart("image_drop");
+            System.out.println("part "+part.getSubmittedFileName());
+            if (part.getSubmittedFileName() != null && part.getSubmittedFileName() !=""){
+
+            fileName = part.getSubmittedFileName();
+            part.write(uploadPath + File.separator + fileName);
+            part.write(uploadPathserver + File.separator + fileName);
+
+
+            }
             String picture = "img" + File.separator + fileName;
             daoBonPlan.postAd(title,price,picture,description,city,owner,category,conditions);
 

@@ -245,7 +245,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, title);
                 preparedStatement.setInt(2, id);
                 preparedStatement.executeUpdate();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -262,7 +261,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        if(!picture.isEmpty()) {
+        System.out.println("avant picture "+picture);
+        if(!picture.equals("vide")) {
+            System.out.println("picture");
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE listAd SET picture =? WHERE id=?;")) {

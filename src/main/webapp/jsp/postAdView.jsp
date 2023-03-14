@@ -18,13 +18,13 @@
 
     <h2 class ="title">Ajouter une annonce</h2>
 
-    <form method="post" action="Controller?id=postAd" enctype='multipart/form-data'>
+    <form method="post" action="Controller?id=postAd" enctype="multipart/form-data">
 
         <input class = "button" type="text" name="title" placeholder="titre"><br><br>
         <input class = "button" type="number" name="price" placeholder="prix"><br><br>
 
         <p>Déposez votre image</p>
-        <input type="file" id="image_drop" name="image_drop"/>
+        <input type="file" id="image_drop" name="image_drop" /><br>
 
         <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
         <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
@@ -38,7 +38,6 @@
         <label class = "radio" for="condi3">Un Peu Abime</label>
         <input type="radio" id="condi4" name="conditions" value="4" >
         <label class = "radio" for="condi4">Tres Abime</label>
-
         <br>
         <p class = "subtitle">A quelle categorie appartient votre objet ?</p>
         <input type="radio" id="catego1" name="category" value="1" >
@@ -55,7 +54,7 @@
         <input type="hidden" name="id" value="postAd">
         <br><br><br>
 
-        <input  class = "button" type="submit" name="btImage" value="Soumettre">
+        <input  class = "button" id="btImage" type="submit" name="btImage" value="Soumettre">
 
         <script src="js/test.js" type="text/javascript"></script>
     </form>

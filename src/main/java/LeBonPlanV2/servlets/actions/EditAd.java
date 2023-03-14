@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -30,7 +32,6 @@ public class EditAd implements Action {
                 String title = request.getParameter("title");
                 String priceEXTRACT = request.getParameter("price");
                 Float price = null;
-                String picture = request.getParameter("picture");
                 String description = request.getParameter("description");
                 String city = request.getParameter("city");
                 String categoryEXTRACT = request.getParameter("category");
@@ -43,8 +44,8 @@ public class EditAd implements Action {
                     state = Integer.parseInt(stateEXTRACT);
                 }
                 System.out.println("price" + priceEXTRACT + "euro");
-                if (priceEXTRACT != null && priceEXTRACT != "") {
-                    System.out.println("Vrai");
+                if (priceEXTRACT != null && priceEXTRACT !="" && !priceEXTRACT.isEmpty()) {
+                    System.out.println("Vraitamere");
                     price = Float.parseFloat(priceEXTRACT);
                     System.out.println("Vrai2");
                 }
@@ -59,8 +60,25 @@ public class EditAd implements Action {
                     conditions = Integer.parseInt(request.getParameter("conditions"));
                 }
 
-                if (title != null || price != null || picture != null || description != null || city != null || category != null || conditions != null) {
-                    System.out.println("je suis dedans");
+                if (title != null || price != null || description != null || city != null || category != null || conditions != null) {
+
+
+                    String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\img";
+                    String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
+                    System.out.println(uploadPath);
+                    File uploadDir = new File(uploadPath);
+                    if (!uploadDir.exists()) {
+                        uploadDir.mkdir();
+                    }
+                    Part part = request.getPart("image_drop");
+                    String fileName;
+                    String picture = "vide";
+                    if(part.getSubmittedFileName() !=null && part.getSubmittedFileName() != "") {
+                        fileName = part.getSubmittedFileName();
+                        part.write(uploadPath + File.separator + fileName);
+                        part.write(uploadPathserver + File.separator + fileName);
+                        picture = "img" + File.separator + fileName;
+                    }
                     daoBonPlan.editAd(idAD_ext, title, price, picture, description, city, category, conditions);
                     daoBonPlan.updateAdState(idAD_ext,state);
                 }
