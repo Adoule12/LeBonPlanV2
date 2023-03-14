@@ -27,7 +27,7 @@ public class Signin implements Action{
         if(email != null && mdp !=null && lastname!=null && firstname!=null && phone!=null){
             erreur = daoBonPlan.create(email,mdp, lastname,firstname,birthday,phone);
             if(erreur.equals("")){
-                request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
             }else{
                 request.setAttribute("info", erreur);
             }
