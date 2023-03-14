@@ -163,8 +163,7 @@
     </form>
     </div>
 </c:forEach>
-<a href="Controller?id=logout">deconnexion</a>
-<a href="Controller?id=deleteUser">supprimer son compte</a>
+
 
 <footer>
 

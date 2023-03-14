@@ -370,7 +370,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     @Override
-    public boolean adGrade(String mail, Integer grade){
+    public boolean switchGrade(String mail, Integer grade){
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "UPDATE user SET grade =? WHERE mail=?;")){
@@ -395,6 +395,26 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 annuaire.add(mail);
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return annuaire;
+    }
+    @Override
+    public List<String> getAdmins(String email){
+        //doit tout renvoyer sauf soit meme
+        List<String> annuaire = new ArrayList<>();
+        try (Connection connexion = daoFactory.getConnection();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "SELECT mail,lastname,firstname FROM user WHERE (grade!=0) AND (mail!=?)")) {
+            preparedStatement.setString(1, email);
+            ResultSet resultat = preparedStatement.executeQuery();
+            while (resultat.next()) {
+
+                String mail = resultat.getString("mail");
+                annuaire.add(mail);
+                System.out.println("annuaire"+annuaire);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -5,8 +5,10 @@ public interface DAOUtilisateur {
     String create(String mail, String password, String lastname, String firstname, Date birthday, String phone);
     String read(String mail, String password);
     boolean checkAdmin(String mail);
-    boolean adGrade(String mail, Integer grade);
+    boolean switchGrade(String mail, Integer grade);
+
     List<String> getClients();
+    List<String> getAdmins(String email);
     void deleteUser(String email);
     void deleteAd(int id, boolean date);
     String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
