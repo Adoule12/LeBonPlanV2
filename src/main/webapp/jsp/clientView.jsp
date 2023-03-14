@@ -30,7 +30,7 @@
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input class = "button" id = "mobilier" type="submit" name="test" value=" Mobilier "><br>
+                                <input class = "button" id = "mobilier" type="submit" name="test" value=" Mobilier"><br>
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
@@ -44,7 +44,7 @@
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input class = "button" id = "electronique" type="submit" name="test" value="Electronique"><br>
+                                <input class = "button" id = "electronique" type="submit" name="test" value="Électronique"><br>
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
                             </form>
@@ -58,7 +58,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class = "title" href="#">état</a>
+                <li><a class = "title" href="#">État</a>
                     <ul class="sousFiltre">
                         <li>
                             <form action="Controller?id=login">
@@ -90,28 +90,28 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class = "title" href="#">prix maximum</a>
+                <li><a class = "title" href="#">Prix maximum</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=login">
-                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix max"><br>
-                            <input class = "button" id = "ok" type="submit" name="test" value="OK">
+                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix maximum"><br>
+                            <input class = "button" id = "ok" type="submit" name="test" value="Appliqué">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
                 </li>
-                <li><a class = "title" href="#">Reset filtres</a>
+                <li><a class = "title" href="#">Rafraichir filtres</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=login">
-                            <input class = "button" id = "reset" type="submit" name="resetButton" value="Reset"><br>
+                            <input class = "button" id = "reset" type="submit" name="resetButton" value="Rafraichir"><br>
                             <input type="hidden" name="id" value="showAd">
                         </form>
                         <form action="Controller?id=login">
-                            <input class = "button" id = "croissant" type="submit" name="resetButton" value="Tris Croissant"><br>
+                            <input class = "button" id = "croissant" type="submit" name="resetButton" value="Tri Croissant"><br>
                             <input type="hidden" name="tris" value="croissant">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                         <form action="Controller?id=login">
-                            <input class = "button" type="submit" id = "decroissant" name="resetButton" value="Tris Decroissant"><br>
+                            <input class = "button" type="submit" id = "decroissant" name="resetButton" value="Tri Décroissant"><br>
                             <input type="hidden" name="tris" value="des_croissant">
                             <input type="hidden" name="id" value="showAd">
                         </form>
