@@ -21,7 +21,7 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
 </c:forEach>
 
-<form action="Controller?id=login">
+<form action="Controller?id=login" method="post">
     <input type="submit" name="infosButton" value="Retour">
     <input type="hidden" name="id" value="goViews">
     </form>

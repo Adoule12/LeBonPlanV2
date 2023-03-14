@@ -14,7 +14,7 @@
     <link href="css/commune.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<form action="Controller?id=moderationUser">
+<form action="Controller?id=moderationUser" method="post">
 <h3>utilisateurs existants</h3>
 <c:forEach var="user" items="${requestScope.listuser}">
     <c:set var="compteur" value="0" scope="page" />
@@ -35,7 +35,7 @@
 </form>
 
 
-<form action="Controller?id=moderationUser">
+<form action="Controller?id=moderationUser" method="post">
 <h3>utilisateurs banis</h3>
 <c:forEach var="user" items="${requestScope.listblacklisted}">
     <c:set var="compteur" value="0" scope="page" />

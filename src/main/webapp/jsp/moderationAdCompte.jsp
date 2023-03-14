@@ -16,7 +16,7 @@
 <body>
 <div class = "frame" id = "SigninFrame">
   <h2 class = "title">Création d'un Compte</h2>
-  <form action="Controller?id=adCompte">
+  <form action="Controller?id=adCompte" method="post">
     <input class = "button ButtonSignin" type="email" name="email" placeholder="email"><br><br>
     <input class = "button ButtonSignin" type="password" name="password" placeholder="password"><br><br>
     <input class = "button ButtonSignin" type="text" name="lastname" placeholder="lastname"><br><br>

@@ -16,7 +16,7 @@
 <c:forEach var="mail" items="${requestScope.list}">
   ${mail}<br>
 </c:forEach>
-<form action="Controller?id=adAdmin">
+<form action="Controller?id=adAdmin" method="post">
     <input type="email" name="email" placeholder="email">
     <input type="submit" value="Ajouter">
     <input type="hidden" name="id" value="adAdmin">

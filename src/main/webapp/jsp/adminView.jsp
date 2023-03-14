@@ -21,28 +21,28 @@
                 <li><a class = "title" href="#">Catégorie</a>
                     <ul class="sousFiltre">
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "vehicule" type="submit" name="test" value="Véhicule">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="1">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "mobilier" type="submit" name="test" value="Mobilier">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "jardin" type="submit" name="test" value="Jardin">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="3">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "electronique" type="submit" name="test" value="Electronique">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
@@ -53,28 +53,28 @@
                 <li><a class = "title" href="#">Etat</a>
                     <ul class="sousFiltre">
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id ="neuf" type="submit" name="test" value="Neuf">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="conditions" value="1">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "quasi" id = "quasi" type="submit" name="test" value="Quasi-neuf">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "UnPeuAbimé"  type="submit" name="test" value="Un peu abimé">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="3">
                             </form>
                         </li>
                         <li>
-                            <form action="Controller?id=login">
+                            <form action="Controller?id=login" method="post">
                                 <input class = "button" id = "trèsAbimé" type="submit" name="test" value="Très abimé">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
@@ -84,7 +84,7 @@
                 </li>
                 <li><a class = "title" href="#">Prix maximum</a>
                     <ul class="sousFiltre">
-                        <form action="Controller?id=login">
+                        <form action="Controller?id=login" method="post">
                             <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix max"><br>
                             <input class = "button" id = "ok" type="submit" name="test" value="OK">
                             <input type="hidden" name="id" value="showAd">
@@ -93,7 +93,7 @@
                 </li>
                 <li><a class = "title" href=#">Reset filtres</a>
                     <ul class="sousFiltre">
-                        <form action="Controller?id=login">
+                        <form action="Controller?id=login" method="post">
                             <input class = "button" id = "reset" type="submit" name="resetButton" value="Reset">
                             <input type="hidden" name="id" value="showAd">
                         </form>
@@ -141,7 +141,7 @@
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-    <form action="Controller?id=login">
+    <form action="Controller?id=login" method="post">
         <input class = "buttonAnnouncement" type = "image" src="./img/question-mark.png" value="${idAD}"> <br><br>
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">

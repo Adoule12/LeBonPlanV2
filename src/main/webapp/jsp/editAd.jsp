@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class = "frame" id = "editFrame">
-    <form action="Controller?id=editAd">
+    <form action="Controller?id=editAd" method="post">
     <c:forEach var="ad" items="${requestScope.listAd}">
       <c:set var="compteur" value="0" scope="page" />
       <c:forEach var="info" items="${ad}">

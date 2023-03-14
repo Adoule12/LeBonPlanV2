@@ -16,7 +16,7 @@
     ${mail}<br>
 </c:forEach>
 
-<form action="Controller?id=delAdmin">
+<form action="Controller?id=delAdmin" method="post">
     <input type="email" name="email" placeholder="email">
     <input type="submit" value="Supprimer">
     <input type="hidden" name="id" value="delAdmin">

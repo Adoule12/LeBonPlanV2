@@ -40,7 +40,7 @@
 
     <h2 class ="title">Modification d'une annonce</h2>
     <p class = "MsgError">toucher que ce que vous voulez modifier</p>
-    <form action="Controller?id=editAd">
+    <form action="Controller?id=editAd" method="post">
       <p class = "subtitle">Etat actuel de visibilité de l'annonce sur le site</p>
       <c:if test="${stateAd == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
         <p class = "MsgError">L'annonce est actuellement Visible sur le site</p>
@@ -84,7 +84,7 @@
     <label class = "radio" for="catego5">Autre</label>
     <br><br>
     <input type="checkbox" id="check" name="delete">
-    <label class = "radio" for="catego5">Suprimer l'annonce?</label>
+    <label class = "radio" for="catego5">Supprimer l'annonce?</label>
 
     <input type="hidden" name="id" value="editAd">
       <input type="hidden" name="annonce" value="${idAD}">
