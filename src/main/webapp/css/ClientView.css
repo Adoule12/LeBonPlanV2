@@ -24,7 +24,7 @@ body{
 
 /* barre de navigation */
 nav{
-    width: 100%;
+    width: auto;
     font-size: 18px;
     position: sticky;
     top: 0px;
@@ -80,7 +80,7 @@ li a {
     border-radius: 2px;
     overflow: hidden;
     max-height: 0;
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
 }
 /* lien d'un element de la liste de type sous menu dans la barre de navigation */
 .sousMenu > li > a {
@@ -89,7 +89,7 @@ li a {
     width: 100%;
     align-items: center;
     display: flex;
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
 }
 
 nav > ul > li:hover > a{
@@ -198,18 +198,98 @@ nav > ul > li:hover > a{
     width: 100px;
 }
 
-
 .button {
+    text-align: center;
     font-family: "Nexa Heavy";
-    font-size: 150%;
-    border: groove 4px #000000;
-    border-radius: 5px;
+    font-size: 72%;
     text-decoration: none;
     color: #000000;
+    margin-bottom: 1.5%;
+    border: groove 3px #000000;
+    border-radius: 2px;
 }
 
+#vehicule{
+    padding-left: 36.5%;
+    padding-right: 36.5%;
+
+}
+#mobilier{
+    padding-left: 36%;
+    padding-right: 36%;
+
+}
+#jardin{
+    padding-left: 37.5%;
+    padding-right: 37.5%;
+
+}
+#electronique{
+    padding-left: 33.5%;
+    padding-right: 33.5%;
+
+}
+#autre{
+    padding-left: 38%;
+    padding-right: 38%;
+
+}
+
+.title {
+    font-family: "Nexa Heavy";
+    font-size: 100%;
+    text-decoration: underline;
+}
+
+#neuf{
+    padding-left: 38.5%;
+    padding-right: 38.5%;
+}
+
+#quasi{
+    padding-left: 34.5%;
+    padding-right: 34.5%;
+}
+
+#UnPeuAbimé{
+    padding-left: 33%;
+    padding-right: 33%;
+}
+
+#trèsAbimé{
+    padding-left: 34.8%;
+    padding-right: 34.8%;
+}
+
+#reset{
+    padding-left: 37%;
+    padding-right: 37%;
+}
+
+#croissant{
+    padding-left: 32%;
+    padding-right: 32%;
+}
+
+#decroissant{
+    padding-left: 30.5%;
+    padding-right: 30.5%;
+}
+
+#ok{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#prixMax{
+    margin-top: 0.5%;
+}
 .action {
     position: center;
+}
+
+.sousMenu{
+    text-align: center;
+    width: auto;
 }
 
 /*annonce*/
@@ -224,13 +304,6 @@ nav > ul > li:hover > a{
     margin-left: 20%;
 }
 
-.title {
-    font-family: "Nexa Heavy";
-    font-size: 150%;
-    text-align: center;
-
-}
-
 .price {
     font-family: "Nexa Heavy";
     font-size: 150%;
@@ -243,3 +316,11 @@ nav > ul > li:hover > a{
     height:23px;
 
 }
+
+/*Footer*/
+footer{
+    background-color: #e3e0e0;
+    width: 100%;
+    height: 10%;
+}
+
