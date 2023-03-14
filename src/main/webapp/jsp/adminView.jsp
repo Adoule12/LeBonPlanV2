@@ -14,92 +14,87 @@
     <link href="css/ClientView.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<nav>
+<nav class = "all">
     <ul>
-        <li>
-            <a href="#">
-                <img class="imgFloat"  src="img/drapeau-ville-angers-logo-flagsonline.jpg">
-            </a>
-        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
-                <li><a href="#">categorie</a>
+                <li><a class = "title" href="#">Catégorie</a>
                     <ul class="sousFiltre">
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Véhicule">
+                                <input class = "button" id = "vehicule" type="submit" name="test" value="Véhicule">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="1">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Mobilier">
+                                <input class = "button" id = "mobilier" type="submit" name="test" value="Mobilier">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Jardin">
+                                <input class = "button" id = "jardin" type="submit" name="test" value="Jardin">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="3">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Electronique">
+                                <input class = "button" id = "electronique" type="submit" name="test" value="Electronique">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
                             </form>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">état</a>
+                <li><a class = "title" href="#">Etat</a>
                     <ul class="sousFiltre">
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Neuf">
+                                <input class = "button" id ="neuf" type="submit" name="test" value="Neuf">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="conditions" value="1">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Quasi-neuf">
+                                <input class = "button" id = "quasi" id = "quasi" type="submit" name="test" value="Quasi-neuf">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Un peu abimé">
+                                <input class = "button" id = "UnPeuAbimé"  type="submit" name="test" value="Un peu abimé">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="3">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Très abimé">
+                                <input class = "button" id = "trèsAbimé" type="submit" name="test" value="Très abimé">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
                             </form>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">prix maximum</a>
+                <li><a class = "title" href="#">Prix maximum</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=login">
-                            <input type="number" name="price" placeholder="Prix max">
-                            <input type="submit" name="test" value="OK">
+                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix max"><br>
+                            <input class = "button" id = "ok" type="submit" name="test" value="OK">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
                 </li>
-                <li><a href="#">Reset filtres</a>
+                <li><a class = "title" href=#">Reset filtres</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=login">
-                            <input type="submit" name="resetButton" value="Reset">
+                            <input class = "button" id = "reset" type="submit" name="resetButton" value="Reset">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
@@ -110,13 +105,16 @@
             <ul class="sousMenu">
                 <li><a href="Controller?id=postAd">Déposer une annonce</a></li>
                 <li><a href="Controller?id=moderationAD">Modération des annonces</a></li>
+                <li><a href="Controller?id=moderationUser">Modération des Comptes</a></li>
+                <li><a href="Controller?id=adAdmin" >Donner droit admin</a></li>
                 <li><a href="Controller?id=adCompte" >Créer un compte</a></li>
                 <li><a href="Controller?id=moderationUser">Modération des Comptes</a></li>
                 <li><a href="Controller?id=adAdmin" >Donner les droits admin</a></li>
                 <li><a href="Controller?id=delAdmin" >Supprimer les droits d'admin</a></li>
             </ul>
         </li>
-        <li class="menu"><a>Mon Compte</a>
+        <li class="menu">
+            <a>Mon Compte</a>
             <ul class="sousMenu">
                 <li><a href="Controller?id=goProfil">Profil</a></li>
                 <li><a href="Controller?id=editUser">Modifier mon profil</a></li>
@@ -126,6 +124,7 @@
 </nav>
 
 <c:forEach var="ad" items="${requestScope.listAd}">
+    <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${ad}">
         <c:if test="${compteur==0}"><br>
@@ -142,18 +141,21 @@
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-    <form action="Controller?id=showDetailsAD">
-        <input type="submit" name="infosButton" value="Informations annonce">
+    <form action="Controller?id=login">
+        <input class = "buttonAnnouncement" type = "image" src="./img/question-mark.png" value="${idAD}"> <br><br>
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">
     </form>
+    </div>
 </c:forEach>
 
-
-
-<p>Vous êtes Admin !</p>
-
+<a href="Controller?id=logout">quitter le jeu</a>
+<a href="Controller?id=deleteUser">rage quitte</a>
 <a href="Controller?id=goHome" >Menu Home</a>
+
+<footer>
+
+</footer>
 
 </body>
 </html>

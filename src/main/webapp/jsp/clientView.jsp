@@ -150,9 +150,6 @@
         <c:if test="${compteur == 3}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
             <c:set var="idAD" value="${info}" scope="page" />
         </c:if>
-        <c:if test="${compteur == 3}">
-            <img src="/img/sheets.jpg" alt="papier" />
-        </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
     <form action="Controller?id=showDetailsAD">
@@ -166,13 +163,6 @@
 
 
 <footer>
-
-
-
-
-
-
-
 
 </footer>
 

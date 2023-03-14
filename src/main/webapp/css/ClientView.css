@@ -319,8 +319,10 @@ nav > ul > li:hover > a{
 
 /*Footer*/
 footer{
+    position: sticky;
     background-color: #e3e0e0;
     width: 100%;
     height: 10%;
+
 }
 

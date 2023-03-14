@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Donner le grade Admin</title>
+    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <c:forEach var="mail" items="${requestScope.list}">
