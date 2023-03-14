@@ -105,12 +105,10 @@
             <ul class="sousMenu">
                 <li><a href="Controller?id=postAd">Déposer une annonce</a></li>
                 <li><a href="Controller?id=moderationAD">Modération des annonces</a></li>
-                <li><a href="Controller?id=moderationUser">Modération des comptes</a></li>
-                <li><a href="Controller?id=adAdmin" >Donner les droits administrateurs</a></li>
                 <li><a href="Controller?id=adCompte" >Créer un compte</a></li>
-                <li><a href="Controller?id=moderationUser">Modération des Comptes</a></li>
-                <li><a href="Controller?id=adAdmin" >Donner les droits admin</a></li>
-                <li><a href="Controller?id=delAdmin" >Supprimer les droits d'admin</a></li>
+                <li><a href="Controller?id=moderationUser">Modération des comptes</a></li>
+                <li><a href="Controller?id=adAdmin" >Donner les droits administrateur</a></li>
+                <li><a href="Controller?id=delAdmin" >Supprimer les droits administrateurs</a></li>
             </ul>
         </li>
         <li class="menu">
