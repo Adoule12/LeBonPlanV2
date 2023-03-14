@@ -27,7 +27,7 @@
     <input class = "button ButtonSignin" type="submit" value="Création"><br><br>
   </form>
   <p class = "MsgError">${info}</p>
-  <a href="jsp/adminView.jsp" >Retour</a>
+  <a href="Controller?id=goViews" >Retour</a>
 </div>
 
 

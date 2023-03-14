@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Admin</title>
-    <link href="css/test.css" type="text/css" rel="stylesheet"/>
+    <link href="css/ClientView.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <nav>

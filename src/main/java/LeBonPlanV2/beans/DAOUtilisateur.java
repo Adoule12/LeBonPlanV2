@@ -21,6 +21,7 @@ public interface DAOUtilisateur {
     List<String> getOwnerInfoByIDOwner(Integer idOwner);
 
 
+    void updateAdState(int idAD, Integer state);
 }
 
 

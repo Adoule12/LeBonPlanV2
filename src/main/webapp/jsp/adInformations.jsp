@@ -25,6 +25,7 @@
     <input type="submit" name="infosButton" value="Retour">
     <input type="hidden" name="id" value="goViews">
     </form>
+<a href="Controller?id=goViews"> Retour</a>
 
 </body>
 </html>

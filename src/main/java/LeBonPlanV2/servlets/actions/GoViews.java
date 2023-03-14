@@ -17,27 +17,40 @@ public class GoViews implements Action{
         System.out.println(grade);
         List<List> listAd = new ArrayList<>();
         HttpSession session = request.getSession( true );
-        listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
-        session.setAttribute( "price", null );
-        session.setAttribute( "categorie", null );
-        session.setAttribute( "conditions", null );
-        session.setAttribute( "tris", null );
-        request.setAttribute("listAd",listAd);
         System.out.println(request.getParameter("from"));
+
         if(request.getParameter("from")!=null){
             if(request.getParameter("from").equals("moderation")){
-                session.setAttribute("moderation","O");
+                session.setAttribute("moderation","false");
             }
         }
         if(daoBonPlan.checkAdmin(grade) ){
+            listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
+            session.setAttribute( "price", null );
+            session.setAttribute( "categorie", null );
+            session.setAttribute( "conditions", null );
+            session.setAttribute( "tris", null );
+            request.setAttribute("listAd",listAd);
             System.out.println("Admin");
-            if(session.getAttribute("moderation").toString().equals("1")){
-                request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
-            }else {
+            if(session.getAttribute("moderation")!=null){
+                if(session.getAttribute("moderation").toString().equals("true")){
+                    request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
+                }else {
+                    session.setAttribute("moderation","false");
+                    request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
+                }
+            } else {
+                session.setAttribute("moderation","false");
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }
         }else{
             System.out.println("CLients");
+            listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
+            session.setAttribute( "price", null );
+            session.setAttribute( "categorie", null );
+            session.setAttribute( "conditions", null );
+            session.setAttribute( "tris", null );
+            request.setAttribute("listAd",listAd);
             request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
         }
         request.getRequestDispatcher("/jsp/connected.jsp").forward(request, response);

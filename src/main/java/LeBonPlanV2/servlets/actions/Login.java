@@ -37,7 +37,7 @@ public class Login implements Action{
                 }else{
                     System.out.println("CLients");
                     etat="client";
-                    listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
+                    listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
                     System.out.println(listAd);
                     session.setAttribute( "price", null );
                     session.setAttribute( "categorie", null );

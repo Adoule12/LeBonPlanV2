@@ -640,10 +640,12 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
-                     "SELECT title,price,city,description,category,conditions,owner FROM listad WHERE id ="+idAD)) {
+                     "SELECT title,price,id,state,city,description,category,conditions,owner FROM listad WHERE id ="+idAD)) {
             while (resultat.next()) {
                 listADInfo.add(resultat.getString("title"));
                 listADInfo.add(resultat.getString("price"));
+                listADInfo.add(resultat.getString("id"));
+                listADInfo.add(resultat.getString("state"));
                 listADInfo.add(resultat.getString("city"));
                 listADInfo.add(resultat.getString("description"));
                 listOwnerInfo = getOwnerInfoByIDOwner(resultat.getInt("owner"));
@@ -677,6 +679,21 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
         System.out.println(listOwnerInfo);
         return listOwnerInfo;
+    }
+    @Override
+    public void updateAdState(int idAD, Integer state){
+        if(state != null){
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE listad SET state =? WHERE id=?;")) {
+                preparedStatement.setInt(1, state);
+                preparedStatement.setInt(2, idAD);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 

@@ -16,7 +16,7 @@ public class GoModerationAD implements Action{
         List<List> listAd = new ArrayList<>();
         String moderationStateEXTRACT = request.getParameter("moderationState");
         Integer moderationState=null;
-        session.setAttribute( "moderation", "1" );
+        session.setAttribute( "moderation", "true" );
 
 
         String tris = request.getParameter("tris");
