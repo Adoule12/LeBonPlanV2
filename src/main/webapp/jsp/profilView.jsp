@@ -17,5 +17,6 @@
 </c:forEach>
 <a href="Controller?id=logout">Déconnexion</a>
 <a href="Controller?id=deleteUser">Supprimer son compte</a>
+<a href="Controller?id=goViews" >Menu Home</a>
 </body>
 </html>

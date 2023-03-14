@@ -40,6 +40,7 @@ public class Controller extends HttpServlet {
         actionMap.put("moderationAD", new GoModerationAD());
         actionMap.put("moderationUser", new ModerationUser());
         actionMap.put("adCompte", new AdCompte());
+        actionMap.put("delAdmin", new DelAdmin());
 
 
         DAOFactory daoFactory = DAOFactory.getInstance();
