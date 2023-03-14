@@ -12,14 +12,16 @@ html {
     padding: 0px;
 }
 
+body{
+    background-color: #ff691c;
+}
 
+.all{
+    background-color: white;
+}
 /*  ---- haut de page ----*/
 
 
-/* image logo eseo */
-.imgFloat {
-    width: 100%;
-}
 /* barre de navigation */
 nav{
     width: 100%;
@@ -34,17 +36,20 @@ nav > ul{
     text-align: center;
     box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.3);
     height: var(--hauteur-menu);
+    font-family: "Nexa Heavy";
 }
 /* liste dans barre de navigation */
 nav ul{
     list-style-type: none;
+    font-family: "Nexa Heavy";
 }
 /* element de la liste dans la barre de navigation */
 nav > ul > li{
-    background-color: white;
+    background-color: #ffffff;
     position: relative;
     height: 100%;
     flex: 1;
+    font-family: "Nexa Heavy";
 }
 /* lien d'un element de la liste dans la barre de navigation */
 nav > ul > li > a{
@@ -52,6 +57,7 @@ nav > ul > li > a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: "Nexa Heavy";
 }
 /* lien d'un element  d'une liste*/
 li a {
@@ -74,6 +80,7 @@ li a {
     border-radius: 2px;
     overflow: hidden;
     max-height: 0;
+    font-family: "Bebas";
 }
 /* lien d'un element de la liste de type sous menu dans la barre de navigation */
 .sousMenu > li > a {
@@ -82,6 +89,7 @@ li a {
     width: 100%;
     align-items: center;
     display: flex;
+    font-family: "Bebas";
 }
 
 nav > ul > li:hover > a{
@@ -93,7 +101,7 @@ nav > ul > li:hover > a{
 }
 
 .sousMenu > li:hover > a {
-    color: white;
+    color: #ffffff;
 }
 /* animation de la rotation d'une fleche > */
 @keyframes rotationFleche {
@@ -134,7 +142,7 @@ nav > ul > li:hover > a{
     margin-top: var(--hauteur-menu);
     width: 100%;
     text-align: left;
-    background-color: white;
+    background-color: #d2cbcb;
     border-radius: 2px;
     overflow: hidden;
     max-height: 0;
@@ -190,15 +198,48 @@ nav > ul > li:hover > a{
     width: 100px;
 }
 
-/*home.jsp*/
-p{
-    font-family: "Roboto Light";
+
+.button {
+    font-family: "Nexa Heavy";
+    font-size: 150%;
+    border: groove 4px #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
 }
- #home{
-     margin-top: 20%;
-     margin-left: 41%;
-     margin-right: 30%;
-     border-width:5px;
-     border-style:double;
-     border-color:black;
- }
+
+.action {
+    position: center;
+}
+
+/*annonce*/
+
+.annonce{
+    background-color: #ffffff;
+    border: groove 6px #000000;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.title {
+    font-family: "Nexa Heavy";
+    font-size: 150%;
+    text-align: center;
+
+}
+
+.price {
+    font-family: "Nexa Heavy";
+    font-size: 150%;
+    text-align: center;
+}
+
+.buttonAnnouncement{
+    margin-left: 90%;
+    width:22px;
+    height:23px;
+
+}

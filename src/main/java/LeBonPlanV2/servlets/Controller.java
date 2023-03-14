@@ -35,7 +35,7 @@ public class Controller extends HttpServlet {
         actionMap.put("adAdmin", new AdAdmin());
         actionMap.put("goViews", new GoViews());
         actionMap.put("showAd", new ShowAd());
-        actionMap.put("showDetailsAd", new ShowDetailsAD());
+        actionMap.put("showDetailsAD", new ShowDetailsAD());
         actionMap.put("goProfil", new GoProfil());
         actionMap.put("moderationAD", new GoModerationAD());
         actionMap.put("moderationUser", new ModerationUser());

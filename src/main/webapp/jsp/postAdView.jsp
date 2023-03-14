@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Déposer une annonces</title>
-    <link href="css/home.css" type="text/css" rel="stylesheet"/>
+    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>

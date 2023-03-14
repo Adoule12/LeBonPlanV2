@@ -12,51 +12,46 @@
 <html>
 <head>
     <title>Client</title>
-    <link href="css/test.css" type="text/css" rel="stylesheet"/>
+    <link href="css/client.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<nav>
+<nav class = "all">
     <ul>
-        <li>
-            <a href="#">
-                <img class="imgFloat"  src="img/drapeau-ville-angers-logo-flagsonline.jpg">
-            </a>
-        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
                 <li><a href="#">Categorie</a>
                     <ul class="sousFiltre">
                         <li>
-                            <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Véhicule">
+                            <form class = "action" action="Controller?id=login">
+                                <input  class = "button" type="submit" name="test" value="Vehicule">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="1">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Mobilier">
+                                <input class = "button" type="submit" name="test" value="Mobilier">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="2">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Jardin">
+                                <input class = "button" type="submit" name="test" value="Jardin">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="3">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Electronique">
+                                <input class = "button" type="submit" name="test" value="Electronique">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=login">
-                                <input type="submit" name="test" value="Autre">
+                                <input class = "button" type="submit" name="test" value="Autre">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="5">
                             </form>
@@ -139,23 +134,31 @@
     </ul>
 </nav>
 <c:forEach var="ad" items="${requestScope.listAd}">
+    <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${ad}">
-        <c:if test="${compteur<2}">
-            ${info}<br>
+        <c:if test="${compteur==0}"><br>
+        <p class = "title"> ${info} </p><br>
+        </c:if>
+        <c:if test="${compteur == 1}">
+            <p class = "price">${info} €</p> <br>
         </c:if>
         <c:if test="${compteur == 2}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
             <c:set var="idAD" value="${info}" scope="page" />
         </c:if>
+        <c:if test="${compteur == 3}">
+            <img src="/img/sheets.jpg" alt="papier" />
+        </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
     <form action="Controller?id=showDetailsAD">
-        <input type="submit" name="infosButton" value="Informations annonce">
+
+        <input class = "buttonAnnouncement" type = "image" src="./img/question-mark.png" value="${idAD}"> <br><br>
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">
     </form>
+    </div>
 </c:forEach>
-
 <a href="Controller?id=logout">deconnexion</a>
 <a href="Controller?id=deleteUser">supprimer son compte</a>
 </body>

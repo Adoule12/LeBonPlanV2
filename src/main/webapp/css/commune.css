@@ -11,7 +11,7 @@ html {
 }
 
 .title {
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     margin-top: 6%;
     text-align: center;
     font-size: 300%;
@@ -26,7 +26,7 @@ html {
 }
 
 .button {
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 175%;
     border: groove 4px #000000;
     border-radius: 5px;
@@ -34,22 +34,22 @@ html {
     color: #000000;
 }
 body{
-    background-color: #fcd205;
+    background-color: #ff691c;
 }
 
 .subtitle{
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 150%;
     color: #000000;
     width: auto;
 }
 .radio{
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 125%;
     color: #000000;
 }
 .MsgError {
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 125%;
     color: #ff0000;
     width: auto;
@@ -89,7 +89,7 @@ body{
 }
 
 #inscriptionLogin{
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 100%;
     color: #2169EC;
 }
@@ -109,7 +109,7 @@ body{
 }
 
 #MenuHome{
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 100%;
     color: #2169EC;
 }
@@ -146,7 +146,7 @@ body{
 }
 
 .delete{
-    font-family: "Bebas";
+    font-family: "Nexa Heavy";
     font-size: 0%;
     height: 5px;
     border: groove 4px #ff0000;
