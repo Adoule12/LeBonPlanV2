@@ -73,7 +73,7 @@
       <input type="hidden" name="id" value="editAd">
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">
-      <script src="js/edit.js" type="text/javascript"></script>
+      <script src="js/test.js" type="text/javascript"></script>
 
     </form>
     <a href="Controller?id=goViews" >Menu Home</a>

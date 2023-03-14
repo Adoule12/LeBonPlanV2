@@ -45,18 +45,14 @@ public class EditAd implements Action {
                 }
                 System.out.println("price" + priceEXTRACT + "euro");
                 if (priceEXTRACT != null && priceEXTRACT !="" && !priceEXTRACT.isEmpty()) {
-                    System.out.println("Vraitamere");
                     price = Float.parseFloat(priceEXTRACT);
-                    System.out.println("Vrai2");
                 }
 
                 if (categoryEXTRACT != null && categoryEXTRACT != "") {
-                    System.out.println("Vrai aussi");
                     category = Integer.parseInt(categoryEXTRACT);
                 }
 
                 if (conditionsEXTRACT != null && conditionsEXTRACT != "") {
-                    System.out.println("Vrai egalement");
                     conditions = Integer.parseInt(request.getParameter("conditions"));
                 }
 
