@@ -17,7 +17,7 @@
 </c:forEach>
 <form action="Controller?id=adAdmin">
     <input type="email" name="email" placeholder="email">
-    <input type="submit" value="BLBLBLB">
+    <input type="submit" value="Ajouter">
     <input type="hidden" name="id" value="adAdmin">
 </form>
 <a href="Controller?id=goViews" >Retour</a>
