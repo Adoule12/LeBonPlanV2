@@ -14,7 +14,8 @@ public interface DAOUtilisateur {
     List<List> myAd(int idOwner);
     List<List> userBan(boolean ban);
     boolean ban(int id,int ban);
-    boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions);
+    boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions );
+    boolean postPic(String path, int id);
     boolean editAd(int id,String title,Float price, String picture,String description, String city, Integer category, Integer conditions);
     int emailToId(String email);
     List<List> getADInfo(Integer idAD);

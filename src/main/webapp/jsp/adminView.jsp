@@ -127,15 +127,21 @@
 <c:forEach var="ad" items="${requestScope.listAd}">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${ad}">
-        <c:if test="${compteur<2}">
-            ${info}<br>
+        <c:if test="${compteur==0}"><br>
+            <p class = "title"> ${info} </p><br>
         </c:if>
-        <c:if test="${compteur == 2}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
+        <c:if test="${compteur == 1}">
+            <p class = "price">${info} €</p> <br>
+        </c:if>
+        <c:if test="${compteur==2}">
+            <img src="${info}"><br>
+        </c:if>
+        <c:if test="${compteur == 3}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
             <c:set var="idAD" value="${info}" scope="page" />
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-    <form action="Controller?id=login">
+    <form action="Controller?id=showDetailsAD">
         <input type="submit" name="infosButton" value="Informations annonce">
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">

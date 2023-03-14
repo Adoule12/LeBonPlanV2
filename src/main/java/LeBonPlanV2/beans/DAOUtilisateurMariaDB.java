@@ -15,7 +15,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     @Override
     public String create(String mail, String password,String lastname, String firstname, Date birthday, String phoneNumber) {
         String erreur = "";
-        System.out.println("on est la 2");
         int Age=18;
         boolean mailOk = true;
         boolean ageOk = true;
@@ -27,15 +26,11 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         Calendar c = Calendar.getInstance();
         c.setTime(actualDate);
         c.add(Calendar.YEAR, -Age);
-        System.out.println("actual time "+actualDate);
-        System.out.println("limite age"+c.getTime());
         legalAge.setTime( c.getTime().getTime() );
-        System.out.println("legalAge"+legalAge);
         if(birthday.after(legalAge)){
             ageOk = false;
             erreur = erreur + "vous êtes trop jeune ";
         }
-        System.out.println("age "+ageOk);
 
 
 
@@ -50,7 +45,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     erreur = erreur +"\n mail déja existant";
                 }
             }
-            System.out.println("mail "+mailOk);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,7 +59,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     erreur = erreur +"\n numero de telephone déja existant";
                 }
             }
-            System.out.println("phone"+phoneOk);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -167,7 +160,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             }
         }
         if(!mailM.isEmpty()) {
-            System.out.println("trop bien");
             boolean mailOk = true;
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -175,13 +167,11 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, mailM);
                 ResultSet resultat = preparedStatement.executeQuery();
                 if (resultat.next()) {
-                    System.out.println(resultat.getString("mail"));
                     if (resultat.getString("mail").equals(mailM)) {
                         mailOk = false;
                         erreur = erreur +"mail deja existant";
                     }
                 }
-                System.out.println("mail " + mailOk);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -209,8 +199,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
         Calendar c = Calendar.getInstance();
         c.setTime(actualDate);
-        System.out.println("actual time "+actualDate);
-
 
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -232,6 +220,22 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
         return true;
     }
+
+    @Override
+    public boolean postPic(String path, int id) {
+        try (Connection connexion = daoFactory.getConnection();
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "UPDATE listad SET picture =? WHERE id=?;")) {
+            preparedStatement.setString(1, path);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     @Override
     public boolean editAd(int id,String title, Float price,String picture,String description, String city, Integer category, Integer conditions){
         if(!title.isEmpty()) {
@@ -434,9 +438,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            System.out.println("listeAd:"+listAd);
             if(!listAd.isEmpty()){
-                System.out.println("non");
                 for (int i = 0; i<listAd.size(); i++){
                     try (Connection connexion = daoFactory.getConnection();
                          PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -447,7 +449,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(listAd.get(i)+" reussi");
                 }
 
             }
@@ -496,26 +497,26 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         if(moderationState!= null){
             if(tris != null){
                 if(tris.equals("croissant")){
-                    sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price ASC";
+                    sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price ASC";
                 }
                 if (tris.equals("des_croissant")) {
-                    sql ="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price DESC";
+                    sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price DESC";
                 }
             }
             else {
-                sql="SELECT title,price,id,category,conditions,owner FROM listad WHERE state="+moderationState;
+                sql="SELECT title,price,picture,id,category,conditions,owner FROM listad WHERE state="+moderationState;
             }
         }else{
             if(tris != null){
                 if(tris.equals("croissant")){
-                    sql ="SELECT title,price,id,category,conditions,owner FROM listad ORDER BY price ASC";
+                    sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad ORDER BY price ASC";
                 }
                 if (tris.equals("des_croissant")) {
-                    sql ="SELECT title,price,id,category,conditions,owner FROM listad ORDER BY price DESC";
+                    sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad ORDER BY price DESC";
                 }
             }
             else {
-                sql="SELECT title,price,id,category,conditions,owner FROM listad";
+                sql="SELECT title,price,picture,id,category,conditions,owner FROM listad";
             }
 
         }
@@ -530,12 +531,13 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 conditionsOK = false;
                 String titleEXTRACT = resultat.getString("title");
                 Float priceEXTRACT = resultat.getFloat("price");
+                String pictureEXTRACT = resultat.getString("picture");
+                String picture = pictureEXTRACT;
                 Integer id = resultat.getInt("id");
                 Integer categoryEXTRACT = resultat.getInt("category");
                 Integer conditionsEXTRACT = resultat.getInt("conditions");
                 Integer owner = resultat.getInt("owner");
                 if(priceMax !=null){
-                    System.out.println("price pas null");
                     if(priceEXTRACT<priceMax){
                         priceOK = true;
                     }
@@ -544,7 +546,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 }
 
                 if(categorie !=null){
-                    System.out.println("cate pas null");
                     if(categorie==categoryEXTRACT){
                         categoryOK = true;
                     }
@@ -553,7 +554,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 }
 
                 if(condition !=null){
-                    System.out.println("condi pas null");
                     if(condition==conditionsEXTRACT){
                         conditionsOK = true;
                     }
@@ -564,10 +564,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     List<String > adInfo=new ArrayList<>();
                     adInfo.add(titleEXTRACT);
                     adInfo.add(priceEXTRACT.toString());
+                    adInfo.add(picture);
                     adInfo.add(id.toString());
-                    System.out.println("adInfo");
-                    System.out.println(adInfo);
-                    System.out.println("--------------");
                     listAd.add(adInfo);
                 }
             }
@@ -654,7 +652,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(listADInfo);
         listInfos.add(listADInfo);
         listInfos.add(listOwnerInfo);
         return listInfos;
@@ -677,7 +674,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(listOwnerInfo);
         return listOwnerInfo;
     }
     @Override

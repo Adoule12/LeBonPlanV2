@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Déposer une annonces</title>
@@ -14,11 +15,17 @@
 </head>
 <body>
 <div class = "frame" id = "FrameAdView">
+
     <h2 class ="title">Ajouter une annonce</h2>
-    <form action="Controller?id=postAd">
+
+    <form method="post" action="Controller?id=postAd" enctype='multipart/form-data'>
+
         <input class = "button" type="text" name="title" placeholder="titre"><br><br>
         <input class = "button" type="number" name="price" placeholder="prix"><br><br>
-        <input class = "button" type="text" name="picture" placeholder="adresse image"><br><br>
+
+        <p>Déposez votre image</p>
+        <input type="file" id="image_drop" name="image_drop"/>
+
         <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
         <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
         <br>
@@ -47,7 +54,10 @@
 
         <input type="hidden" name="id" value="postAd">
         <br><br><br>
-        <input  class = "button" type="submit" value="Soumettre">
+
+        <input  class = "button" type="submit" name="btImage" value="Soumettre">
+
+        <script src="js/test.js" type="text/javascript"></script>
     </form>
     <a href="Controller?id=goViews" >Menu Home</a>
 </div>
