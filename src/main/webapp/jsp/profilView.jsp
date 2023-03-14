@@ -11,7 +11,11 @@
     <title>Votre Profil</title>
 </head>
 <body>
-<p>PROFIL OUI</p>
-
+<p>Votre Profil :</p>
+<c:forEach var="info" items="${requestScope.info}">
+    ${info}
+</c:forEach>
+<a href="Controller?id=logout">Déconnexion</a>
+<a href="Controller?id=deleteUser">Supprimer son compte</a>
 </body>
 </html>

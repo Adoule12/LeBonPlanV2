@@ -108,14 +108,16 @@
         </li>
         <li class="menu"><a>Modération</a>
             <ul class="sousMenu">
-                <li><a href="Controller?id=postAd">Déposer une annonc</a></li>
+                <li><a href="Controller?id=postAd">Déposer une annonce</a></li>
                 <li><a href="Controller?id=moderationAD">Modération des annonces</a></li>
                 <li><a href="Controller?id=moderationUser">Modération des Comptes</a></li>
+                <li><a href="Controller?id=adAdmin" >Donner droit admin</a></li>
+                <li><a href="Controller?id=adCompte" >Créer un compte</a></li>
             </ul>
         </li>
         <li class="menu"><a>Mon Compte</a>
             <ul class="sousMenu">
-                <li><a href="#">Profil</a></li>
+                <li><a href="Controller?id=goProfil">Profil</a></li>
                 <li><a href="Controller?id=editUser">Modifier mon profil</a></li>
             </ul>
         </li>
@@ -144,7 +146,7 @@
 <a href="Controller?id=deleteUser">rage quitte</a>
 
 <p>Vous êtes Admin !</p>
-<a href="Controller?id=adAdmin" >Donner droit admin</a>
+
 <a href="Controller?id=goHome" >Menu Home</a>
 
 </body>

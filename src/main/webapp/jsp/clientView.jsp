@@ -127,7 +127,7 @@
         </li>
         <li class="menu"><a>Mon Compte</a>
             <ul class="sousMenu">
-                <li><a href="#">Profil</a></li>
+                <li><a href="Controller?id=goProfil">Profil</a></li>
                 <li><a href="Controller?id=editUser">Modifier mon profil</a></li>
             </ul>
         </li>
@@ -159,7 +159,6 @@
     </form>
     </div>
 </c:forEach>
-<a href="Controller?id=logout">deconnexion</a>
-<a href="Controller?id=deleteUser">supprimer son compte</a>
+
 </body>
 </html>

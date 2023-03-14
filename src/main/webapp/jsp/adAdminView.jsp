@@ -20,7 +20,7 @@
     <input type="submit" value="Connexion">
     <input type="hidden" name="id" value="adAdmin">
 </form>
-<a href="jsp/adminView.jsp" >Retour marche pas</a>
+<a href="jsp/adminView.jsp" >Retour</a>
 
 </body>
 </html>

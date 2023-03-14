@@ -325,8 +325,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     @Override
     public int emailToId(String email){
         int id = 100;
-        System.out.println("JE suis la");
-
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement("SELECT id FROM user WHERE mail=?;")) {
             preparedStatement.setString(1, email);
@@ -341,30 +339,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
         return id;
     }
-    @Override
-    public List<String> emailToInfo(String email){
-        List<String> info = new ArrayList<>();
-        try (Connection connexion = daoFactory.getConnection();
-             Statement statement = connexion.createStatement();
-             ResultSet resultat = statement.executeQuery(
-                     "SELECT mail,lastname,firstname,phoneNumber FROM user WHERE mail=?")){
-            while (resultat.next()) {
-                String mail = resultat.getString("mail");
-                String lastname = resultat.getString("lastname");
-                String firstname = resultat.getString("firstname");
-                String phoneNumber = resultat.getString("phoneNumber");
-                info.add(mail);
-                info.add(lastname);
-                info.add(firstname);
-                info.add(phoneNumber);
 
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return info;
-    }
 
 
     @Override
@@ -421,10 +396,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }
         return annuaire;
     }
-
-
-
-
     @Override
     public void deleteUser(String email) {
         try (Connection connexion = daoFactory.getConnection();
