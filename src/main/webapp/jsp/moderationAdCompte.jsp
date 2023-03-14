@@ -6,26 +6,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
   <title>Création d'un nouveau compte</title>
+  <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+
 </head>
 <body>
 <div class = "frame" id = "SigninFrame">
-  <h2 class = "title">LeBonPlan</h2>
-  <form action="Controller?id=signin">
+  <h2 class = "title">Création d'un Compte</h2>
+  <form action="Controller?id=adCompte">
     <input class = "button ButtonSignin" type="email" name="email" placeholder="email"><br><br>
     <input class = "button ButtonSignin" type="password" name="password" placeholder="password"><br><br>
     <input class = "button ButtonSignin" type="text" name="lastname" placeholder="lastname"><br><br>
     <input class = "button ButtonSignin" type="text" name="firstname" placeholder="firstname"><br><br>
     <input class = "button ButtonSignin" type="date" name="birthday" placeholder="birthday"><br><br>
     <input class = "button ButtonSignin" type="number" name="phone" placeholder="phone"><br><br>
-    <input class = "button ButtonSignin" type="hidden" name="id" value="signin"><br><br>
-    <input class = "button ButtonSignin" type="submit" value="Inscription"><br><br>
+    <input class = "button ButtonSignin" type="hidden" name="id" value="adCompte"><br><br>
+    <input class = "button ButtonSignin" type="submit" value="Création"><br><br>
   </form>
   <p class = "MsgError">${info}</p>
+  <a href="jsp/adminView.jsp" >Retour</a>
 </div>
-<a href="jsp/adminView.jsp" >Retour</a>
+
 
 </body>
 </html>
