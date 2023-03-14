@@ -149,7 +149,7 @@
     </div>
 </c:forEach>
 
-<a href="Controller?id=goHome" >Menu Home</a>
+
 
 <footer>
 
