@@ -69,21 +69,21 @@
                             <form action="Controller?id=moderationAD" method="post">
                                 <input type="submit" name="test" value="Quasi-neuf">
                                 <input type="hidden" name="id" value="moderationAD">
-                                <input type="hidden" name="categorie" value="2">
+                                <input type="hidden" name="conditions" value="2">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=moderationAD" method="post">
                                 <input type="submit" name="test" value="Un peu abimé">
                                 <input type="hidden" name="id" value="moderationAD">
-                                <input type="hidden" name="categorie" value="3">
+                                <input type="hidden" name="conditions" value="3">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=moderationAD" method="post">
                                 <input type="submit" name="test" value="Très abimé">
                                 <input type="hidden" name="id" value="moderationAD">
-                                <input type="hidden" name="categorie" value="4">
+                                <input type="hidden" name="conditions" value="4">
                             </form>
                         </li>
                     </ul>
