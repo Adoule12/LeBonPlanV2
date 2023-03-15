@@ -26,7 +26,7 @@
                     <ul class="sousFiltre">
                         <li>
                             <form action="Controller?id=showAd" method="post">
-                                <input class = "button" id = "vehicule" type="submit" name="test" value="Vehicule">
+                                <input class = "button" id = "vehicule" type="submit" name="test" value="Véhicule">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="1">
                             </form>
@@ -47,7 +47,7 @@
                         </li>
                         <li>
                             <form action="Controller?id=showAd" method="post">
-                                <input class = "button" id = "electronique" type="submit" name="test" value="Electronique">
+                                <input class = "button" id = "electronique" type="submit" name="test" value="Électronique">
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="4">
                             </form>
@@ -74,21 +74,21 @@
                             <form action="Controller?id=showAd" method="post">
                                 <input class = "button" id = "quasi" id = "quasi" type="submit" name="test" value="Quasi-neuf">
                                 <input type="hidden" name="id" value="showAd">
-                                <input type="hidden" name="categorie" value="2">
+                                <input type="hidden" name="conditions" value="2">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=showAd" method="post">
                                 <input class = "button" id = "UnPeuAbimé"  type="submit" name="test" value="Un peu abimé">
                                 <input type="hidden" name="id" value="showAd">
-                                <input type="hidden" name="categorie" value="3">
+                                <input type="hidden" name="conditions" value="3">
                             </form>
                         </li>
                         <li>
                             <form action="Controller?id=showAd" method="post">
                                 <input class = "button" id = "trèsAbimé" type="submit" name="test" value="Très abimé">
                                 <input type="hidden" name="id" value="showAd">
-                                <input type="hidden" name="categorie" value="4">
+                                <input type="hidden" name="conditions" value="4">
                             </form>
                         </li>
                     </ul>
@@ -106,6 +106,16 @@
                     <ul class="sousFiltre">
                         <form action="Controller?id=showAd" method="post">
                             <input class = "button" id = "reset" type="submit" name="resetButton" value="Reset">
+                            <input type="hidden" name="id" value="showAd">
+                        </form>
+                        <form action="Controller?id=showAd" method="post">
+                            <input class = "button" id = "croissant" type="submit" name="resetButton" value="Tri Croissant"><br>
+                            <input type="hidden" name="tris" value="croissant">
+                            <input type="hidden" name="id" value="showAd">
+                        </form>
+                        <form action="Controller?id=showAd" method="post">
+                            <input class = "button" type="submit" id = "decroissant" name="resetButton" value="Tri Décroissant"><br>
+                            <input type="hidden" name="tris" value="des_croissant">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
@@ -161,6 +171,7 @@
 
 
 <footer>
+
 
 </footer>
 

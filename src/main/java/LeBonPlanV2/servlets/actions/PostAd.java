@@ -48,9 +48,9 @@ public class PostAd implements Action{
 
         if (title !=null) {
 
-            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img";
-            String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
-            System.out.println(uploadPath);
+            String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\img";
+            String uploadPathserver = request.getServletContext().getRealPath("") + "img";
+            System.out.println(uploadPathserver);
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();

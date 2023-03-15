@@ -14,7 +14,7 @@
 <body>
 <div class = "frame" id = "editFrame">
     <h2 class ="title">Modification des informations personnelles</h2>
-    <p class ="MsgError">toucher que ce que vous voulez modifier</p>
+    <p class ="MsgError">Toucher que ce que vous voulez modifier</p>
     <form action="Controller?id=editUser" method="post">
     <input class = "button" type="email" name="email" placeholder="mail"><br><br>
     <input class = "button" type="text" name="lastname" placeholder="lastname"><br><br>

@@ -34,7 +34,7 @@
     </c:forEach>
 
     <h2 class ="title">Modification d'une annonce</h2>
-    <p class = "MsgError">toucher que ce que vous voulez modifier</p>
+    <p class = "MsgError">Toucher que ce que vous voulez modifier</p>
 
       <input class = "button" type="text" name="title" placeholder="titre"><br><br>
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
@@ -45,7 +45,7 @@
       <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
       <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
       <br>
-      <p class = "subtitle">Dans quel etat est votre objet ?</p>
+      <p class = "subtitle">Dans quel état est votre objet ?</p>
       <input type="radio" id="condi1" name="conditions" value="1" >
       <label class = "radio" for="condi1">Neuf</label>
       <input type="radio" id="condi2" name="conditions" value="2" >
@@ -56,7 +56,7 @@
       <label class = "radio" for="condi4">Tres Abime</label>
 
       <br>
-      <p class = "subtitle">A quelle categorie appartient votre objet ?</p>
+      <p class = "subtitle">A quelle catégorie appartient votre objet ?</p>
       <input type="radio" id="catego1" name="category" value="1" >
       <label class = "radio" for="catego1">Vehicule</label>
       <input type="radio" id="catego2" name="category" value="2" >
@@ -69,7 +69,7 @@
       <label class = "radio" for="catego5">Autre</label>
       <br><br>
       <input type="checkbox" id="check" name="delete">
-      <label class = "radio" for="catego5">Suprimer l'annonce?</label>
+      <label class = "radio" for="catego5">Supprimer l'annonce?</label>
       <input type="hidden" name="id" value="editAd">
       <br><br><br>
       <input  class = "button" type="submit" value="Soumettre">

@@ -23,7 +23,7 @@
                     <ul class="sousFiltre">
                         <li>
                             <form action="Controller?id=showAd" method="post">
-                                <input class = "button" id = "vehicule" type="submit" name="test" value="Vehicule"><br>
+                                <input class = "button" id = "vehicule" type="submit" name="test" value="Véhicule"><br>
                                 <input type="hidden" name="id" value="showAd">
                                 <input type="hidden" name="categorie" value="1">
                             </form>
@@ -111,7 +111,7 @@
                             <input type="hidden" name="id" value="showAd">
                         </form>
                         <form action="Controller?id=showAd" method="post">
-                            <input class = "button" type="submit" id = "decroissant" name="resetButton" value="Tris Decroissant"><br>
+                            <input class = "button" type="submit" id = "decroissant" name="resetButton" value="Tri Décroissant"><br>
                             <input type="hidden" name="tris" value="des_croissant">
                             <input type="hidden" name="id" value="showAd">
                         </form>
