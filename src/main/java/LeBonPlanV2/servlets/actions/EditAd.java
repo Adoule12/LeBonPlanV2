@@ -60,7 +60,7 @@ public class EditAd implements Action {
                 if (title != null || price != null || description != null || city != null || category != null || conditions != null) {
 
 
-                    String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\img";
+                    String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img";
                     String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
                     System.out.println(uploadPath);
                     File uploadDir = new File(uploadPath);

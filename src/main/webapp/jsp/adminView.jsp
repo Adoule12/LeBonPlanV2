@@ -16,6 +16,10 @@
 <body>
 <nav class = "all">
     <ul>
+        <li>
+            <a href="#">
+            </a>
+        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
                 <li><a class = "title" href="#">Catégorie</a>

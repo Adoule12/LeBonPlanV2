@@ -106,7 +106,7 @@
                             <input type="hidden" name="id" value="showAd">
                         </form>
                         <form action="Controller?id=showAd" method="post">
-                            <input class = "button" id = "croissant" type="submit" name="resetButton" value="Tris Croissant"><br>
+                            <input class = "button" id = "croissant" type="submit" name="resetButton" value="Tri Croissant"><br>
                             <input type="hidden" name="tris" value="croissant">
                             <input type="hidden" name="id" value="showAd">
                         </form>

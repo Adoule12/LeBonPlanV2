@@ -515,8 +515,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         boolean categoryOK = false;
         boolean conditionsOK = false;
         String sql="";
-        if(moderationState!= null){
+        if(moderationState !=null){
+            System.out.println("lolol");
             if(tris != null){
+                System.out.println(moderationState);
                 if(tris.equals("croissant")){
                     sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price ASC";
                 }

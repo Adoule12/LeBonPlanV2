@@ -26,6 +26,9 @@ public class ShowAd implements Action {
         String conditionsEXTRACT = request.getParameter("conditions");
         Integer conditions = null;
 
+        String grade =   String.valueOf(request.getSession().getAttribute("email"));
+
+
         String resetEXTRACTJSP = request.getParameter("resetButton");
         if(resetEXTRACTJSP == null){//pour contrer erreur quand on reset pas car il est null si pas coché
             resetEXTRACTJSP="";
@@ -36,7 +39,6 @@ public class ShowAd implements Action {
             session.setAttribute( "categorie", null );
             session.setAttribute( "conditions", null );
             session.setAttribute( "tris", null );
-
         }else{
             if(price != null){
                 HttpSession session = request.getSession( true );
@@ -68,8 +70,14 @@ public class ShowAd implements Action {
         }
         if(moderationStateEXTRACT!=null){
             if (moderationStateEXTRACT.equals("0")){
-                moderationState=0;
+                moderationState=1;
             }else if (moderationStateEXTRACT.equals("1")){
+                moderationState=null;
+            }
+        }else{
+            if(daoBonPlan.checkAdmin(grade) ){
+                moderationState=null;
+            }else{
                 moderationState=1;
             }
         }
@@ -78,7 +86,6 @@ public class ShowAd implements Action {
         listAd = daoBonPlan.filtreAd(priceMax,categorie,null,conditions,tris,moderationState);
 
         System.out.println(listAd);
-        String grade =   String.valueOf(request.getSession().getAttribute("email"));
         request.setAttribute("listAd",listAd);
         if(daoBonPlan.checkAdmin(grade) ){
             System.out.println("Admin");
