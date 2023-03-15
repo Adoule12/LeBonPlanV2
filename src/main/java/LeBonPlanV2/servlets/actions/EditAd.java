@@ -18,7 +18,8 @@ public class EditAd implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         HttpSession session = request.getSession( true );
         Object idAD = request.getParameter("annonce");
-        if(idAD != null){
+        System.out.println("pas mod");
+        if(idAD != null && idAD !=""){
             System.out.println("idAD pas null");
             int idAD_ext = Integer.parseInt(String.valueOf(idAD));
             System.out.println("cooolll : "+idAD_ext);

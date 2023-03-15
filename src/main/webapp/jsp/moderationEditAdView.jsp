@@ -40,7 +40,7 @@
 
     <h2 class ="title">Modification d'une annonce</h2>
     <p class = "MsgError">toucher que ce que vous voulez modifier</p>
-    <form action="Controller?id=editAd" method="post">
+    <form action="Controller?id=editAd" method="post" enctype="multipart/form-data">
       <p class = "subtitle">Etat actuel de visibilité de l'annonce sur le site</p>
       <c:if test="${stateAd == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
         <p class = "MsgError">L'annonce est actuellement Visible sur le site</p>
@@ -56,7 +56,10 @@
       <br><br><br>
     <input class = "button" type="text" name="title" placeholder="titre"><br><br>
     <input class = "button" type="number" name="price" placeholder="prix"><br><br>
-    <input class = "button" type="text" name="picture" placeholder="adresse image"><br><br>
+
+    <p>Déposez votre image</p>
+    <input type="file" id="image_drop" name="image_drop" /><br>
+
     <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
     <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
     <br>
@@ -87,11 +90,10 @@
     <label class = "radio" for="catego5">Supprimer l'annonce?</label>
 
     <input type="hidden" name="id" value="editAd">
-      <input type="hidden" name="annonce" value="${idAD}">
-
-
+    <input type="hidden" name="annonce" value="${idAD}">
       <br><br><br>
     <input  class = "button" type="submit" value="Soumettre">
+    <script src="js/test.js" type="text/javascript"></script>
   </form>
   <a href="Controller?id=goViews" >Menu Home</a>
 </div>

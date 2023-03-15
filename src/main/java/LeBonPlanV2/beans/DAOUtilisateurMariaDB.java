@@ -659,12 +659,12 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
-                     "SELECT title,price,id,state,city,description,category,conditions,owner FROM listad WHERE id ="+idAD)) {
+                     "SELECT title,price,id,city,description,category,conditions,owner,state FROM listad WHERE id ="+idAD)) {
             while (resultat.next()) {
                 listADInfo.add(resultat.getString("title"));
                 listADInfo.add(resultat.getString("price"));
                 listADInfo.add(resultat.getString("id"));
-                listADInfo.add(resultat.getString("state"));
+                listADInfo.add(String.valueOf(resultat.getInt("state")));
                 listADInfo.add(resultat.getString("city"));
                 listADInfo.add(resultat.getString("description"));
                 listOwnerInfo = getOwnerInfoByIDOwner(resultat.getInt("owner"));
