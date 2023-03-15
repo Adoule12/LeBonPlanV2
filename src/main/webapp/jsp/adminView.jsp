@@ -166,6 +166,7 @@
         <input type="hidden" name="id" value="showDetailsAD">
     </form>
     </div>
+    <p>oui</p>
 </c:forEach>
 
 

@@ -56,6 +56,7 @@
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>
+<a href="Controller?id=goViews" >Retour</a>
 
 </body>
 </html>

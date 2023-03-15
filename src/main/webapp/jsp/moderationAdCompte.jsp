@@ -28,7 +28,10 @@
   </form>
   <p class = "MsgError">${info}</p>
   <a href="Controller?id=goViews" >Retour</a>
+
 </div>
+
+
 
 
 </body>
