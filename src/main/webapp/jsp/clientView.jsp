@@ -93,8 +93,8 @@
                 <li><a class = "title" href="#">Prix maximum</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=showAd" method="post">
-                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix maximum"><br>
-                            <input class = "button" id = "ok" type="submit" name="test" value="Appliqué">
+                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix maximum">
+                            <input class = "button" id = "ok" type="submit" name="test" value="Appliquer">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
@@ -133,6 +133,7 @@
             </ul>
         </li>
     </ul>
+</nav>
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
@@ -159,6 +160,6 @@
     </div>
 </c:forEach>
 
-</nav>
+
 </body>
 </html>

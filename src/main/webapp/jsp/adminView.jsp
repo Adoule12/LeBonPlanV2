@@ -92,8 +92,8 @@
                 <li><a class = "title" href="#">Prix maximum</a>
                     <ul class="sousFiltre">
                         <form action="Controller?id=showAd" method="post">
-                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix max"><br>
-                            <input class = "button" id = "ok" type="submit" name="test" value="OK">
+                            <input class = "button" id = "prixMax" type="number" name="price" placeholder="Prix maximum">
+                            <input class = "button" id = "ok" type="submit" name="test" value="Appliquer">
                             <input type="hidden" name="id" value="showAd">
                         </form>
                     </ul>
