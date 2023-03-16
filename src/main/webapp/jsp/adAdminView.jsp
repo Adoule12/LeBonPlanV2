@@ -10,18 +10,23 @@
 <html>
 <head>
     <title>Donner le grade Admin</title>
-    <link href="css/view.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<c:forEach var="mail" items="${requestScope.list}">
-  ${mail}<br>
-</c:forEach>
+<div class = "frame" id = "frameAdAdmin">
+<p class = "title">Donner le grade Administrateur</p><br>
+    <div id = "ListMail">
+    <c:forEach var="mail" items="${requestScope.list}">
+        liste des addresses mails :<br>
+         ${mail}<br><br>
+    </c:forEach>
+    </div>
 <form action="Controller?id=adAdmin" method="post">
-    <input type="email" name="email" placeholder="email">
-    <input type="submit" value="Ajouter">
+    <input class = "button" type="email" name="email" placeholder="email">
+    <input class = "button" type="submit" value="Ajouter">
     <input type="hidden" name="id" value="adAdmin">
 </form>
-<a href="Controller?id=goViews" >Retour</a>
-
+<a id = "MenuHome" href="Controller?id=goViews" >Retour</a> <br><br>
+</div>
 </body>
 </html>

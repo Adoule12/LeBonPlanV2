@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Page de moderation des annonces</title>
-    <link href="css/view.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>

@@ -34,7 +34,7 @@ html {
     color: #000000;
 }
 body{
-    background-color: #0090fa;
+    background-color: #ff691c;
 }
 
 .subtitle{
@@ -86,7 +86,7 @@ body{
 /*jsp login*/
 
 #LoginFrame {
-    margin-top: 10%;
+    margin-top: 8%;
     margin-bottom: 15%;
     margin-right: 25%;
     margin-left: 25%;
@@ -179,5 +179,13 @@ body{
 #frameAdAdmin {
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 15%;
+    margin-top: 10%;
+    padding-top: -2%;
+}
+
+#ListMail{
+    font-family: "Nexa Heavy";
+    text-align: center;
+    font-size: 125%;
+    margin-top: -2%;
 }

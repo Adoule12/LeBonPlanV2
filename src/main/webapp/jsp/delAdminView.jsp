@@ -11,7 +11,7 @@
 
 <head>
     <title>Supprimer le grade Admin</title>
-    <link href="css/view.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "frameDelAdmi">
