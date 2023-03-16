@@ -166,3 +166,10 @@ body{
     padding-left: 2px;
 
 }
+
+/* jsp delAdminView */
+#frameDelAdmi{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 15%;
+}

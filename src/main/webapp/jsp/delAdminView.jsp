@@ -8,21 +8,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>Supprimer le grade Admin</title>
+    <link href="css/view.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+<div class = "frame" id = "frameDelAdmi">
+    <p class = "title">Supprimer le grade administrateur</p><br>
 <c:forEach var="mail" items="${requestScope.list}">
     ${mail}<br>
 </c:forEach>
-
 <form action="Controller?id=delAdmin" method="post">
-    <input type="email" name="email" placeholder="email">
-    <input type="submit" value="Supprimer">
-    <input type="hidden" name="id" value="delAdmin">
+    <input class = "button" type="email" name="email" placeholder="email">
+    <input class = "button" type="submit" value="Supprimer">
 </form>
-<a href="Controller?id=goViews" >Retour</a>
-
+    <input type="hidden" name="id" value="delAdmin">
+<a id = "MenuHome" href="Controller?id=goViews" >Retour</a> <br><br>
+</div>
 
 </body>
 </html>

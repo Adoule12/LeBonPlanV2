@@ -58,7 +58,7 @@
 
         <script src="js/test.js" type="text/javascript"></script>
     </form>
-    <a href="Controller?id=goViews" >Menu Home</a>
+    <a id = "MenuHome" href="Controller?id=goViews" >Menu Home</a>
 </div>
 </body>
 </html>
