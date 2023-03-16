@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>modifier annonce</title>
-    <link href="css/view.cssne.css" type="text/css" rel="stylesheet"/>
+    <link href="css/view.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
   <div class = "frame" id = "editFrame">
@@ -34,13 +34,12 @@
     </c:forEach>
 
     <h2 class ="title">Modification d'une annonce</h2>
-    <p class = "MsgError">Toucher que ce que vous voulez modifier</p>
 
       <input class = "button" type="text" name="title" placeholder="titre"><br><br>
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
 
-      <p>Déposez votre image</p>
-      <input type="file" id="image_drop" name="image_drop" /><br>
+      <p class = "title" id = "postImg">Déposez votre image</p>
+      <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" /><br><br>
 
       <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
       <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
@@ -76,7 +75,7 @@
       <script src="js/test.js" type="text/javascript"></script>
 
     </form>
-    <a href="Controller?id=goViews" >Menu Home</a>
+    <a id = "MenuHome" href="Controller?id=goViews" >Menu Home</a>
   </div>
 </body>
 </html>
