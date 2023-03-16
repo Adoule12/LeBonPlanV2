@@ -118,13 +118,18 @@
                 </li>
             </ul>
         </li>
-        <li class="menu"><a>Modération</a>
+        <li class="menu"><a> Mes Annonces</a>
             <ul class="sousMenu">
                 <li><a href="Controller?id=postAd">Déposer une annonce</a></li>
+                <li><a href="Controller?id=editAd">Modifier mes annonces</a></li>
+            </ul>
+        </li>
+        <li class="menu"><a>Modération</a>
+            <ul class="sousMenu">
                 <li><a href="Controller?id=moderationAD">Modération des annonces</a></li>
                 <li><a href="Controller?id=adCompte" >Créer un compte</a></li>
                 <li><a href="Controller?id=moderationUser">Modération des comptes</a></li>
-                <li><a href="Controller?id=adAdmin" >Donner les droits administrateur</a></li>
+                <li><a href="Controller?id=adAdmin" >Donner les droits administrateurs</a></li>
                 <li><a href="Controller?id=delAdmin" >Supprimer les droits administrateurs</a></li>
             </ul>
         </li>
@@ -162,7 +167,6 @@
         <input type="hidden" name="id" value="showDetailsAD">
     </form>
     </div>
-    <p>oui</p>
 </c:forEach>
 </body>
 </html>

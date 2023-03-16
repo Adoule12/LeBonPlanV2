@@ -492,15 +492,22 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "SELECT title,id FROM listad WHERE owner=?")) {
+                     "SELECT title,id,price,picture,state FROM listad WHERE owner=?")) {
             preparedStatement.setInt(1, idOwner);
             ResultSet resultat = preparedStatement.executeQuery();
             while (resultat.next()) {
                 String titleEXTRACT = resultat.getString("title");
                 Integer id = resultat.getInt("id");
+                Float price = resultat.getFloat("price");
+                String image = resultat.getString("picture");
+                Integer state = resultat.getInt("state");
                 List<String > adInfo=new ArrayList<>();
                 adInfo.add(titleEXTRACT);
                 adInfo.add(id.toString());
+                adInfo.add(price.toString());
+                adInfo.add(image);
+                adInfo.add(state.toString());
+
                 listAd.add(adInfo);
             }
         } catch (SQLException e) {
@@ -509,7 +516,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return listAd;
     }
     @Override
-    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState) {
+    public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState ) {
         List<List> listAd = new ArrayList<>();
         boolean priceOK = false;
         boolean categoryOK = false;

@@ -11,17 +11,12 @@
 <html>
 <head>
     <title>Page de moderation des annonces</title>
-    <link href="css/view.css" type="text/css" rel="stylesheet"/>
+    <link href="css/camenerve.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>
 <nav>
     <ul>
-        <li>
-            <a href="#">
-                <img class="imgFloat"  src="img/drapeau-ville-angers-logo-flagsonline.jpg">
-            </a>
-        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
                 <li><a href="#">categorie</a>
@@ -142,10 +137,18 @@
 </nav>
 
 <c:forEach var="ad" items="${requestScope.listAd}">
+<div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${ad}">
-        <c:if test="${compteur<3}">
-            ${info}<br>
+        <c:if test="${compteur==0}"><br>
+            <p class = "title"> ${info} </p><br>
+        </c:if>
+
+        <c:if test="${compteur == 1}">
+            <p class = "price">${info} €</p> <br>
+        </c:if>
+        <c:if test="${compteur==2}">
+            <img class="image" src="${info}"><br>
         </c:if>
         <c:if test="${compteur == 3}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
             <c:set var="idAD" value="${info}" scope="page" />
@@ -157,6 +160,7 @@
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="editAd">
     </form>
+</div>
 </c:forEach>
 
 <a href="Controller?id=goViews&from=moderation"> Retour</a>

@@ -50,12 +50,15 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
 
-    <input type="submit" name="debannir" value="${idUser}">
-    <input class="delete" type="submit" name="deleteUser" value="${idUser}" >
+    <input type="submit" name="deban" value="debannir">
+    <input type="hidden" name="debannir" value="${idUser}">
+    <input class="delete" type="submit" name="deleteU" value="${idUser}" >
 
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>
+<a href="Controller?id=goViews" >Retour</a>
+
 <a href="Controller?id=goViews" >Retour</a>
 
 </body>

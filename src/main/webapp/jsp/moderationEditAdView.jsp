@@ -15,12 +15,21 @@
 <body>
 <div class = "frame" id = "editFrame">
   <h2 class ="title">Information de l'annonce actuelle</h2>
+  <div class = "annonce">
   <c:set var="compteur" value="0" scope="page" />
   <c:set var="compteurListe" value="0" scope="page" />
   <c:forEach var="info" items="${requestScope.listInfoAd}">
       <c:forEach var="infoAd" items="${info}">
         <c:if test="${compteur!=2}">
           <c:if test="${compteur!=3}">
+            <c:if test="${compteur==0}">
+
+              <p class = "title"> ${info} </p><br>
+            </c:if>
+            <c:if test="${compteur==0}">
+
+              <p class = "price"> ${info} </p><br>
+            </c:if>
             ${infoAd}<br>
           </c:if>
         </c:if>
@@ -36,19 +45,20 @@
       </c:forEach>
     <c:set var="compteurListe" value="${compteurListe+1 }" scope="page" />
   </c:forEach>
+  </div>
 
 
     <h2 class ="title">Modification d'une annonce</h2>
     <p class = "MsgError">toucher que ce que vous voulez modifier</p>
     <form action="Controller?id=editAd" method="post" enctype="multipart/form-data">
-      <p class = "subtitle">Etat actuel de visibilité de l'annonce sur le site</p>
+      <p class = "subtitle">Etat actuel de visibilité de l'annonce sur le site :</p>
       <c:if test="${stateAd == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
         <p class = "MsgError">L'annonce est actuellement Visible sur le site</p>
       </c:if>
       <c:if test="${stateAd == 0}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
         <p class = "MsgError">L'annonce n'est actuellement pas Visible sur le site</p>
       </c:if>
-      <p class = "subtitle">Etat de visibilité de l'annonce sur le site</p>
+      <p class = "subtitle">Etat futur de visibilité de l'annonce sur le site :</p>
       <input type="radio" id="state0" name="state" value="0" ><%-- state = 0 ==== Annonce PAS-visible --%>
       <label class = "radio" for="state0">NON-Visible</label>
       <input type="radio" id="state1" name="state" value="1" > <%-- state = 1 ==== Annonce visible --%>
@@ -58,7 +68,7 @@
     <input class = "button" type="number" name="price" placeholder="prix"><br><br>
 
     <p>Déposez votre image</p>
-    <input type="file" id="image_drop" name="image_drop" /><br>
+    <input type="file" id="image_drop" name="image_drop" /><br><br>
 
     <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
     <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
