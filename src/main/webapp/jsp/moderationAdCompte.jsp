@@ -10,7 +10,7 @@
 <html>
 <head>
   <title>Création d'un nouveau compte</title>
-  <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+  <link href="css/view.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>

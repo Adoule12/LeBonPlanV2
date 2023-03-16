@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+    <link href="css/view.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "HomeFrame">

@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>modération</title>
-    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+    <link href="css/view.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <form action="Controller?id=moderationUser" method="post">

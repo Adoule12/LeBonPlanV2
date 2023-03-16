@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>modifier annonce</title>
-    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+    <link href="css/view.cssne.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
   <div class = "frame" id = "editFrame">

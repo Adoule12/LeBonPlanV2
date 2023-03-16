@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Déposer une annonces</title>
-    <link href="css/commune.css" type="text/css" rel="stylesheet"/>
+    <link href="css/view.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -21,10 +21,10 @@
     <form method="post" action="Controller?id=postAd" enctype="multipart/form-data">
 
         <input class = "button" type="text" name="title" placeholder="titre"><br><br>
-        <input class = "button" type="number" name="price" placeholder="prix"><br><br>
+        <input class = "button" type="number" name="price" placeholder="prix">
 
-        <p>Déposez votre image</p>
-        <input type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg"/><br>
+        <p class = "title" id = "postImg">Déposez votre image</p>
+        <input class = "button" id="buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg"/><br><br>
 
         <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
         <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>

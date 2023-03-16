@@ -16,10 +16,6 @@
 <body>
 <nav class = "all">
     <ul>
-        <li>
-            <a href="#">
-            </a>
-        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
                 <li><a class = "title" href="#">Catégorie</a>
@@ -141,7 +137,7 @@
         </li>
     </ul>
 </nav>
-
+<p class = "title" id = "txtAdmi" >Vous êtes administrateur !</p>
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
@@ -168,13 +164,5 @@
     </div>
     <p>oui</p>
 </c:forEach>
-
-
-
-<footer>
-
-
-</footer>
-
 </body>
 </html>

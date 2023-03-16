@@ -133,7 +133,6 @@
             </ul>
         </li>
     </ul>
-</nav>
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
@@ -157,14 +156,9 @@
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="showDetailsAD">
     </form>
-        <p>oui</p>
     </div>
 </c:forEach>
 
-
-<footer>
-
-</footer>
-
+</nav>
 </body>
 </html>
