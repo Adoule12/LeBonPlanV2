@@ -16,6 +16,7 @@ public class ShowDetailsAD implements Action{
         String idAD_STRING=request.getParameter("idAD");
         Integer idAD = Integer.parseInt(idAD_STRING);
         listInfoAd = daoBonPlan.getADInfo(idAD);
+        System.out.println(listInfoAd);
         request.setAttribute("listInfoAd",listInfoAd);
         HttpSession session = request.getSession( true );
         if(session.getAttribute("moderation")!=null){

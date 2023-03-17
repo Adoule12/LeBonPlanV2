@@ -14,15 +14,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour la création et l'ajout d'un compte dans la table de donné user.
-     * Elle prend en compte différent règle d'admissions (être majeur, email unique dans la table user).
+     * Fonction pour la creation et l'ajout d'un compte dans la table de donne user.
+     * Elle prend en compte different règle d'admissions (être majeur, email unique dans la table user).
      * @param mail
      * @param password
      * @param lastname
      * @param firstname
      * @param birthday
      * @param phoneNumber
-     * @return erreur (String) message d'erreur si les règles d'admissions ne sont pas respèctées.
+     * @return erreur (String) message d'erreur si les règles d'admissions ne sont pas respèctees.
      */
     @Override
     public String create(String mail, String password,String lastname, String firstname, Date birthday, String phoneNumber) {
@@ -54,7 +54,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             if(resultat.next()){
                 if (resultat.getString("mail").equals(mail)) {
                     mailOk = false;
-                    erreur = erreur +"\n mail déja existant";
+                    erreur = erreur +"\n mail deja existant";
                 }
             }
         } catch (SQLException e) {
@@ -68,7 +68,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             if(resultat.next()){
                 if (resultat.getString("phoneNumber").equals(phoneNumber)) {
                     phoneOk = false;
-                    erreur = erreur +"\n numero de telephone déja existant";
+                    erreur = erreur +"\n numero de telephone deja existant";
                 }
             }
         } catch (SQLException e) {
@@ -94,10 +94,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour connaitre état d'un compte dans la table user
+     * Fonction pour connaitre etat d'un compte dans la table user
      * @param mail
      * @param password
-     * @return message (string) sur état du compte dans la table user
+     * @return message (string) sur etat du compte dans la table user
      */
     @Override
     public String read(String mail, String password){
@@ -219,7 +219,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * @param owner
      * @param category
      * @param conditions
-     * @return boolean si ajout dans la table correctement mené.
+     * @return boolean si ajout dans la table correctement mene.
      */
     @Override
     public boolean postAd(String title, float price,String picture,String description, String city,int owner, int category, int conditions){
@@ -358,9 +358,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour recupérer l'ID d'un compte dans la table user avec son email.
+     * Fonction pour recuperer l'ID d'un compte dans la table user avec son email.
      * @param email
-     * @return id(Integer) l'id du compte associé à l'email donné.
+     * @return id(Integer) l'id du compte associe a l'email donne.
      */
     @Override
     public int emailToId(String email){
@@ -382,9 +382,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
 
     /**
-     * Fonction pour tester si compte dans la table user associé à l'email donné possède le grade ADMIN ou non.
+     * Fonction pour tester si compte dans la table user associe a l'email donne possède le grade ADMIN ou non.
      * @param mail
-     * @return admin (Boolean) true si compte associé à l'amil est admin ou false sinon.
+     * @return admin (Boolean) true si compte associe a l'amil est admin ou false sinon.
      */
     @Override
     public boolean checkAdmin(String mail){
@@ -410,12 +410,12 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour changer le grade d'un compte associé à l'email dans la table user.
+     * Fonction pour changer le grade d'un compte associe a l'email dans la table user.
      * Grade 0 ---> client classique
      * Grade 1 ---> Admin
      * @param mail
      * @param grade
-     * @return Boolean si action dans la table user fait avec succès.
+     * @return Boolean si action dans la table user fait avec succes.
      */
     @Override
     public boolean switchGrade(String mail, Integer grade){
@@ -456,8 +456,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour obtenir l'ensemble des admins excluant le compte associé à l'email donné en param.
-     * NB: ne renvois pas le compte de l'email passé en param.
+     * Fonction pour obtenir l'ensemble des admins excluant le compte associe à l'email donne en param.
+     * NB: ne renvoi pas le compte de l'email passe en param.
      * @param email
      * @return annuaire (List<String>) liste de String contenant l'ensemble des emails des comptes avec le grade admin (1).
      */
@@ -483,7 +483,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour supprimer le compte associé à l'email passé en param dans la table user.
+     * Fonction pour supprimer le compte associe a l'email passe en param dans la table user.
      * @param email
      */
     @Override
@@ -500,8 +500,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
     /**
      * Fonction pour supprimer une annonce de la table listAd.
-     * Fonction qui gère la validité dans le temps d'une annonce, si l'annonce date de plus de 30j elle est supprimée.
-     * L'annonce supprimée est celle associée à l'id passé en param
+     * Fonction qui gere la validite dans le temps d'une annonce, si l'annonce date de plus de 30j elle est supprimee.
+     * L'annonce supprimee est celle associee à l'id passe en param
      * @param id
      * @param date
      */
@@ -560,9 +560,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour obtenir l'ensemble des annonces associé dans la table listad associé à un id d'un compte de la table user.
+     * Fonction pour obtenir l'ensemble des annonces associe dans la table listad associe a un id d'un compte de la table user.
      * @param idOwner
-     * @return listAd (List<List>) uns liste de list adInfo(List<String >) contenant les informations en String lié aux annonces de l'id de l'owner des annonces.
+     * @return listAd (List<List>) uns liste de list adInfo(List<String >) contenant les informations en String lie aux annonces de l'id de l'owner des annonces.
      */
     @Override
     public List<List> myAd(int idOwner) {
@@ -595,15 +595,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour obtenir des annonces de la table listAd en fonction de critère donné en paramètre.
-     * Tris croissant ou de-croissant ou aucun.
+     * Fonction pour obtenir des annonces de la table listAd en fonction de critère donne en parametre.
+     * Tri croissant ou de-croissant ou aucun.
      * @param priceMax
      * @param categorie
      * @param city
      * @param condition
      * @param tris
-     * @param moderationState état de l'annonce (state) visible ou non pour client, 0---> pas visible, 1---> visible
-     * @return listAd (List<List>) une list de list adInfo (List<String >) contenant les infos des annonces de la table listAd correspondant au filtre demandé en param.
+     * @param moderationState etat de l'annonce (state) visible ou non pour client, 0---> pas visible, 1---> visible
+     * @return listAd (List<List>) une list de list adInfo (List<String >) contenant les infos des annonces de la table listAd correspondant au filtre demande en param.
      */
     @Override
     public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState ) {
@@ -697,9 +697,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     *
-     * @param ban
-     * @return
+     * savoir qui est ban et qui ne l'est pas
+     * @param ban pour savoir quel liste retourner
+     * @return la liste des users qui sont ban ou pas ban
      */
     public List<List> userBan(boolean ban) {
         List<List> listUser = new ArrayList<>();
@@ -729,6 +729,13 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return listUser;
 
     }
+
+    /**
+     * permet de bannir ou de debannir un user
+     * @param id du user à ban ou unban
+     * @param ban savoir s'il faut le bannir ou le debannir
+     * @return
+     */
     @Override
     public boolean ban(int id,int ban){
         if(ban<3) {
@@ -757,8 +764,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour récupérer ensemble des infos concernant l'id de l'annonce en param.
-     * On entend par ensemble des infos, celle de l'ad mais aussi les informations concernent le propriétaire de l'annonce.
+     * Fonction pour recuperer ensemble des infos concernant l'id de l'annonce en param.
+     * On entend par ensemble des infos, celle de l'ad mais aussi les informations concernent le proprietaire de l'annonce.
      * @param idAD
      * @return listInfos (List<List>) une liste contenant deux list(List<String>) listOwnerInfo et listADInfo contenant les informations complete de l'annonce.
      */
@@ -771,14 +778,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
-                     "SELECT title,price,id,city,description,category,conditions,owner,state FROM listad WHERE id ="+idAD)) {
+                     "SELECT title,price,picture,id,city,description,category,conditions,owner,state FROM listad WHERE id ="+idAD)) {
             while (resultat.next()) {
                 listADInfo.add(resultat.getString("title"));
                 listADInfo.add(resultat.getString("price"));
+                listADInfo.add(resultat.getString("picture"));
                 listADInfo.add(resultat.getString("id"));
-                listADInfo.add(String.valueOf(resultat.getInt("state")));
                 listADInfo.add(resultat.getString("city"));
                 listADInfo.add(resultat.getString("description"));
+                listADInfo.add(String.valueOf(resultat.getInt("state")));
                 listOwnerInfo = getOwnerInfoByIDOwner(resultat.getInt("owner"));
 
             }
@@ -791,7 +799,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour récuper info d'un compte associé a l'id dans la table user.
+     * Fonction pour recuper info d'un compte associe a l'id dans la table user.
      * @param idOwner
      * @return listOwnerInfo (List<String>) contenant les informations du compte voulu.
      */
@@ -816,7 +824,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     }
 
     /**
-     * Fonction pour mettre à jour l'état de vidibilté d'une annonce avec son id donné en param.
+     * Fonction pour mettre a jour l'etat de vidibilte d'une annonce avec son id donne en param.
      * state ---> 0, l'annonce n'est pas visible pour un client.
      * state ---> 1, l'annonce est visible par un client.
      * @param idAD
