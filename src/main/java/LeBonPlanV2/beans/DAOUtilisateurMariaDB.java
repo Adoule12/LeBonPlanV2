@@ -522,6 +522,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         boolean categoryOK = false;
         boolean conditionsOK = false;
         String sql="";
+        System.out.println("moderationState"+moderationState);
         if(moderationState !=null){
             System.out.println("lolol");
             if(tris != null){

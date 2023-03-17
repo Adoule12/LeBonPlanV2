@@ -84,15 +84,25 @@ public class EditAd implements Action {
             if (daoBonPlan.checkAdmin(grade)) {
                 if(session.getAttribute("moderation")!=null){
                     if(session.getAttribute("moderation").toString().equals("true")){
+                        List<List> listAd = new ArrayList<>();
+                        listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
+                        request.setAttribute("listAd",listAd);
                         request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
                     }else {
                         session.setAttribute("moderation","false");
+                        List<List> listAd = new ArrayList<>();
+                        listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
+                        request.setAttribute("listAd",listAd);
                         request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
                     }
                 } else {
                     session.setAttribute("moderation","false");
                     request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
                 }            } else {
+                daoBonPlan.updateAdState(idAD_ext,0);
+                List<List> listAd = new ArrayList<>();
+                listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
+                request.setAttribute("listAd",listAd);
                 request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
             }
 
