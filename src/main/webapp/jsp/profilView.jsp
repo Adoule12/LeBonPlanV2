@@ -11,43 +11,47 @@
 <html>
 <head>
     <title>Votre Profil</title>
-    <link href="css/view.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<p>Votre Profil :</p>
 <div class = "frame" id = "profilFrame">
+    <img src="img/profil.jpg">
+    <p class="profil">Votre Profil :</p> <a class="button" href="Controller?id=editUser">modifier son compte</a><br>
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${requestScope.info}">
-        <c:if test="${compteur==0}"><br>
-            <p class = "title">votre addresse mail: ${info} </p><br>
+        <c:if test="${compteur==0}">
+            <p>votre addresse mail: ${info} </p>
         </c:if>
-        <c:if test="${compteur==1}"><br>
-            <p class = "title">nom : ${info} </p>
+        <c:if test="${compteur==1}">
+            <p>nom : ${info} </p>
         </c:if>
-        <c:if test="${compteur==2}"><br>
-            <p class = "title">prenom : ${info} </p>
+        <c:if test="${compteur==2}">
+            <p>prenom : ${info} </p>
         </c:if>
-        <c:if test="${compteur==3}"><br>
-            <p class = "title">numéro de télephone : ${info} </p>
+        <c:if test="${compteur==3}">
+            <p>numéro de télephone : ${info} </p>
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-    <p  class = "button"><a href="Controller?id=editUser">modifier son compte</a></p>
-    <p class="title"> mes annonces:</p>
+
+    <a class = "button" href="Controller?id=goViews" >retour</a>
+    <a class = "button" href="Controller?id=logout">Déconnexion</a>
+    <a class="button" href="Controller?id=deleteUser">Supprimer son compte</a>
+     <p class="title"> mes annonces:</p>
 
     <c:forEach var="ad" items="${requestScope.listAd}">
         <div class = "annonce">
         <c:set var="compteur" value="0" scope="page" />
         <c:forEach var="info" items="${ad}">
             <c:if test="${compteur==0}"><br>
-                <p class = "title"> ${info} </p><br>
+                <p class = "title"> ${info} | |
             </c:if>
 
             <c:if test="${compteur == 2}">
-                <p class = "price">${info} €</p> <br>
+               ${info} €</p> <br>
             </c:if>
             <c:if test="${compteur==3}">
-                <img class="image" src="${info}"><br>
+                <img class="image" src="${info}">
             </c:if>
             <c:if test="${compteur == 1}">
                 <c:set var="idAD" value="${info}" scope="page" />
@@ -70,9 +74,8 @@
         </div>
     </c:forEach>
 
-    <p  class = "button"><a href="Controller?id=logout">Déconnexion</a></p>
-    <p  class = "button"><a href="Controller?id=deleteUser">Supprimer son compte</a></p>
-    <p  class = "button"><a href="Controller?id=goViews" >Menu Home</a></p>
+    <br><br>
+    <a class = "button" href="Controller?id=goViews" >retour</a>
 
 </div>
 </body>

@@ -146,6 +146,15 @@ body{
 
 }
 
+#profilFrame {
+    margin-top: 12%;
+    margin-bottom: 15%;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-bottom:2%;
+    padding-top: 2%;
+}
+
 #postImg{
     text-align: center;
     font-size: 115%;
@@ -188,4 +197,24 @@ body{
     text-align: center;
     font-size: 125%;
     margin-top: -2%;
+}
+
+.annonce{
+    background-color: #ffffff;
+    border: groove 6px #000000;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.image{
+    width: 100%;
+}
+.profil {
+    font-family: "Nexa Heavy";
+    text-align: left;
+    margin-top: 6%;
+    font-size: 300%;
+
 }

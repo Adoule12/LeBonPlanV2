@@ -10,9 +10,10 @@
 <html>
 <head>
     <title>Informations d'annonce</title>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<p>lol</p>
+<div class = "frame" id = "profilFrame">
 <c:set var="compteur" value="0" scope="page" />
 <c:set var="compteurAd" value="0" scope="page" />
 <c:set var="compteurOw" value="0" scope="page" />
@@ -20,18 +21,23 @@
     <c:forEach var="ad" items="${info}">
         <c:if test="${compteur==0}">
             <c:if test="${compteurAd==0}">
-                <p>titre:${ad}</p></c:if>
+                <p class = "title"> ${ad} | |</c:if>
             <c:if test="${compteurAd==1}">
-                <p>prix:${ad}</p></c:if>
+                ${ad} €</p></c:if>
             <c:if test="${compteurAd==2}">
                 <img class="image" src="${ad}"></c:if>
             <c:if test="${compteurAd==4}">
-                <p>ville:${ad}</p></c:if>
+                <p class="profil">ville:${ad}</p></c:if>
             <c:if test="${compteurAd==5}">
-                <p>description:${ad}</p></c:if>
+                <p class="profil">description:</p><p>${ad}</p></c:if>
             <c:if test="${compteurAd==6}">
-                <p>state:${ad}</p></c:if><br>
-
+                <c:if test="${ad == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
+                    <p class = "MsgError">état : visible</p>
+                </c:if>
+                <c:if test="${ad == 0}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
+                    <p class = "MsgError">état : non-visible</p>
+                </c:if>
+            </c:if>
             <c:set var="compteurAd" value="${compteurAd+1 }" scope="page" />
         </c:if>
     </c:forEach>
@@ -57,6 +63,6 @@
 </c:forEach>
 
 <a href="Controller?id=goViews"> Retour</a>
-
+</div>
 </body>
 </html>
