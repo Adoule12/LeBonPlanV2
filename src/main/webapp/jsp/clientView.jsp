@@ -145,7 +145,7 @@
             <p class = "price">${info} €</p> <br>
         </c:if>
         <c:if test="${compteur==2}">
-            <img class="image" src="${info}"><br>
+            <br><img class="image" src="${info}"><br>
         </c:if>
         <c:if test="${compteur == 3}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
             <c:set var="idAD" value="${info}" scope="page" />

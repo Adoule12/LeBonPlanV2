@@ -11,36 +11,45 @@
 <html>
 <head>
     <title>Votre Profil</title>
-    <link href="css/views.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views2.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "profilFrame">
-    <img src="img/profil.jpg">
-    <p class="profil">Votre Profil :</p> <a class="button" href="Controller?id=editUser">modifier son compte</a><br>
+    <p class="title">Votre Profil</p> <br>
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${requestScope.info}">
         <c:if test="${compteur==0}">
-            <p>votre addresse mail: ${info} </p>
+            <div class="description villestate">
+            <img class="img" src="img/profil.jpg">
+            <section>
+            <p class="info">Adresse mail: ${info} </p>
         </c:if>
         <c:if test="${compteur==1}">
-            <p>nom : ${info} </p>
+            <p class="info">Nom : ${info}
         </c:if>
         <c:if test="${compteur==2}">
-            <p>prenom : ${info} </p>
+             ${info} </p>
         </c:if>
         <c:if test="${compteur==3}">
-            <p>numéro de télephone : ${info} </p>
+            <p class="info">Numéro de téléphone : ${info} </p>
+            <p class="info"><a href="Controller?id=editUser">Modifier son compte</a></p>
+            </section>
+            </div>
         </c:if>
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
-
-    <a class = "button" href="Controller?id=goViews" >retour</a>
+    <br>
+    <a class = "button" href="Controller?id=goViews" >Retour</a>
     <a class = "button" href="Controller?id=logout">Déconnexion</a>
     <a class="button" href="Controller?id=deleteUser">Supprimer son compte</a>
-     <p class="title"> mes annonces:</p>
+     <p class="title"> Mes Annonces</p>
+    <c:set var="compteurAd" value="0" scope="page" />
 
     <c:forEach var="ad" items="${requestScope.listAd}">
-        <div class = "annonce">
+        <c:if test="${compteurAd mod 2==0}">
+            <section class="ligne">
+        </c:if>
+        <div class = "annonce carre">
         <c:set var="compteur" value="0" scope="page" />
         <c:forEach var="info" items="${ad}">
             <c:if test="${compteur==0}"><br>
@@ -72,8 +81,13 @@
                     <input type="hidden" name="id" value="editAd">
             </form>
         </div>
-    </c:forEach>
+            <c:if test="${compteurAd mod 2==1}">
+                </section>
+            </c:if>
+        <c:set var="compteurAd" value="${compteurAd+1 }" scope="page" />
 
+    </c:forEach>
+    </section>
     <br><br>
     <a class = "button" href="Controller?id=goViews" >retour</a>
 

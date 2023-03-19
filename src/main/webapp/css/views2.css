@@ -211,6 +211,19 @@ body{
 .image{
     width: 100%;
 }
+.profil {
+    font-family: "Nexa Heavy";
+    width: 86%;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #2121f8;
+    border-radius: 4px;
+    height: 100%;
+
+}
 
 .titre{
     font-size: 170%;

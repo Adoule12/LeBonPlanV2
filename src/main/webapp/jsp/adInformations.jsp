@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Informations d'annonce</title>
-    <link href="css/views.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views2.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "profilFrame">
@@ -27,16 +27,25 @@
             <c:if test="${compteurAd==2}">
                 <img class="image" src="${ad}"></c:if>
             <c:if test="${compteurAd==4}">
-                <p class="profil">ville:${ad}</p></c:if>
+                <c:set var="ville" value="${ad}" scope="page" />
+            </c:if>
             <c:if test="${compteurAd==5}">
-                <p class="profil">description:</p><p>${ad}</p></c:if>
+                <div class="description">
+                <h3 class="titre">description:</h3>
+                <p class="info">${ad}</p>
+                <section class="villestate">
+                <p class="ville">ville : ${ville}</p>
+
+            </c:if>
             <c:if test="${compteurAd==6}">
                 <c:if test="${ad == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
-                    <p class = "MsgError">état : visible</p>
+                    <p  id="nothide" class = "state">état : visible</p>
                 </c:if>
                 <c:if test="${ad == 0}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
-                    <p class = "MsgError">état : non-visible</p>
+                    <p id="hide" class = "state">état : non-visible</p>
                 </c:if>
+                </section>
+            </div>
             </c:if>
             <c:set var="compteurAd" value="${compteurAd+1 }" scope="page" />
         </c:if>
@@ -46,23 +55,28 @@
 
         <c:if test="${compteur==1}">
             <c:if test="${compteurOw==0}">
-                <h1>Vendeur</h1>
-                <p>mail : ${owner}</p></c:if>
+                <div class="description villestate">
+                <img class="img" src="img/profil.jpg">
+                <section>
+                <p class="info">mail : ${owner}</p></c:if>
             <c:if test="${compteurOw==1}">
-                <p>nom : ${owner}</c:if>
+                <p class="info">nom : ${owner}</c:if>
             <c:if test="${compteurOw==2}">
-                prenom: ${owner}</p></c:if>
+                ${owner}</p></c:if>
             <c:if test="${compteurOw==3}">
-                <p>numero: ${owner}</p></c:if>
-
+                <p class="info">numero: ${owner}</p>
+                </section>
+                </div>
+            </c:if>
         <c:set var="compteurOw" value="${compteurOw+1 }" scope="page" />
         </c:if>
+
     </c:forEach>
 
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
 </c:forEach>
 
-<a href="Controller?id=goViews"> Retour</a>
+<br><a class="button" href="Controller?id=goViews"> Retour</a>
 </div>
 </body>
 </html>
