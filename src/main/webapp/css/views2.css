@@ -269,10 +269,13 @@ body{
     position: center;
     display: flex;
 }
-.img{
+.imgP{
+    border-radius: 50%;
     margin-left: 5%;
     width: 20%;
+    height: 20%;
     margin-right: 10%;
+
 }
 .info{
     font-family: "Nexa Heavy";

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>home</title>
     <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>

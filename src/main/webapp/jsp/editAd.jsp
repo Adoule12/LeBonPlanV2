@@ -39,7 +39,7 @@
       <input class = "button" type="number" name="price" placeholder="prix"><br><br>
 
       <p class = "title" id = "postImg">Déposez votre image</p>
-      <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" /><br><br>
+      <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg" /><br><br>
 
       <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
       <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>

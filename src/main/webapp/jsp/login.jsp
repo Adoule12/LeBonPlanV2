@@ -16,7 +16,7 @@
 <h2 class ="title">LeBonPlan</h2>
 <form action="Controller?id=login" method="post">
     <input class = "button ButtonLogin" type="email" name="email" placeholder="email"><br><br>
-    <input class = "button ButtonLogin" type="password" name="password" placeholder="password"><br><br>
+    <input class = "button ButtonLogin" type="password" name="password" placeholder="mot de passe"><br><br>
     <input class = "button ButtonLogin" type="submit" value="Connexion"><br><br>
     <input class = "button" type="hidden" name="id" value="login"><br>
 </form>

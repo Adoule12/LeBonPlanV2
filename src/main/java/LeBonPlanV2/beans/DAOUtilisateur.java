@@ -2,7 +2,7 @@ package LeBonPlanV2.beans;
 import java.sql.Date;
 import java.util.List;
 public interface DAOUtilisateur {
-    String create(String mail, String password, String lastname, String firstname, Date birthday, String phone);
+    String create(String mail, String password, String lastname, String firstname, Date birthday, String phone,String picture);
     String read(String mail, String password);
     boolean checkAdmin(String mail);
     boolean switchGrade(String mail, Integer grade);
@@ -11,13 +11,12 @@ public interface DAOUtilisateur {
     List<String> getAdmins(String email);
     void deleteUser(String email);
     void deleteAd(int id, boolean date);
-    String editUser(String mail, String mailM,String lastname, String firstname, Date birthday);
+    String editUser(String mail, String mailM,String lastname, String firstname, Date birthday, String picture);
     List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState);
     List<List> myAd(int idOwner);
     List<List> userBan(boolean ban);
     boolean ban(int id,int ban);
     boolean postAd(String title,float price, String picture,String description, String city,int owner, int category, int conditions );
-    boolean postPic(String path, int id);
     boolean editAd(int id,String title,Float price, String picture,String description, String city, Integer category, Integer conditions);
     int emailToId(String email);
     List<List> getADInfo(Integer idAD);

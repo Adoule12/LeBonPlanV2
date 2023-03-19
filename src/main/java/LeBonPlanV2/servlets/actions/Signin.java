@@ -5,6 +5,8 @@ import LeBonPlanV2.beans.DAOUtilisateur;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 
@@ -25,7 +27,29 @@ public class Signin implements Action{
         String phone = request.getParameter("phone");
         String erreur = "";
         if(email != null && mdp !=null && lastname!=null && firstname!=null && phone!=null){
-            erreur = daoBonPlan.create(email,mdp, lastname,firstname,birthday,phone);
+
+            String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
+            String uploadPathserver = request.getServletContext().getRealPath("") + "imgProfil";
+            System.out.println(uploadPathserver);
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+            String fileName = "profil.jpg";
+
+            Part part = request.getPart("image_drop");
+            System.out.println("part "+part.getSubmittedFileName());
+            if (part.getSubmittedFileName() != null && part.getSubmittedFileName() !=""){
+
+                fileName = part.getSubmittedFileName();
+                part.write(uploadPath + File.separator + fileName);
+                part.write(uploadPathserver + File.separator + fileName);
+
+
+            }
+            String picture = "imgProfil" + File.separator + fileName;
+
+            erreur = daoBonPlan.create(email,mdp, lastname,firstname,birthday,phone, picture);
             if(erreur.equals("")){
                 request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
             }else{

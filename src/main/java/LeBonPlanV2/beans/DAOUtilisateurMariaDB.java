@@ -25,7 +25,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * @return erreur (String) message d'erreur si les règles d'admissions ne sont pas respèctees.
      */
     @Override
-    public String create(String mail, String password,String lastname, String firstname, Date birthday, String phoneNumber) {
+    public String create(String mail, String password,String lastname, String firstname, Date birthday, String phoneNumber, String picture) {
         String erreur = "";
         int Age=18;
         boolean mailOk = true;
@@ -77,13 +77,14 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         if (mailOk && ageOk && phoneOk) {
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
-                         "INSERT INTO user(mail, password,lastname,firstname,birthday,phoneNumber) VALUES(?, ?,?,?,?,?);")) {
+                         "INSERT INTO user(mail, password,lastname,firstname,birthday,phoneNumber,profilPic) VALUES(?, ?,?,?,?,?,?);")) {
                 preparedStatement.setString(1, mail);
                 preparedStatement.setString(2, BCrypt.hashpw(password, BCrypt.gensalt()));
                 preparedStatement.setString(3, lastname);
                 preparedStatement.setString(4, firstname);
                 preparedStatement.setDate(5, birthday);
                 preparedStatement.setString(6, phoneNumber);
+                preparedStatement.setString(7, picture);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -124,7 +125,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         return login;
     }
     @Override
-    public String editUser(String mail, String mailM, String lastname, String firstname, Date birthday) {
+    public String editUser(String mail, String mailM, String lastname, String firstname, Date birthday,String picture) {
         String erreur = "";
         if(!lastname.isEmpty()) {
             try (Connection connexion = daoFactory.getConnection();
@@ -206,6 +207,19 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 }
             }
         }
+        if(!picture.equals("vide")) {
+            System.out.println("picture");
+            try (Connection connexion = daoFactory.getConnection();
+                 PreparedStatement preparedStatement = connexion.prepareStatement(
+                         "UPDATE user SET profilPic =? WHERE mail=?;")) {
+                preparedStatement.setString(1, picture);
+                preparedStatement.setString(2, mail);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return erreur;
     }
 
@@ -249,21 +263,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             return false;
         }
         return true;
-    }
-
-    @Override
-    public boolean postPic(String path, int id) {
-        try (Connection connexion = daoFactory.getConnection();
-             PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE listad SET picture =? WHERE id=?;")) {
-            preparedStatement.setString(1, path);
-            preparedStatement.setInt(2, id);
-            preparedStatement.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
     @Override
@@ -810,8 +809,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              ResultSet resultat = statement.executeQuery(
-                     "SELECT mail,lastname,firstname,phoneNumber FROM user WHERE id ="+idOwner)) {
+                     "SELECT mail,lastname,firstname,phoneNumber,profilPic FROM user WHERE id ="+idOwner)) {
             while (resultat.next()) {
+                listOwnerInfo.add(resultat.getString("profilPic"));
                 listOwnerInfo.add(resultat.getString("mail"));
                 listOwnerInfo.add(resultat.getString("lastname"));
                 listOwnerInfo.add(resultat.getString("firstname"));

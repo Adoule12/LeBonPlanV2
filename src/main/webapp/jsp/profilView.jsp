@@ -19,18 +19,20 @@
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${requestScope.info}">
         <c:if test="${compteur==0}">
-            <div class="description villestate">
-            <img class="img" src="img/profil.jpg">
-            <section>
-            <p class="info">Adresse mail: ${info} </p>
+        <div class="description villestate">
+        <img class="imgP" src="${info}">
+        <section>
         </c:if>
         <c:if test="${compteur==1}">
-            <p class="info">Nom : ${info}
+            <p class="info">Adresse mail: ${info} </p>
         </c:if>
         <c:if test="${compteur==2}">
-             ${info} </p>
+            <p class="info">Nom : ${info}
         </c:if>
         <c:if test="${compteur==3}">
+             ${info} </p>
+        </c:if>
+        <c:if test="${compteur==4}">
             <p class="info">Numéro de téléphone : ${info} </p>
             <p class="info"><a href="Controller?id=editUser">Modifier son compte</a></p>
             </section>

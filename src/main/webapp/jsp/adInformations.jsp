@@ -55,15 +55,17 @@
 
         <c:if test="${compteur==1}">
             <c:if test="${compteurOw==0}">
-                <div class="description villestate">
-                <img class="img" src="img/profil.jpg">
-                <section>
-                <p class="info">mail : ${owner}</p></c:if>
+            <div class="description villestate">
+            <img class="imgP" src="${owner}">
+            <section>
+            </c:if>
             <c:if test="${compteurOw==1}">
-                <p class="info">nom : ${owner}</c:if>
+                <p class="info">mail : ${owner}</p></c:if>
             <c:if test="${compteurOw==2}">
-                ${owner}</p></c:if>
+                <p class="info">nom : ${owner}</c:if>
             <c:if test="${compteurOw==3}">
+                ${owner}</p></c:if>
+            <c:if test="${compteurOw==4}">
                 <p class="info">numero: ${owner}</p>
                 </section>
                 </div>

@@ -5,6 +5,7 @@ import LeBonPlanV2.beans.DAOUtilisateur;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 
@@ -24,8 +25,9 @@ public class AdCompte implements Action {
         String firstname = request.getParameter("firstname");
         String phone = request.getParameter("phone");
         String erreur = "";
+        String picture = "imgProfil" + File.separator + "profil.jpg";
         if(email != null && mdp !=null && lastname!=null && firstname!=null && phone!=null){
-            erreur = daoBonPlan.create(email,mdp, lastname,firstname,birthday,phone);
+            erreur = daoBonPlan.create(email,mdp, lastname,firstname,birthday,phone,picture);
             if(erreur.equals("")){
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }else{
