@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Informations d'annonce</title>
-    <link href="css/views2.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "profilFrame">
@@ -47,6 +47,7 @@
                 </section>
             </div>
             </c:if>
+
             <c:set var="compteurAd" value="${compteurAd+1 }" scope="page" />
         </c:if>
     </c:forEach>

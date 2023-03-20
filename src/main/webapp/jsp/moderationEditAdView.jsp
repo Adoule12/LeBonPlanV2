@@ -23,22 +23,33 @@
       <c:forEach var="ad" items="${info}">
         <c:if test="${compteur==0}">
           <c:if test="${compteurAd==0}">
-            <p>titre:${ad}</p></c:if>
+            <p class = "title"> ${ad} | |</c:if>
           <c:if test="${compteurAd==1}">
-            <p>prix:${ad}</p></c:if>
+            ${ad} €</p></c:if>
           <c:if test="${compteurAd==2}">
             <img class="image" src="${ad}"></c:if>
-          <c:if test="${compteur == 3}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
-            <c:set var="idAD" value="${ad}" scope="page" />
-          </c:if>
           <c:if test="${compteurAd==4}">
-            <p>ville:${ad}</p></c:if>
+            <c:set var="ville" value="${ad}" scope="page" />
+          </c:if>
           <c:if test="${compteurAd==5}">
-            <p>description:${ad}</p></c:if>
+            <div class="description">
+            <h3 class="titre">description:</h3>
+            <p class="info">${ad}</p>
+            <section class="villestate">
+            <p class="ville">ville : ${ville}</p>
+
+          </c:if>
           <c:if test="${compteurAd==6}">
-            <p>state:${ad}</p>
-            <c:set var="stateAd" value="${ad}" scope="page" />
-        </c:if><br>
+            <c:if test="${ad == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
+              <p  id="nothide" class = "state">état : visible</p>
+            </c:if>
+            <c:if test="${ad == 0}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
+              <p id="hide" class = "state">état : non-visible</p>
+            </c:if>
+            </section>
+            </div>
+          </c:if>
+
           <c:set var="compteurAd" value="${compteurAd+1 }" scope="page" />
         </c:if>
       </c:forEach>
@@ -47,18 +58,21 @@
 
         <c:if test="${compteur==1}">
           <c:if test="${compteurOw==0}">
-            <h1>Vendeur</h1>
-            <p>mail : ${owner}</p></c:if>
-          <c:if test="${compteurOw==1}">
-            <p>nom : ${owner}</c:if>
-          <c:if test="${compteurOw==2}">
-            prenom: ${owner}</p></c:if>
-          <c:if test="${compteurOw==3}">
-            <p>numero: ${owner}</p></c:if>
-          <c:if test="${compteur == 4}"><%-- ID de l'annonce en 3eme place dans la liste des infosAd récupérer  --%>
-            <c:set var="idAD" value="${infoAd}" scope="page" />
+            <div class="description villestate">
+            <img class="imgP" src="${owner}">
+            <section>
           </c:if>
-
+          <c:if test="${compteurOw==1}">
+            <p class="info">mail : ${owner}</p></c:if>
+          <c:if test="${compteurOw==2}">
+            <p class="info">nom : ${owner}</c:if>
+          <c:if test="${compteurOw==3}">
+            ${owner}</p></c:if>
+          <c:if test="${compteurOw==4}">
+            <p class="info">numero: ${owner}</p>
+            </section>
+            </div>
+          </c:if>
           <c:set var="compteurOw" value="${compteurOw+1 }" scope="page" />
         </c:if>
       </c:forEach>
