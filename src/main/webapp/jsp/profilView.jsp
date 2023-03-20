@@ -1,6 +1,5 @@
-
 <%--
-  Created by axoul.
+  Created by IntelliJ IDEA.
   User: 33625
   Date: 08/03/2023
   Time: 14:30
