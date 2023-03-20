@@ -154,7 +154,7 @@
 </nav>
 
 <div id="ancreHome"><a href="Controller?id=goViews&from=moderation" class = "button" > Retour</a></div>
-<a   href="#ancreHome" title="buttonUp"> <img src="img\fleche.png" class="flecheRemonte"></a>
+<a href="#ancreHome" title="buttonUp" id="buttonUp"> <img src="img\fleche.png" class="flecheRemonte"></a>
 
 
 <c:forEach var="ad" items="${requestScope.listAd}">

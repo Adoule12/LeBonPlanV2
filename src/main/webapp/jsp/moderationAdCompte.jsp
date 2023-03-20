@@ -22,7 +22,7 @@
     <input class = "button ButtonSignin" type="text" name="lastname" placeholder="nom" maxlength="40" required><br><br>
     <input class = "button ButtonSignin" type="text" name="firstname" placeholder="prénom" maxlength="20" required><br><br>
     <input class = "button ButtonSignin" type="date" name="birthday" placeholder="date de naissance" required><br><br>
-    <input class = "button ButtonSignin" type="number" name="phone" placeholder="numéro de téléphone" maxlength="20" required><br><br>
+    <input class = "button ButtonSignin" type="number" name="phone" placeholder="numéro de téléphone" max="9999999999999999999"  required><br><br>
     <input class = "button ButtonSignin" type="hidden" name="id" value="adCompte"><br><br>
     <input class = "button ButtonSignin" type="submit" value="Création"><br><br>
   </form>

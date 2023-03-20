@@ -20,7 +20,7 @@
     <input class = "button ButtonSignin" type="text" name="lastname" placeholder="nom" maxlength="40" required><br><br>
     <input class = "button ButtonSignin" type="text" name="firstname" placeholder="prénom" maxlength="20" required><br><br>
     <input class = "button ButtonSignin" type="date" name="birthday" placeholder="date de naissance" required><br><br>
-    <input class = "button ButtonSignin" type="number" name="phone" placeholder="numéro de téléphone" maxlength="20" required><br><br>
+    <input class = "button ButtonSignin" type="number" name="phone" placeholder="numéro de téléphone" max="9999999999999999999" maxlength="20" required><br><br>
 
     <p class = "title" id = "postImg">Photo de profil</p>
     <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg" /><br><br>
