@@ -76,7 +76,6 @@ public class GoModerationAD implements Action{
 
         listAd = daoBonPlan.filtreAd(priceMax,categorie,null,conditions,tris,moderationState);
 
-        System.out.println(listAd);
         String grade =   String.valueOf(request.getSession().getAttribute("email"));
         request.setAttribute("listAd",listAd);
         request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);

@@ -151,10 +151,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        System.out.println(birthday);
         String birthdayex = String.valueOf(birthday);
         if(!birthdayex.equals("2023-02-27")) {
-            System.out.println("je suis passer");
             int Age = 18;
             boolean ageOk = true;
             long millis = System.currentTimeMillis();
@@ -211,7 +209,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             }
         }
         if(!picture.equals("vide")) {
-            System.out.println("picture");
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE user SET profilPic =? WHERE mail=?;")) {
@@ -293,9 +290,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        System.out.println("avant picture "+picture);
         if(!picture.equals("vide")) {
-            System.out.println("picture");
             try (Connection connexion = daoFactory.getConnection();
                  PreparedStatement preparedStatement = connexion.prepareStatement(
                          "UPDATE listAd SET picture =? WHERE id=?;")) {
@@ -476,7 +471,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
                 String mail = resultat.getString("mail");
                 annuaire.add(mail);
-                System.out.println("annuaire"+annuaire);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -614,10 +608,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         boolean categoryOK = false;
         boolean conditionsOK = false;
         String sql="";
-        System.out.println("moderationState"+moderationState);
         if(moderationState !=null){
             if(tris != null){
-                System.out.println(moderationState);
                 if(tris.equals("croissant")){
                     sql ="SELECT title,price,picture,id,category,conditions,owner FROM listad WHERE state="+moderationState+" ORDER BY price ASC";
                 }

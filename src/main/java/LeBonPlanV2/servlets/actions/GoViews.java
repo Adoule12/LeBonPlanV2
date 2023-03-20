@@ -14,10 +14,8 @@ public class GoViews implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         String grade =   String.valueOf(request.getSession().getAttribute("email"));
-        System.out.println(grade);
         List<List> listAd = new ArrayList<>();
         HttpSession session = request.getSession( true );
-        System.out.println(request.getParameter("from"));
 
         if(request.getParameter("from")!=null){
             if(request.getParameter("from").equals("moderation")){
@@ -31,7 +29,6 @@ public class GoViews implements Action{
             session.setAttribute( "conditions", null );
             session.setAttribute( "tris", null );
             request.setAttribute("listAd",listAd);
-            System.out.println("Admin");
             if(session.getAttribute("moderation")!=null){
                 if(session.getAttribute("moderation").toString().equals("true")){
                     request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
@@ -44,7 +41,6 @@ public class GoViews implements Action{
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }
         }else{
-            System.out.println("CLients");
             listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
             session.setAttribute( "price", null );
             session.setAttribute( "categorie", null );

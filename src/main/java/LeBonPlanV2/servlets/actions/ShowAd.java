@@ -85,13 +85,10 @@ public class ShowAd implements Action {
 
         listAd = daoBonPlan.filtreAd(priceMax,categorie,null,conditions,tris,moderationState);
 
-        System.out.println(listAd);
         request.setAttribute("listAd",listAd);
         if(daoBonPlan.checkAdmin(grade) ){
-            System.out.println("Admin");
             request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
         }else{
-            System.out.println("CLients");
             request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
         }
 

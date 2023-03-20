@@ -24,7 +24,6 @@ public class Login implements Action{
                 HttpSession session = request.getSession( true );
                 session.setAttribute( "email", email );
                 if(daoBonPlan.checkAdmin(email) ){
-                    System.out.println("admin");
                     etat="admin";
                     listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
                     session.setAttribute( "price", null );
@@ -35,10 +34,8 @@ public class Login implements Action{
                     request.setAttribute("content",etat); // DEMANDER PROF SI CA LEGAL ET ACCEPTE
                     request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
                 }else{
-                    System.out.println("CLients");
                     etat="client";
                     listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
-                    System.out.println(listAd);
                     session.setAttribute( "price", null );
                     session.setAttribute( "categorie", null );
                     session.setAttribute( "conditions", null );

@@ -21,7 +21,6 @@ public class EditUser implements Action{
         if(date != null && date !="" && !date.equals("")){
             birthday = Date.valueOf(date);
         }
-        System.out.println("la date 1.5"+birthday);
         //a modifier
         String emailM = request.getParameter("email");
         String email  = String.valueOf(request.getSession().getAttribute("email"));
@@ -32,7 +31,6 @@ public class EditUser implements Action{
 
             String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "imgProfil";
-            System.out.println(uploadPath);
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();

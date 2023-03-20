@@ -60,10 +60,8 @@ public class Controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
-        System.out.printf(response.toString());
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
-        System.out.println(id);
         if(id == null) {
             id="home";
         }

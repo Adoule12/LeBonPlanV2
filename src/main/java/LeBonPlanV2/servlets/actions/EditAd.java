@@ -18,15 +18,10 @@ public class EditAd implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         HttpSession session = request.getSession( true );
         Object idAD = request.getParameter("annonce");
-        System.out.println("pas mod");
         if(idAD != null && idAD !=""){
-            System.out.println("idAD pas null");
             int idAD_ext = Integer.parseInt(String.valueOf(idAD));
-            System.out.println("cooolll : "+idAD_ext);
 
             String delete = request.getParameter("delete");
-
-            System.out.println("delete"+delete);
             if(delete!=null){
                 daoBonPlan.deleteAd(idAD_ext,false);
             }else {
@@ -44,7 +39,6 @@ public class EditAd implements Action {
                 if(stateEXTRACT!= null && stateEXTRACT != ""){
                     state = Integer.parseInt(stateEXTRACT);
                 }
-                System.out.println("price" + priceEXTRACT + "euro");
                 if (priceEXTRACT != null && priceEXTRACT !="" && !priceEXTRACT.isEmpty()) {
                     price = Float.parseFloat(priceEXTRACT);
                 }
@@ -62,7 +56,6 @@ public class EditAd implements Action {
 
                     String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\img";
                     String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
-                    System.out.println(uploadPath);
                     File uploadDir = new File(uploadPath);
                     if (!uploadDir.exists()) {
                         uploadDir.mkdir();

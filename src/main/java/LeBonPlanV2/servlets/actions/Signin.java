@@ -30,7 +30,6 @@ public class Signin implements Action{
 
             String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + "imgProfil";
-            System.out.println(uploadPathserver);
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();
@@ -38,7 +37,6 @@ public class Signin implements Action{
             String fileName = "profil.jpg";
 
             Part part = request.getPart("image_drop");
-            System.out.println("part "+part.getSubmittedFileName());
             if (part.getSubmittedFileName() != null && part.getSubmittedFileName() !=""){
 
                 fileName = part.getSubmittedFileName();
