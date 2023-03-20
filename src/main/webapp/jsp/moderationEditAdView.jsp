@@ -28,6 +28,9 @@
             ${ad} €</p></c:if>
           <c:if test="${compteurAd==2}">
             <img class="image" src="${ad}"></c:if>
+          <c:if test="${compteurAd==3}">
+            <c:set var="idAD" value="${ad}" scope="page" />
+          </c:if>
           <c:if test="${compteurAd==4}">
             <c:set var="ville" value="${ad}" scope="page" />
           </c:if>

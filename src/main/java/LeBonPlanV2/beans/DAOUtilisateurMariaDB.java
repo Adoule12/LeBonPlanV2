@@ -434,7 +434,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     /**
      * Fonction pour obtenir l'ensemble des comptes Client de la table user.
      * Les comptes donc le grade =0.
-     * @return annuaire (List<String>) contenant les emails de chaque client (compte avec grade=0 dans la table user).
+     * @return annuaire (List String ) contenant les emails de chaque client (compte avec grade=0 dans la table user).
      */
     @Override
     public List<String> getClients(){
@@ -458,7 +458,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * Fonction pour obtenir l'ensemble des admins excluant le compte associe à l'email donne en param.
      * NB: ne renvoi pas le compte de l'email passe en param.
      * @param email
-     * @return annuaire (List<String>) liste de String contenant l'ensemble des emails des comptes avec le grade admin (1).
+     * @return annuaire (List String ) liste de String contenant l'ensemble des emails des comptes avec le grade admin (1).
      */
     @Override
     public List<String> getAdmins(String email){
@@ -561,7 +561,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     /**
      * Fonction pour obtenir l'ensemble des annonces associe dans la table listad associe a un id d'un compte de la table user.
      * @param idOwner
-     * @return listAd (List<List>) uns liste de list adInfo(List<String >) contenant les informations en String lie aux annonces de l'id de l'owner des annonces.
+     * @return listAd (List List ) uns liste de list adInfo(List String )> contenant les informations en String lie aux annonces de l'id de l'owner des annonces.
      */
     @Override
     public List<List> myAd(int idOwner) {
@@ -602,7 +602,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * @param condition
      * @param tris
      * @param moderationState etat de l'annonce (state) visible ou non pour client, 0---> pas visible, 1---> visible
-     * @return listAd (List<List>) une list de list adInfo (List<String >) contenant les infos des annonces de la table listAd correspondant au filtre demande en param.
+     * @return listAd (List List ) une list de list adInfo (List String  ) contenant les infos des annonces de la table listAd correspondant au filtre demande en param.
      */
     @Override
     public List<List> filtreAd(Float priceMax, Integer categorie, String city, Integer condition,String tris, Integer moderationState ) {
@@ -766,7 +766,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * Fonction pour recuperer ensemble des infos concernant l'id de l'annonce en param.
      * On entend par ensemble des infos, celle de l'ad mais aussi les informations concernent le proprietaire de l'annonce.
      * @param idAD
-     * @return listInfos (List<List>) une liste contenant deux list(List<String>) listOwnerInfo et listADInfo contenant les informations complete de l'annonce.
+     * @return listInfos (List List ) une liste contenant deux list(List String ) listOwnerInfo et listADInfo contenant les informations complete de l'annonce.
      */
     @Override
     public List<List> getADInfo(Integer idAD) {
@@ -800,7 +800,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
     /**
      * Fonction pour recuper info d'un compte associe a l'id dans la table user.
      * @param idOwner
-     * @return listOwnerInfo (List<String>) contenant les informations du compte voulu.
+     * @return listOwnerInfo (List String ) contenant les informations du compte voulu.
      */
     @Override
     public List<String> getOwnerInfoByIDOwner(Integer idOwner) {
