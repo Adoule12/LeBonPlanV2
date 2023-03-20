@@ -10,12 +10,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>modération</title>
+    <title>modération des comptes</title>
     <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+<div class = "frame" id = "profilFrame">
 <form action="Controller?id=moderationUser" method="post">
-<h3>utilisateurs existants</h3>
+<h3>utilisateurs existants :</h3>
 <c:forEach var="user" items="${requestScope.listuser}">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${user}">
@@ -29,14 +30,14 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
 
-    <input type="submit" name="bannir" value="${idUser}" >
+    <input id="ban" type="submit" name="bannir" value="${idUser}" >
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>
 
 
 <form action="Controller?id=moderationUser" method="post">
-<h3>utilisateurs banis</h3>
+<h3>utilisateurs banis :</h3>
 <c:forEach var="user" items="${requestScope.listblacklisted}">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${user}">
@@ -50,16 +51,13 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
 
-    <input type="submit" name="deban" value="debannir">
-    <input type="hidden" name="debannir" value="${idUser}">
-    <input class="delete" type="submit" name="deleteU" value="${idUser}" >
+    <input id="deban" type="submit" name="debannir" value="${idUser}">
+    <input id="delete" type="submit" name="deleteUser" value="${idUser}" >
 
 </c:forEach>
     <input type="hidden" name="id" value="moderationUser">
 </form>
 <a href="Controller?id=goViews" >Retour</a>
-
-<a href="Controller?id=goViews" >Retour</a>
-
+</div>
 </body>
 </html>

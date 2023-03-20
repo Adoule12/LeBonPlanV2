@@ -20,35 +20,35 @@
 
     <form method="post" action="Controller?id=postAd" enctype="multipart/form-data">
 
-        <input class = "button" type="text" name="title" placeholder="titre"><br><br>
-        <input class = "button" type="number" name="price" placeholder="prix">
+        <input class = "button" type="text" name="title" placeholder="titre" maxlength="50" required><br><br>
+        <input class = "button" type="number" name="price" placeholder="prix" required>
 
         <p class = "title" id = "postImg">Déposez votre image</p>
-        <input class = "button" id="buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg"/><br><br>
+        <input class = "button" id="buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg" required/><br><br>
 
-        <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
-        <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
+        <input class = "button" type="text" name="description" placeholder="description de l'annonce" maxlength="512" required><br><br>
+        <input class = "button" type="text" name="city" placeholder="ville annonce" maxlength="50" required ><br><br>
         <br>
         <p class = "subtitle">Dans quel etat est votre objet ?</p>
-        <input type="radio" id="condi1" name="conditions" value="1" >
+        <input type="radio" id="condi1" name="conditions" value="1" required >
         <label class = "radio" for="condi1">Neuf</label>
-        <input type="radio" id="condi2" name="conditions" value="2" >
+        <input type="radio" id="condi2" name="conditions" value="2" required>
         <label class = "radio" for="condi2">Quasi Neuf</label>
-        <input type="radio" id="condi3" name="conditions" value="3" >
+        <input type="radio" id="condi3" name="conditions" value="3" required >
         <label class = "radio" for="condi3">Un Peu Abime</label>
-        <input type="radio" id="condi4" name="conditions" value="4" >
+        <input type="radio" id="condi4" name="conditions" value="4" required>
         <label class = "radio" for="condi4">Tres Abime</label>
         <br>
         <p class = "subtitle">A quelle categorie appartient votre objet ?</p>
-        <input type="radio" id="catego1" name="category" value="1" >
+        <input type="radio" id="catego1" name="category" value="1" required>
         <label class = "radio" for="catego1">Vehicule</label>
-        <input type="radio" id="catego2" name="category" value="2" >
+        <input type="radio" id="catego2" name="category" value="2" required>
         <label class = "radio" for="catego2">Mobilier</label>
-        <input type="radio" id="catego3" name="category" value="3" >
+        <input type="radio" id="catego3" name="category" value="3" required >
         <label class = "radio" for="catego3">Jardin</label>
-        <input type="radio" id="catego4" name="category" value="4" >
+        <input type="radio" id="catego4" name="category" value="4" required>
         <label class = "radio" for="catego4">Electronique</label>
-        <input type="radio" id="catego5" name="category" value="5" >
+        <input type="radio" id="catego5" name="category" value="5" required>
         <label class = "radio" for="catego5">Autre</label>
 
         <input type="hidden" name="id" value="postAd">

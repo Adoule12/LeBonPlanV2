@@ -18,8 +18,8 @@ public class EditUser implements Action{
 
         String date = request.getParameter("birthday");
         Date birthday = Date.valueOf("2023-02-27");
-        if(date != null && date !=""){
-            birthday = Date.valueOf(request.getParameter("birthday"));
+        if(date != null && date !="" && !date.equals("")){
+            birthday = Date.valueOf(date);
         }
         System.out.println("la date 1.5"+birthday);
         //a modifier

@@ -4,14 +4,13 @@ html {
 }
 :root{
     --hauteur-menu: 60px;
-
+    font-family: "Nexa Heavy";
 }
 *{
     padding: 0px;
 }
 
 .title {
-    font-family: "Nexa Heavy";
     margin-top: 6%;
     text-align: center;
     font-size: 300%;
@@ -26,7 +25,6 @@ html {
 }
 
 .button {
-    font-family: "Nexa Heavy";
     font-size: 175%;
     border: groove 4px #000000;
     border-radius: 5px;
@@ -38,31 +36,49 @@ body{
 }
 
 .subtitle{
-    font-family: "Nexa Heavy";
     font-size: 150%;
     color: #000000;
     width: auto;
 }
 .radio{
-    font-family: "Nexa Heavy";
     font-size: 125%;
     color: #000000;
 }
 .MsgError {
-    font-family: "Nexa Heavy";
     font-size: 125%;
     color: #ff0000;
     width: auto;
 }
 
-.delete{
-    font-family: "Nexa Heavy";
+#delete{
     font-size: 0%;
-    height: 5px;
+    height: 10px;
+    width: 10px;
     border: groove 4px #ff0000;
     border-radius: 5px;
     text-decoration: none;
     color: #ff0000;
+}
+
+#ban{
+
+    font-size: 0%;
+    height: 10px;
+    width: 10px;
+    border: groove 4px #ef651b;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ef651b;
+}
+
+#deban{
+    font-size: 0%;
+    height: 10px;
+    width: 10px;
+    border: groove 4px #1a653f;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #1a653f;
 }
 
 /*jsp home*/
@@ -100,7 +116,6 @@ body{
 }
 
 #inscriptionLogin{
-    font-family: "Nexa Heavy";
     font-size: 100%;
     color: #2169EC;
 }
@@ -120,7 +135,6 @@ body{
 }
 
 #MenuHome{
-    font-family: "Nexa Heavy";
     font-size: 100%;
     color: #2169EC;
 }
@@ -163,7 +177,6 @@ body{
 }
 
 #buttonPostImg{
-    font-family: "Nexa Heavy";
     font-size: 80%;
     border: groove 3px #000000;
     border-radius: 4px;
@@ -193,7 +206,6 @@ body{
 }
 
 #ListMail{
-    font-family: "Nexa Heavy";
     text-align: center;
     font-size: 125%;
     margin-top: -2%;
@@ -219,7 +231,6 @@ body{
 }
 .description {
     margin-top: 4%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     border: groove 4px #000000;
     border-radius: 5px;
@@ -228,7 +239,6 @@ body{
 }
 .ville {
     margin-left: 20%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     width: 20%;
     border: groove 2px rgb(0, 1, 3);
@@ -239,7 +249,6 @@ body{
 
 .state {
     margin-left: 20%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     width: 20%;
     border: groove 2px rgb(0, 1, 3);
@@ -257,15 +266,15 @@ body{
     display: flex;
 }
 .imgP{
+    position: center;
     border-radius: 50%;
     margin-left: 5%;
-    width: 20%;
-    height: 20%;
+    width: 130px;
+    height: 130px;
     margin-right: 10%;
 
 }
 .info{
-    font-family: "Nexa Heavy";
     text-align: left;
 }
 .ligne{

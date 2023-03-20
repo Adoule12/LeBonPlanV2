@@ -29,20 +29,19 @@
       </c:forEach>
 
         <input type="radio" name="annonce" value="${idAD}" required>
-      <label class = "radio" for="condi1">${idAD}</label>
 
     </c:forEach>
 
     <h2 class ="title">Modification d'une annonce</h2>
 
-      <input class = "button" type="text" name="title" placeholder="titre"><br><br>
-      <input class = "button" type="number" name="price" placeholder="prix"><br><br>
+      <input class = "button" type="text" name="title" placeholder="titre" maxlength="50"><br><br>
+      <input class = "button" type="number" name="price" placeholder="prix" ><br><br>
 
       <p class = "title" id = "postImg">Déposez votre image</p>
       <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg" /><br><br>
 
-      <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
-      <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
+      <input class = "button" type="text" name="description" placeholder="description de l'annonce" maxlength="512"><br><br>
+      <input class = "button" type="text" name="city" placeholder="ville annonce" maxlength="50"><br><br>
       <br>
       <p class = "subtitle">Dans quel état est votre objet ?</p>
       <input type="radio" id="condi1" name="conditions" value="1" >

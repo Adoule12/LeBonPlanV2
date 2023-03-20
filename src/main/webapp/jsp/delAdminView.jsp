@@ -15,12 +15,16 @@
 </head>
 <body>
 <div class = "frame" id = "frameDelAdmi">
-    <p class = "title">Supprimer le grade administrateur</p><br>
+    <p class = "title">Supprimer le grade d'Administrateur</p><br>
+    <div id = "ListMail">
+        liste des adresses mails :<br><br>
 <c:forEach var="mail" items="${requestScope.list}">
     ${mail}<br>
 </c:forEach>
+        <br>
+        </div>
 <form action="Controller?id=delAdmin" method="post">
-    <input class = "button" type="email" name="email" placeholder="email">
+    <input class = "button" type="email" name="email" placeholder="email" maxlength="320" required>
     <input class = "button" type="submit" value="Supprimer">
 </form>
     <input type="hidden" name="id" value="delAdmin">

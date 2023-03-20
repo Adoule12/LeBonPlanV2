@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Votre Profil</title>
-    <link href="css/views2.css" type="text/css" rel="stylesheet"/>
+    <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class = "frame" id = "profilFrame">

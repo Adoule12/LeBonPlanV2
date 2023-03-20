@@ -151,7 +151,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 e.printStackTrace();
             }
         }
-        if(!birthday.equals("2023-02-27")) {
+        System.out.println(birthday);
+        String birthdayex = String.valueOf(birthday);
+        if(!birthdayex.equals("2023-02-27")) {
+            System.out.println("je suis passer");
             int Age = 18;
             boolean ageOk = true;
             long millis = System.currentTimeMillis();
@@ -161,7 +164,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             c.setTime(actualDate);
             c.add(Calendar.YEAR, -Age);
             legalAge.setTime(c.getTime().getTime());
-            if (birthday.after(legalAge)) {
+            if (birthday.after(legalAge) && !birthday.equals("2023-02-27")) {
                 ageOk = false;
                 erreur = erreur+ "vous êtes trop jeune";
             }

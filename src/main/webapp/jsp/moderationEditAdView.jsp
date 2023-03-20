@@ -43,6 +43,7 @@
 
           </c:if>
           <c:if test="${compteurAd==6}">
+            <c:set var="stateAd" value="${ad}" scope="page" />
             <c:if test="${ad == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
               <p  id="nothide" class = "state">état : visible</p>
             </c:if>
@@ -103,14 +104,14 @@
       <input type="radio" id="state1" name="state" value="1" > <%-- state = 1 ==== Annonce visible --%>
       <label class = "radio" for="state1">Visible</label>
       <br><br><br>
-    <input class = "button" type="text" name="title" placeholder="titre"><br><br>
+    <input class = "button" type="text" name="title" placeholder="titre" maxlength="50"><br><br>
     <input class = "button" type="number" name="price" placeholder="prix"><br><br>
 
     <p>Déposez votre image</p>
     <input type="file" id="image_drop" name="image_drop" /><br><br>
 
-    <input class = "button" type="text" name="description" placeholder="description de l'annonce"><br><br>
-    <input class = "button" type="text" name="city" placeholder="ville annonce"><br><br>
+    <input class = "button" type="text" name="description" placeholder="description de l'annonce" maxlength="512"><br><br>
+    <input class = "button" type="text" name="city" placeholder="ville annonce" maxlength="50"><br><br>
     <br>
     <p class = "subtitle">Dans quel etat est votre objet ?</p>
     <input type="radio" id="condi1" name="conditions" value="1" >

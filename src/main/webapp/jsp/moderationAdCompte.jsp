@@ -17,12 +17,12 @@
 <div class = "frame" id = "SigninFrame">
   <h2 class = "title">Création d'un Compte</h2>
   <form action="Controller?id=adCompte" method="post">
-    <input class = "button ButtonSignin" type="email" name="email" placeholder="email"><br><br>
-    <input class = "button ButtonSignin" type="password" name="password" placeholder="password"><br><br>
-    <input class = "button ButtonSignin" type="text" name="lastname" placeholder="lastname"><br><br>
-    <input class = "button ButtonSignin" type="text" name="firstname" placeholder="firstname"><br><br>
-    <input class = "button ButtonSignin" type="date" name="birthday" placeholder="birthday"><br><br>
-    <input class = "button ButtonSignin" type="number" name="phone" placeholder="phone"><br><br>
+    <input class = "button ButtonSignin" type="email" name="email" placeholder="email" maxlength="320" required><br><br>
+    <input class = "button ButtonSignin" type="password" name="password" placeholder="mot de passe" maxlength="60" required><br><br>
+    <input class = "button ButtonSignin" type="text" name="lastname" placeholder="nom" maxlength="40" required><br><br>
+    <input class = "button ButtonSignin" type="text" name="firstname" placeholder="prénom" maxlength="20" required><br><br>
+    <input class = "button ButtonSignin" type="date" name="birthday" placeholder="date de naissance" required><br><br>
+    <input class = "button ButtonSignin" type="number" name="phone" placeholder="numéro de téléphone" maxlength="20" required><br><br>
     <input class = "button ButtonSignin" type="hidden" name="id" value="adCompte"><br><br>
     <input class = "button ButtonSignin" type="submit" value="Création"><br><br>
   </form>

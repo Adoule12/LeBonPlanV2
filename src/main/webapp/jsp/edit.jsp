@@ -16,10 +16,10 @@
     <h2 class ="title">Modification des informations personnelles</h2>
     <p class ="MsgError">Toucher que ce que vous voulez modifier</p>
     <form action="Controller?id=editUser" method="post" enctype='multipart/form-data'>
-    <input class = "button" type="email" name="email" placeholder="mail"><br><br>
-    <input class = "button" type="text" name="lastname" placeholder="lastname"><br><br>
-    <input class = "button" type="text" name="firstname" placeholder="firstname"><br><br>
-    <input class = "button" type="date" name="birthday" placeholder="birthday"><br><br>
+    <input class = "button" type="email" name="email" placeholder="mail" maxlength="320"><br><br>
+    <input class = "button" type="text" name="lastname" placeholder="nom" maxlength="40"><br><br>
+    <input class = "button" type="text" name="firstname" placeholder="prenom" maxlength="20"><br><br>
+    <input class = "button" type="date" name="birthday" placeholder="date de naissance" ><br><br>
 
     <p class = "title" id = "postImg">photo de profil</p>
     <input class = "button" id = "buttonPostImg" type="file" id="image_drop" name="image_drop" accept="image/png,image/jpg" /><br><br>
