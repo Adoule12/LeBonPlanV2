@@ -16,7 +16,7 @@ public class GoProfil implements Action {
         String email = String.valueOf(request.getSession().getAttribute("email"));
         List<String> info = new ArrayList<>();
         List<List> listAd = new ArrayList<>();
-        Integer proprio = daoBonPlan.emailToId(email);
+        int proprio = daoBonPlan.emailToId(email);
         info = daoBonPlan.getOwnerInfoByIDOwner(proprio);
         request.setAttribute("info",info);
         listAd = daoBonPlan.myAd(proprio);

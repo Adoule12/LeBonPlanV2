@@ -6,13 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShowDetailsAD implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
-        List<List> listInfoAd = new ArrayList<>();
+        List<List> listInfoAd;
         String idAD_STRING=request.getParameter("idAD");
         Integer idAD = Integer.parseInt(idAD_STRING);
         listInfoAd = daoBonPlan.getADInfo(idAD);

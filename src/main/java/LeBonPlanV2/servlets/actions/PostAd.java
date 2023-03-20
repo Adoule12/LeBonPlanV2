@@ -8,22 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.attribute.FileAttribute;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static java.lang.Float.parseFloat;
-
 public class PostAd implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
 
-        List<List> listAd = new ArrayList<>();
+        List<List> listAd;
         String title = request.getParameter("title");
         String priceEXTRACT = request.getParameter("price");
         Float price = null;
@@ -48,12 +38,8 @@ public class PostAd implements Action{
 
         if (title !=null) {
 
-            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img";
+            String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\img";
             String uploadPathserver = request.getServletContext().getRealPath("") + "img";
-            File uploadDir = new File(uploadPath);
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
             String fileName = "drapeau-ville-angers-logo-flagsonline.jpg";
 
             Part part = request.getPart("image_drop");

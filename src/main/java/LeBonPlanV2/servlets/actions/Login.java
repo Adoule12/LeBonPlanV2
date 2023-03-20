@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Login implements Action{
@@ -16,7 +15,7 @@ public class Login implements Action{
         String etat ="";
         String email = request.getParameter("email");
         String mdp = request.getParameter("password");
-        List<List> listAd = new ArrayList<>();
+        List<List> listAd;
         if(email != null && mdp !=null){
             String login =daoBonPlan.read(email,mdp);
             if(login.equals("ok")){

@@ -14,7 +14,7 @@ public class GoViews implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         String grade =   String.valueOf(request.getSession().getAttribute("email"));
-        List<List> listAd = new ArrayList<>();
+        List<List> listAd;
         HttpSession session = request.getSession( true );
 
         if(request.getParameter("from")!=null){

@@ -162,7 +162,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             c.setTime(actualDate);
             c.add(Calendar.YEAR, -Age);
             legalAge.setTime(c.getTime().getTime());
-            if (birthday.after(legalAge) && !birthday.equals("2023-02-27")) {
+
+            if (birthday.after(legalAge)) {
                 ageOk = false;
                 erreur = erreur+ "vous êtes trop jeune";
             }
@@ -225,14 +226,14 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
     /**
      * Fonction pour ajouter une annonce dans la table lisAd.
-     * @param title
-     * @param price
-     * @param picture
-     * @param description
-     * @param city
-     * @param owner
-     * @param category
-     * @param conditions
+     * @param title .
+     * @param price .
+     * @param picture .
+     * @param description .
+     * @param city .
+     * @param owner .
+     * @param category .
+     * @param conditions .
      * @return boolean si ajout dans la table correctement mene.
      */
     @Override
@@ -392,13 +393,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             preparedStatement.setString(1, mail);
             ResultSet resultat = preparedStatement.executeQuery();
             if(resultat.next()) {
-
-                if(resultat.getString("grade").equals("1")){
-                    admin=true;
-                }
-                else{
-                    admin = false;
-                }
+                admin= resultat.getString("grade").equals("1");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -460,7 +455,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      */
     @Override
     public List<String> getAdmins(String email){
-        //doit tout renvoyer sauf soit meme
+        //doit tout renvoyer sauf soi même
         List<String> annuaire = new ArrayList<>();
         try (Connection connexion = daoFactory.getConnection();
              PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -571,16 +566,16 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             ResultSet resultat = preparedStatement.executeQuery();
             while (resultat.next()) {
                 String titleEXTRACT = resultat.getString("title");
-                Integer id = resultat.getInt("id");
-                Float price = resultat.getFloat("price");
+                int id = resultat.getInt("id");
+                float price = resultat.getFloat("price");
                 String image = resultat.getString("picture");
-                Integer state = resultat.getInt("state");
+                int state = resultat.getInt("state");
                 List<String > adInfo=new ArrayList<>();
                 adInfo.add(titleEXTRACT);
-                adInfo.add(id.toString());
-                adInfo.add(price.toString());
+                adInfo.add(Integer.toString(id));
+                adInfo.add(Float.toString(price));
                 adInfo.add(image);
-                adInfo.add(state.toString());
+                adInfo.add(Integer.toString(state));
 
                 listAd.add(adInfo);
             }
@@ -644,26 +639,24 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 categoryOK = false;
                 conditionsOK = false;
                 String titleEXTRACT = resultat.getString("title");
-                Float priceEXTRACT = resultat.getFloat("price");
-                String pictureEXTRACT = resultat.getString("picture");
-                String picture = pictureEXTRACT;
-                Integer id = resultat.getInt("id");
-                Integer categoryEXTRACT = resultat.getInt("category");
-                Integer conditionsEXTRACT = resultat.getInt("conditions");
+                float priceEXTRACT = resultat.getFloat("price");
+                String picture = resultat.getString("picture");
+                int id = resultat.getInt("id");
+                int categoryEXTRACT = resultat.getInt("category");
+                int conditionsEXTRACT = resultat.getInt("conditions");
                 Integer owner = resultat.getInt("owner");
                 if(priceMax !=null){
                     if(priceEXTRACT<priceMax){
                         priceOK = true;
                     }
-                } else if (priceMax==null) {
+                } else {
                     priceOK = true;
                 }
-
                 if(categorie !=null){
                     if(categorie==categoryEXTRACT){
                         categoryOK = true;
                     }
-                } else if (categorie==null) {
+                } else {
                     categoryOK = true;
                 }
 
@@ -671,15 +664,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     if(condition==conditionsEXTRACT){
                         conditionsOK = true;
                     }
-                } else if (condition==null) {
+                } else {
                     conditionsOK = true;
                 }
                 if(priceOK && conditionsOK && categoryOK){
                     List<String > adInfo=new ArrayList<>();
                     adInfo.add(titleEXTRACT);
-                    adInfo.add(priceEXTRACT.toString());
+                    adInfo.add(Float.toString(priceEXTRACT));
                     adInfo.add(picture);
-                    adInfo.add(id.toString());
+                    adInfo.add(Integer.toString(id));
                     listAd.add(adInfo);
                 }
             }
@@ -711,10 +704,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             ResultSet resultat = preparedStatement.executeQuery();
             while (resultat.next()) {
                 String mailEXTRACT = resultat.getString("mail");
-                Integer id = resultat.getInt("id");
+                int id = resultat.getInt("id");
                 List<String > adInfo=new ArrayList<>();
                 adInfo.add(mailEXTRACT);
-                adInfo.add(id.toString());
+                adInfo.add(Integer.toString(id));
                 listUser.add(adInfo);
             }
         } catch (SQLException e) {

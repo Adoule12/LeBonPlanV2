@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,18 +35,18 @@ public class EditAd implements Action {
                 Integer conditions = null;
                 String stateEXTRACT = request.getParameter("state");
                 Integer state = null;
-                if(stateEXTRACT!= null && stateEXTRACT != ""){
+                if(stateEXTRACT!= null && !stateEXTRACT.equals("")){
                     state = Integer.parseInt(stateEXTRACT);
                 }
-                if (priceEXTRACT != null && priceEXTRACT !="" && !priceEXTRACT.isEmpty()) {
+                if (priceEXTRACT != null && !priceEXTRACT.isEmpty()) {
                     price = Float.parseFloat(priceEXTRACT);
                 }
 
-                if (categoryEXTRACT != null && categoryEXTRACT != "") {
+                if (categoryEXTRACT != null && !categoryEXTRACT.equals("")) {
                     category = Integer.parseInt(categoryEXTRACT);
                 }
 
-                if (conditionsEXTRACT != null && conditionsEXTRACT != "") {
+                if (conditionsEXTRACT != null && !conditionsEXTRACT.equals("")) {
                     conditions = Integer.parseInt(request.getParameter("conditions"));
                 }
 

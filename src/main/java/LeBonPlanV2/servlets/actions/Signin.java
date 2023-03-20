@@ -9,6 +9,7 @@ import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Objects;
 
 public class Signin implements Action{
     @Override
@@ -30,14 +31,10 @@ public class Signin implements Action{
 
             String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + "imgProfil";
-            File uploadDir = new File(uploadPath);
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
             String fileName = "profil.jpg";
 
             Part part = request.getPart("image_drop");
-            if (part.getSubmittedFileName() != null && part.getSubmittedFileName() !=""){
+            if (part.getSubmittedFileName() != null && !Objects.equals(part.getSubmittedFileName(), "")){
 
                 fileName = part.getSubmittedFileName();
                 part.write(uploadPath + File.separator + fileName);
