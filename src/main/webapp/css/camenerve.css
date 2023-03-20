@@ -295,6 +295,12 @@ nav > ul > li:hover > a{
     position: center;
     padding-top: 5%;
 }
+
+a[title = "buttonUp"]{
+    position: sticky;
+    top: 850px;
+
+}
                                                   /*Les Annonces*/
 /*annonce*/
 

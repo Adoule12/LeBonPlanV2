@@ -151,7 +151,10 @@
             </ul>
         </li>
     </ul>
+
 </nav>
+<a href="Controller?id=goViews&from=moderation" id="ancreHome"> Retour</a>
+<a href="#ancreHome" title="buttonUp">Remonter</a>
 
 <c:forEach var="ad" items="${requestScope.listAd}">
 <div class = "annonce">
@@ -177,10 +180,12 @@
         <input type="hidden" name="idAD" value="${idAD}">
         <input type="hidden" name="id" value="editAd">
     </form>
+
 </div>
 </c:forEach>
 
-<a href="Controller?id=goViews&from=moderation"> Retour</a>
+
+
 
 </body>
 </html>
