@@ -90,7 +90,8 @@
     </c:forEach>
     </section>
     <br><br>
-    <a class = "button" href="Controller?id=goViews" >retour</a>
+    <a class = "button" href="Controller?id=goViews" >Retour</a>
+
 
 </div>
 </body>

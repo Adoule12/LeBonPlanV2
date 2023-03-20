@@ -14,7 +14,6 @@
     <link href="css/camenerve.css" type="text/css" rel="stylesheet"/>
 
 </head>
-<body>
 <nav class="all">
     <ul>
         <li class="menu"><a href="#">Filtre</a>
@@ -153,8 +152,10 @@
     </ul>
 
 </nav>
-<a href="Controller?id=goViews&from=moderation" id="ancreHome"> Retour</a>
-<a href="#ancreHome" title="buttonUp">Remonter</a>
+
+<div id="ancreHome"><a href="Controller?id=goViews&from=moderation" class = "button" > Retour</a></div>
+<a   href="#ancreHome" title="buttonUp"> <img src="img\fleche.png" class="flecheRemonte"></a>
+
 
 <c:forEach var="ad" items="${requestScope.listAd}">
 <div class = "annonce">

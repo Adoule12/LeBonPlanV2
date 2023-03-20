@@ -199,6 +199,12 @@ body{
     margin-top: -2%;
 }
 
+a[title = "buttonUp"]{
+    position: sticky;
+    top: 850px;
+
+}
+
 .annonce{
     background-color: #ffffff;
     border: groove 6px #000000;

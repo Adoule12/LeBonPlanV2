@@ -16,6 +16,7 @@
 </head>
 <body>
 <nav class = "all">
+
     <ul>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
@@ -134,6 +135,10 @@
         </li>
     </ul>
 </nav>
+
+<a href="Controller?id=goViews&from=moderation" id="ancreClient"> Retour</a>
+<a href="#ancreClient" class = "button" title="buttonUp">Remonter</a>
+
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">
     <c:set var="compteur" value="0" scope="page" />
@@ -159,6 +164,8 @@
     </form>
     </div>
 </c:forEach>
+
+
 
 
 </body>
