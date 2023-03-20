@@ -144,8 +144,6 @@
 </nav>
 <p class = "title" id = "txtAdmi" >Vous êtes administrateur !</p>
 
-<div id="ZZZZ"><a href="Controller?id=goViews&from=moderation" class = "button" > Retour</a></div>
-<a  class = "button" href="#ZZZZ" title="buttonUp">Remonter</a>
 
 
 <c:forEach var="ad" items="${requestScope.listAd}">

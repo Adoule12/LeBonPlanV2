@@ -136,8 +136,7 @@
     </ul>
 </nav>
 
-<a href="Controller?id=goViews&from=moderation" id="ancreClient"> Retour</a>
-<a href="#ancreClient" class = "button" title="buttonUp">Remonter</a>
+
 
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">

@@ -12,7 +12,11 @@
     <title>Votre Profil</title>
     <link href="css/views.css" type="text/css" rel="stylesheet"/>
 </head>
+
 <body>
+<div id="ancreHome"><a> </a></div>
+<a href="#ancreHome" title="buttonUp" id="buttonUp"> <img src="img\fleche.png" class="flecheRemonte"></a>
+
 <div class = "frame" id = "profilFrame">
     <p class="title">Votre Profil</p> <br>
     <c:set var="compteur" value="0" scope="page" />
@@ -89,8 +93,8 @@
 
     </c:forEach>
     </section>
-    <br><br>
-    <a class = "button" href="Controller?id=goViews" >Retour</a>
+
+
 
 
 </div>
