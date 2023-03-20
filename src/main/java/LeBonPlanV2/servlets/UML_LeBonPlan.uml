@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-407.0" y="408.0">LeBonPlanV2.beans.DAOFactory</node>
+    <node x="4770.5" y="893.0">LeBonPlanV2.servlets.actions.DeleteUser</node>
+    <node x="-764.0" y="579.5">javax.servlet.ServletConfig</node>
+    <node x="-209.5" y="602.0">LeBonPlanV2.servlets.actions.Action</node>
+    <node x="-9.5" y="408.5">javax.servlet.Servlet</node>
+    <node x="3890.5" y="893.0">LeBonPlanV2.servlets.actions.Logout</node>
+    <node x="3450.5" y="893.0">LeBonPlanV2.servlets.actions.Signin</node>
+    <node x="2570.5" y="893.0">LeBonPlanV2.servlets.actions.GoProfil</node>
+    <node x="7410.5" y="881.5416666666666">LeBonPlanV2.servlets.actions.EditAd</node>
+    <node x="1250.5" y="893.0">LeBonPlanV2.servlets.actions.ShowDetailsAD</node>
+    <node x="-367.0" y="617.5">java.io.Serializable</node>
+    <node x="6970.5" y="888.3125">LeBonPlanV2.servlets.actions.AdAdmin</node>
+    <node x="370.5" y="893.0">LeBonPlanV2.servlets.actions.PostAd</node>
+    <node x="-913.5" y="1091.0">javax.servlet.http.HttpServlet</node>
+    <node x="6090.5" y="893.0">LeBonPlanV2.servlets.actions.Home</node>
+    <node x="-437.5" y="-145.5">LeBonPlanV2.beans.DAOUtilisateurMariaDB</node>
+    <node x="5650.5" y="893.0">LeBonPlanV2.servlets.actions.ShowAd</node>
+    <node x="5210.5" y="893.0">LeBonPlanV2.servlets.actions.GoModerationAD</node>
+    <node x="6530.5" y="893.0">LeBonPlanV2.servlets.actions.DeleteAd</node>
+    <node x="4330.5" y="893.0">LeBonPlanV2.servlets.actions.GoViews</node>
+    <node x="3010.5" y="893.0">LeBonPlanV2.servlets.actions.ModerationUser</node>
+    <node x="2130.5" y="893.0">LeBonPlanV2.servlets.actions.Login</node>
+    <node x="1690.5" y="893.0">LeBonPlanV2.servlets.actions.AdCompte</node>
+    <node x="-429.5" y="771.5">javax.servlet.GenericServlet</node>
+    <node x="-297.0" y="1160.0">LeBonPlanV2.servlets.Controller</node>
+    <node x="-69.5" y="893.0">LeBonPlanV2.servlets.actions.EditUser</node>
+    <node x="810.5" y="893.0">LeBonPlanV2.servlets.actions.DelAdmin</node>
+    <node x="39.5" y="-619.0">LeBonPlanV2.beans.DAOUtilisateur</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.Login" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="2337.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.Logout" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="4097.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.DeleteAd" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="6737.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.PostAd" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="577.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="javax.servlet.http.HttpServlet" relationship="GENERALIZATION">
+      <point x="-194.0" y="19.0" />
+      <point x="180.5" y="-0.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.Login" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="2337.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.Logout" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="4097.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.beans.DAOUtilisateurMariaDB" target="LeBonPlanV2.beans.DAOUtilisateur" relationship="REALIZATION">
+      <point x="-0.0" y="-225.5" />
+      <point x="-243.0" y="-393.5" />
+      <point x="-194.5" y="-0.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.EditAd" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-38.45833333333334" />
+      <point x="7617.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.AdCompte" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="1897.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.GoViews" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="4537.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.Action" relationship="TO_MANY">
+      <point x="0.0" y="-60.0" />
+      <point x="-100.0" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.EditAd" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="7617.0" y="980.0" />
+      <point x="0.0" y="38.45833333333337" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.DeleteUser" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="4977.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.beans.DAOUtilisateurMariaDB" target="LeBonPlanV2.beans.DAOFactory" relationship="TO_ONE">
+      <point x="-100.0" y="225.5" />
+      <point x="-80.0" y="-72.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.DeleteUser" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="4977.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.beans.DAOUtilisateur" relationship="TO_ONE">
+      <point x="194.0" y="-0.0" />
+      <point x="7841.0" y="1220.0" />
+      <point x="7841.0" y="-393.5" />
+      <point x="194.5" y="-0.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.Signin" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.DeleteAd" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="6737.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.Home" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="6297.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.ShowAd" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="5857.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.GoViews" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="4537.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.DelAdmin" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="1017.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="javax.servlet.GenericServlet" target="javax.servlet.Servlet" relationship="REALIZATION">
+      <point x="53.5" y="-148.5" />
+      <point x="-229.5" y="584.5" />
+      <point x="137.0" y="584.5" />
+      <point x="-0.0" y="71.5" />
+    </edge>
+    <edge source="javax.servlet.http.HttpServlet" target="javax.servlet.GenericServlet" relationship="GENERALIZATION">
+      <point x="-0.0" y="-148.0" />
+      <point x="-733.0" y="920.0" />
+      <point x="-146.5" y="-0.0" />
+    </edge>
+    <edge source="javax.servlet.GenericServlet" target="javax.servlet.ServletConfig" relationship="REALIZATION">
+      <point x="-146.5" y="-15.0" />
+      <point x="-625.0" y="905.0" />
+      <point x="-0.0" y="60.5" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.ShowAd" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="5857.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.ModerationUser" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="3217.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.DelAdmin" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="1017.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.AdAdmin" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="7177.0" y="980.0" />
+      <point x="0.0" y="31.6875" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.EditUser" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="137.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="javax.servlet.GenericServlet" target="javax.servlet.ServletConfig" relationship="TO_ONE">
+      <point x="-101.5" y="-148.5" />
+      <point x="-384.5" y="639.0" />
+      <point x="139.0" y="-1.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.Home" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="6297.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.GoModerationAD" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="5417.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.ShowDetailsAD" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="1457.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.beans.DAOFactory" target="LeBonPlanV2.beans.DAOUtilisateurMariaDB" relationship="CREATE">
+      <point x="80.0" y="-72.0" />
+      <point x="60.0" y="225.5" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.Signin" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.GoProfil" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="2777.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.PostAd" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="577.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.GoProfil" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="2777.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.ModerationUser" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="3217.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.EditUser" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="137.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="javax.servlet.GenericServlet" target="java.io.Serializable" relationship="REALIZATION">
+      <point x="-24.0" y="-148.5" />
+      <point x="-0.0" y="14.5" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.ShowDetailsAD" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-27.0" />
+      <point x="1457.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.AdCompte" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="1897.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.actions.AdAdmin" target="LeBonPlanV2.servlets.actions.Action" relationship="REALIZATION">
+      <point x="0.0" y="-31.6875" />
+      <point x="7177.0" y="860.0" />
+      <point x="3657.0" y="860.0" />
+      <point x="3657.0" y="700.0" />
+      <point x="101.33333333333348" y="700.0" />
+      <point x="104.33333333333337" y="38.0" />
+    </edge>
+    <edge source="LeBonPlanV2.servlets.Controller" target="LeBonPlanV2.servlets.actions.GoModerationAD" relationship="CREATE">
+      <point x="129.33333333333337" y="-60.0" />
+      <point x="26.333333333333485" y="1140.0" />
+      <point x="3657.0" y="1140.0" />
+      <point x="3657.0" y="980.0" />
+      <point x="5417.0" y="980.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.699048572859289" showDependencies="true" x="193.8585243553008" y="-112.59742120343844" />
+  <SelectedNodes>
+    <node>LeBonPlanV2.beans.DAOUtilisateur</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
