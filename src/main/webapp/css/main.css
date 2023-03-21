@@ -5,11 +5,12 @@ html {
 }
 :root{
     --hauteur-menu: 60px;
+    font-family: "Nexa Heavy", serif;
 
 }
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -22,7 +23,6 @@ body{
 }
 .button {
     text-align: center;
-    font-family: "Nexa Heavy";
     font-size: 72%;
     text-decoration: none;
     color: #000000;
@@ -31,7 +31,6 @@ body{
     border-radius: 2px;
 }
 .title {
-    font-family: "Nexa Heavy";
     font-size: 100%;
     text-decoration: underline;
 }
@@ -43,7 +42,7 @@ body{
 #progress {
     background-color: #0090fa;
     height: 3px;
-    width: 0%;
+    width: 0;
     position: fixed;
     top:0;
     left:0;
@@ -58,21 +57,19 @@ nav{
     width: auto;
     font-size: 18px;
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 1;
 }
 /* liste dans la barre de navigation */
 nav > ul{
     display: flex;
     text-align: center;
-    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
     height: var(--hauteur-menu);
-    font-family: "Nexa Heavy";
 }
 /* liste dans barre de navigation */
 nav ul{
     list-style-type: none;
-    font-family: "Nexa Heavy";
 }
 /* element de la liste dans la barre de navigation */
 nav > ul > li{
@@ -80,7 +77,6 @@ nav > ul > li{
     position: relative;
     height: 100%;
     flex: 1;
-    font-family: "Nexa Heavy";
 }
 /* lien d'un element de la liste dans la barre de navigation */
 nav > ul > li > a{
@@ -88,7 +84,6 @@ nav > ul > li > a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Nexa Heavy";
 }
 /* lien d'un element  d'une liste*/
 li a {
@@ -111,7 +106,6 @@ li a {
     border-radius: 2px;
     overflow: hidden;
     max-height: 0;
-    font-family: "Nexa Heavy";
 }
 /* lien d'un element de la liste de type sous menu dans la barre de navigation */
 .sousMenu > li > a {
@@ -120,7 +114,6 @@ li a {
     width: 100%;
     align-items: center;
     display: flex;
-    font-family: "Nexa Heavy";
 }
 
 nav > ul > li:hover > a{
@@ -151,16 +144,16 @@ nav > ul > li:hover > a{
 /* animation d'apparition d'un sous menu */
 @keyframes apparitionSousMenu {
     0% {
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0);
         border-top: 3px solid #2169EC;
     }
     30% {
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0.3);
     }
     100% {
         max-height: 50em;
         border-top: 3px solid #2169EC;
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0.3);
     }
 }
 /* activation de l'animation */
@@ -198,16 +191,16 @@ nav > ul > li:hover > a{
 /* animation d'apparition d'un sous menu */
 @keyframes apparitionsousFiltre {
     0% {
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0);
         border-right: 3px solid #2169EC;
     }
     30% {
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0.3);
     }
     100% {
         max-height: 50em;
         border-right: 3px solid #2169EC;
-        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 3px 1px rgba(0,0,0,0.3);
     }
 }
 /* activation de l'animation */
@@ -310,7 +303,7 @@ nav > ul > li:hover > a{
 #progress {
     background-color: #0090fa;
     height: 3px;
-    width: 0%;
+    width: 0;
     position: fixed;
     top:0;
     left:0;
@@ -332,7 +325,6 @@ nav > ul > li:hover > a{
 }
 
 .price {
-    font-family: "Nexa Heavy";
     font-size: 150%;
     text-align: center;
 }

@@ -95,7 +95,6 @@ body{
 }
 .description {
     margin-top: 4%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     border: groove 4px #000000;
     border-radius: 5px;
@@ -104,7 +103,6 @@ body{
 }
 .ville {
     margin-left: 20%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     width: 20%;
     border: groove 2px rgb(0, 1, 3);
@@ -114,7 +112,6 @@ body{
 }
 .state {
     margin-left: 20%;
-    font-family: "Nexa Heavy";
     font-size: 100%;
     width: 20%;
     border: groove 2px rgb(0, 1, 3);

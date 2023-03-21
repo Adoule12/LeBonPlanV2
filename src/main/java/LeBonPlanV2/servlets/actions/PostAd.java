@@ -40,7 +40,7 @@ public class PostAd implements Action{
 
             String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\img";
             String uploadPathserver = request.getServletContext().getRealPath("") + "img";
-            String fileName = "drapeau-ville-angers-logo-flagsonline.jpg";
+            String fileName = "imagenotfound.png";
 
             Part part = request.getPart("image_drop");
             if (part.getSubmittedFileName() != null && part.getSubmittedFileName() !=""){

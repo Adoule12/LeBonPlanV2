@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Client</title>
-    <link href="css/camenerve.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <nav class = "all">
@@ -135,8 +135,6 @@
         </li>
     </ul>
 </nav>
-
-
 
 <c:forEach var="ad" items="${requestScope.listAd}">
     <div class = "annonce">

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EditAd implements Action {
     @Override
@@ -55,14 +55,10 @@ public class EditAd implements Action {
 
                     String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\img";
                     String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
-                    File uploadDir = new File(uploadPath);
-                    if (!uploadDir.exists()) {
-                        uploadDir.mkdir();
-                    }
                     Part part = request.getPart("image_drop");
                     String fileName;
                     String picture = "vide";
-                    if(part.getSubmittedFileName() !=null && part.getSubmittedFileName() != "") {
+                    if(part.getSubmittedFileName() !=null && !Objects.equals(part.getSubmittedFileName(), "")) {
                         fileName = part.getSubmittedFileName();
                         part.write(uploadPath + File.separator + fileName);
                         part.write(uploadPathserver + File.separator + fileName);
@@ -76,13 +72,13 @@ public class EditAd implements Action {
             if (daoBonPlan.checkAdmin(grade)) {
                 if(session.getAttribute("moderation")!=null){
                     if(session.getAttribute("moderation").toString().equals("true")){
-                        List<List> listAd = new ArrayList<>();
+                        List<List> listAd;
                         listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
                         request.setAttribute("listAd",listAd);
                         request.getRequestDispatcher("/jsp/moderationAdView.jsp").forward(request, response);
                     }else {
                         session.setAttribute("moderation","false");
-                        List<List> listAd = new ArrayList<>();
+                        List<List> listAd;
                         listAd = daoBonPlan.filtreAd(null,null,null,null,null,null);
                         request.setAttribute("listAd",listAd);
                         request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
@@ -92,7 +88,7 @@ public class EditAd implements Action {
                     request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
                 }            } else {
                 daoBonPlan.updateAdState(idAD_ext,0);
-                List<List> listAd = new ArrayList<>();
+                List<List> listAd;
                 listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
                 request.setAttribute("listAd",listAd);
                 request.getRequestDispatcher("/jsp/clientView.jsp").forward(request, response);
@@ -102,7 +98,7 @@ public class EditAd implements Action {
         }else {
             if(session.getAttribute("moderation")!=null){
                 if(session.getAttribute("moderation").toString().equals("true")){
-                    List<List> listInfoAd = new ArrayList<>();
+                    List<List> listInfoAd;
                     String idAD_STRING=request.getParameter("idAD");
                     listInfoAd = daoBonPlan.getADInfo(Integer.parseInt(String.valueOf(idAD_STRING)));
                     request.setAttribute("listInfoAd",listInfoAd);
