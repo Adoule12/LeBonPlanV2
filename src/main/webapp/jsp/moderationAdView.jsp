@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Page de moderation des annonces</title>
-    <link href="css/camenerve.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <nav class="all">

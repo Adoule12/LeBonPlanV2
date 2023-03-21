@@ -13,7 +13,7 @@ html {
 }
 
 body{
-    background-color: #33ff1c;
+    background-color: #ff691c;
 }
 
 .top{
@@ -40,7 +40,18 @@ body{
     width: 100%;
 }
 
-                                             /*  ---- haut de page ----*/
+#progress {
+    background-color: #0090fa;
+    height: 3px;
+    width: 0%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+}
+
+
+/*  ---- haut de page ----*/
 
 /* barre de navigation */
 nav{
@@ -228,54 +239,54 @@ nav > ul > li:hover > a{
 
 }
 #mobilier{
-    padding-left: 36%;
-    padding-right: 36%;
+    padding-left: 36.8%;
+    padding-right: 36.8%;
 
 }
 #jardin{
-    padding-left: 37.5%;
-    padding-right: 37.5%;
-
-}
-#electronique{
-    padding-left: 33.5%;
-    padding-right: 33.5%;
-
-}
-#autre{
     padding-left: 38%;
     padding-right: 38%;
 
 }
+#electronique{
+    padding-left: 33%;
+    padding-right: 33%;
+
+}
+#autre{
+    padding-left: 38.8%;
+    padding-right: 38.8%;
+
+}
 
 #neuf{
-    padding-left: 38.5%;
-    padding-right: 38.5%;
+    padding-left: 38.8%;
+    padding-right: 38.8%;
 }
 
 #quasi{
-    padding-left: 34.5%;
-    padding-right: 34.5%;
+    padding-left: 33.4%;
+    padding-right: 33.4%;
 }
 
 #UnPeuAbimé{
-    padding-left: 33%;
-    padding-right: 33%;
+    padding-left: 31.5%;
+    padding-right: 31.5%;
 }
 
 #trèsAbimé{
-    padding-left: 34.8%;
-    padding-right: 34.8%;
+    padding-left: 33.9%;
+    padding-right: 33.9%;
 }
 
 #reset{
-    padding-left: 37%;
-    padding-right: 37%;
+    padding-left: 38%;
+    padding-right: 38%;
 }
 
 #croissant{
-    padding-left: 32%;
-    padding-right: 32%;
+    padding-left: 32.2%;
+    padding-right: 32.2%;
 }
 
 #decroissant{
@@ -296,15 +307,17 @@ nav > ul > li:hover > a{
     padding-top: 5%;
 }
 
-#buttonUp{
-    position: sticky;
-    top: 95%;
+#progress {
+    background-color: #0090fa;
+    height: 3px;
+    width: 0%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
 }
-.flecheRemonte{
-    width: 50px;
-    height: 50px;
-}
-                                                  /*Les Annonces*/
+
+/*Les Annonces*/
 /*annonce*/
 
 .annonce{

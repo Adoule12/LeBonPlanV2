@@ -29,7 +29,7 @@
     <script src="js/test.js" type="text/javascript"></script>
 </form>
     <p class = "MsgError">${info}</p>
-<a href="Controller?id=goViews" >Menu Home</a>
+<a id = "MenuHome" href="Controller?id=goViews" >Menu Home</a>
 </div>
 </body>
 </html>

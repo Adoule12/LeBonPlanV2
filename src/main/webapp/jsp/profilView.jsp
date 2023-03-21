@@ -22,9 +22,9 @@
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${requestScope.info}">
         <c:if test="${compteur==0}">
-        <div class="description villestate">
+    <div class="description villestate" id = "frameinfoProfil">
         <img class="imgP" src="${info}">
-        <section>
+        <section id = "sectionInfo">
         </c:if>
         <c:if test="${compteur==1}">
             <p class="info">Adresse mail: ${info} </p>
@@ -44,9 +44,9 @@
         <c:set var="compteur" value="${compteur+1 }" scope="page" />
     </c:forEach>
     <br>
-    <a class = "button" href="Controller?id=goViews" >Retour</a>
-    <a class = "button" href="Controller?id=logout">Déconnexion</a>
-    <a class="button" href="Controller?id=deleteUser">Supprimer son compte</a>
+    <a class = "buttonAction" href="Controller?id=goViews" >Retour</a>
+    <a class = "buttonAction" href="Controller?id=logout">Déconnexion</a>
+    <a class = "buttonAction" href="Controller?id=deleteUser">Supprimer son compte</a>
      <p class="title"> Mes Annonces</p>
     <c:set var="compteurAd" value="0" scope="page" />
 
@@ -93,9 +93,8 @@
 
     </c:forEach>
     </section>
-
-
-
+    <br><br>
+    <a class = "buttonAction" href="Controller?id=goViews" >retour</a>
 
 </div>
 </body>
