@@ -110,12 +110,12 @@ class DAOUtilisateurMariaDBTest {
 
     }
 
-    /*@Test
+    @Test
     void editUser(){
 
         daoBonPlan = daoFactory.getUtilisateurDao("MariaDB");
 
-        String mail = "nolan@gmail.com";
+        String mail = "test@gmail.com";
         String mailM = "";
         String lastname = "";
         String firstname = "";
@@ -128,10 +128,110 @@ class DAOUtilisateurMariaDBTest {
             String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
             assertEquals("mailUpdate",erreur);
 
+            mail = "update@gmail.com";
+            mailM = "test@gmail.com";
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+
 
         }
 
-    }*/
+        lastname = "updateLastname";
+        mailM = "";
+        if(lastname.equals("updateLastname")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("lastnameUpdate",erreur);
+
+            lastname= "Nolan";
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+        }
+
+        firstname = "updateFirstname";
+        lastname = "";
+        if(firstname.equals("updateFirstname")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("firstnameUpdate",erreur);
+
+            firstname= "Babin";
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+        }
+
+        firstname = "";
+        birthday = Date.valueOf("2002-01-12");
+
+        if(birthday.equals("2002-01-12")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("ageUpdate",erreur);
+
+            birthday= Date.valueOf("2023-02-27");
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+        }
+
+
+        birthday= Date.valueOf("2023-02-27");
+        picture = "imgProfil/profil.jpg";
+
+        if(picture.equals("imgProfil/profil.jpg")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("pictureUpdate",erreur);
+
+            picture = "vide";
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+        }
+
+        picture = "vide";
+        birthday = Date.valueOf("2012-01-12");
+
+        if(birthday.equals("2012-01-12")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("vous êtes trop jeune",erreur);
+        }
+        birthday = Date.valueOf("2023-02-27");
+        mailM = "bab1nono85@gmail.com";
+        if(mailM.equals("bab1nono85@gmail.com")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("mail deja existant",erreur);
+
+        }
+
+        mailM = "update2@gmail.com";
+        lastname = "update2Lastname";
+        firstname = "update2Firstname";
+        birthday = Date.valueOf("2002-02-12");
+        picture = "imgProfil/profil2.jpg";
+        if(mailM.equals("update2@gmail.com") && lastname.equals("update2Lastname") && firstname.equals("update2Firstname") && birthday.equals("2002-02-12") && picture.equals("imgProfil/profil2.jpg")){
+            String erreur = daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+            assertEquals("lastnameUpdatefirstnameUpdateageUpdatemailUpdatepictureUpdate",erreur);
+
+            mail = "update@gmail.com";
+            mailM = "test@gmail.com";
+            lastname= "Nolan";
+            firstname= "Babin";
+            birthday= Date.valueOf("2023-02-27");
+            picture = "vide";
+            daoBonPlan.editUser(mail,mailM,lastname,firstname,birthday,picture);
+
+
+        }
+    }
+
+    @Test
+    void postAd(){
+
+        daoBonPlan = daoFactory.getUtilisateurDao("MariaDB");
+
+        String title = "Voiture";
+        float price = Float.parseFloat("1000.99");
+        String picture = "imgProfil/profil.jpg";
+        String description = "Une belle voiture";
+        String city = "Angers";
+        int owner = 12;
+        int category = 1;
+        int conditions = 1;
+
+        String message = daoBonPlan.postAd(title,price,picture,description,city,owner,category,conditions);
+        assertEquals("true",message);
+
+    }
 
 
 

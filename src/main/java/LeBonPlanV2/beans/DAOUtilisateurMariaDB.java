@@ -160,7 +160,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, firstname);
                 preparedStatement.setString(2, mail);
                 preparedStatement.executeUpdate();
-                erreur=erreur+"fisrtnameUpdate";
+                erreur=erreur+"firstnameUpdate";
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -255,9 +255,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
      * @return boolean si ajout dans la table correctement mene.
      */
     @Override
-    public boolean postAd(String title, float price,String picture,String description, String city,int owner, int category, int conditions){
+    public String postAd(String title, float price,String picture,String description, String city,int owner, int category, int conditions){
         long millis=System.currentTimeMillis();
         Date actualDate = new Date(millis);
+        String message="";
 
 
         Calendar c = Calendar.getInstance();
@@ -279,9 +280,11 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            message = "false";
         }
-        return true;
+        message = "true";
+
+        return message;
     }
 
     /**
