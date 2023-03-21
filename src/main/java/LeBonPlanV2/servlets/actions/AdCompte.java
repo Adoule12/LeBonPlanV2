@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * Action pour ajouter un compte dans la base de donné en respectant les conditions ajouts
+ */
 public class AdCompte implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {

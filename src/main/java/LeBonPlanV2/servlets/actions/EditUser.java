@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * Action pour mettre a jour les informations personelle d'un compte
+ */
 public class EditUser implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
@@ -28,7 +31,7 @@ public class EditUser implements Action{
 
         if(emailM != null || lastname != null || firstname !=null ){
 
-            String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
+            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "imgProfil";
 
             Part part = request.getPart("image_drop");

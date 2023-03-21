@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Action pour mettre a jour une annonce tout en respectant les conditions
+ */
 public class EditAd implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
@@ -53,7 +56,7 @@ public class EditAd implements Action {
                 if (title != null || price != null || description != null || city != null || category != null || conditions != null) {
 
 
-                    String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\img";
+                    String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img";
                     String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "img";
                     Part part = request.getPart("image_drop");
                     String fileName;

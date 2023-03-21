@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * Actin pour ajouter un compte dans la base de donné user
+ */
 public class Signin implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
@@ -29,7 +32,7 @@ public class Signin implements Action{
         String erreur = "";
         if(email != null && mdp !=null && lastname!=null && firstname!=null && phone!=null){
 
-            String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
+            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + "imgProfil";
             String fileName = "profil.jpg";
 

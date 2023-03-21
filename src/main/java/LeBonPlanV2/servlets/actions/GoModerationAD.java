@@ -8,6 +8,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Action pour afficher les annonces lors de l'arrivé dans la moderation des annonces avec les filtres
+ */
 public class GoModerationAD implements Action{
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
         HttpSession session = request.getSession( true );

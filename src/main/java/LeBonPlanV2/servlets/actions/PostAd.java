@@ -9,6 +9,10 @@ import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+/**
+ * Action pour poster une annonce
+ */
 public class PostAd implements Action{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoBonPlan) throws ServletException, IOException {
@@ -37,8 +41,8 @@ public class PostAd implements Action{
         }
 
         if (title !=null) {
-
-            String uploadPath = "C:\\Users\\axoul\\Documents\\B2\\Java\\IdeaProjects\\LeBonPlanV2\\src\\main\\webapp\\img";
+//"C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img"
+            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\img";
             String uploadPathserver = request.getServletContext().getRealPath("") + "img";
             String fileName = "imagenotfound.png";
 
@@ -57,7 +61,8 @@ public class PostAd implements Action{
             String grade = String.valueOf(request.getSession().getAttribute("email"));
 
             if (daoBonPlan.checkAdmin(grade)) {
-
+                listAd = daoBonPlan.filtreAd(null,null,null,null,null,0);
+                request.setAttribute("listAd",listAd);
                 request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
             }else{
                 listAd = daoBonPlan.filtreAd(null,null,null,null,null,1);
