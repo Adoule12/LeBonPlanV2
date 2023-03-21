@@ -31,7 +31,7 @@ public class EditUser implements Action{
 
         if(emailM != null || lastname != null || firstname !=null ){
 
-            String uploadPath = "C:\\Users\\Tanguy Suteau\\IdeaProjects\\LeBonPlanV2PLUS\\src\\main\\webapp\\imgProfil";
+            String uploadPath = "C:\\Java\\LeBonPlanV2\\src\\main\\webapp\\imgProfil";
             String uploadPathserver = request.getServletContext().getRealPath("") + File.separator + "imgProfil";
 
             Part part = request.getPart("image_drop");
@@ -44,7 +44,7 @@ public class EditUser implements Action{
                 picture = "imgProfil" + File.separator + fileName;
             }
             erreur = daoBonPlan.editUser(email,emailM, lastname,firstname,birthday,picture);
-            if(erreur.equals("")){
+            if(!(erreur.equals("vous êtes trop jeune") || (erreur.equals("mail deja existant") || erreur.equals("vous êtes trop jeunemail deja existant")))){
                 String grade =   String.valueOf(request.getSession().getAttribute("email"));
                 if(daoBonPlan.checkAdmin(grade) ){
                     request.getRequestDispatcher("/jsp/adminView.jsp").forward(request, response);
