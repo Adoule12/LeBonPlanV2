@@ -81,6 +81,46 @@ body{
     color: #1a653f;
 }
 
+.image{
+    width: 100%;
+}
+.annonce{
+    background-color: #ffffff;
+    border: groove 6px #000000;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.description {
+    margin-top: 4%;
+    font-family: "Nexa Heavy";
+    font-size: 100%;
+    border: groove 4px #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
+}
+.ville {
+    margin-left: 20%;
+    font-family: "Nexa Heavy";
+    font-size: 100%;
+    width: 20%;
+    border: groove 2px rgb(0, 1, 3);
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(0, 1, 3);
+}
+.state {
+    margin-left: 20%;
+    font-family: "Nexa Heavy";
+    font-size: 100%;
+    width: 20%;
+    border: groove 2px rgb(0, 1, 3);
+    border-radius: 5px;
+    text-decoration: none;
+}
 /*jsp home*/
 
 #HomeFrame {
@@ -211,23 +251,43 @@ body{
     margin-top: -2%;
 }
 
-.annonce{
-    background-color: #ffffff;
-    border: groove 6px #000000;
-    border-radius: 6px;
-    text-align: center;
-    margin-top: 5%;
+/*jsp profilView*/
+.ligne{
+    display: flex;
+}
+ .imgP{
+     border-radius: 50%;
+     margin-left: 5%;
+     margin-top: 2%;
+     width: 130px;
+     height: 130px;
+     margin-right: 10%;
+
+ }
+.carre{
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#frameInfoProfil {
     margin-right: 10%;
     margin-left: 10%;
+    text-align: center;
 }
-.image{
-    width: 100%;
+.description villestate {
+    text-align: center;
 }
-
-.titre{
-    font-size: 170%;
-    text-align: left;
-
+#sectionInfo {
+    text-align: center;
+}
+.buttonAction{
+    font-size: 125%;
+    border: groove 3px #000000;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 .description {
     margin-top: 4%;
@@ -255,6 +315,9 @@ body{
     border-radius: 5px;
     text-decoration: none;
 }
+
+
+/*jsp adInformations*/
 #hide{
     color: rgb(255, 0, 0);
 }
@@ -265,26 +328,8 @@ body{
     position: center;
     display: flex;
 }
-.imgP{
-    position: center;
-    border-radius: 50%;
-    margin-left: 5%;
-    width: 130px;
-    height: 130px;
-    margin-right: 10%;
-
-}
 .info{
     text-align: left;
-}
-.ligne{
-    display: flex;
-}
-
-.carre{
-    width: 45%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
 }
 #buttonUp{
     position: sticky;

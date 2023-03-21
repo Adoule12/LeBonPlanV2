@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Tanguy Suteau
-  Date: 07/03/2023
-  Time: 15:13
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -31,7 +24,7 @@
             </c:if>
             <c:if test="${compteurAd==5}">
                 <div class="description">
-                <h3 class="titre">description:</h3>
+                <h3 class="title">description:</h3>
                 <p class="info">${ad}</p>
                 <section class="villestate">
                 <p class="ville">ville : ${ville}</p>
@@ -39,7 +32,7 @@
             </c:if>
             <c:if test="${compteurAd==6}">
                 <c:if test="${ad == 1}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
-                    <p  id="nothide" class = "state">état : visible</p>
+                    <p  id="notvillestate" class = "state">état : visible</p>
                 </c:if>
                 <c:if test="${ad == 0}"><%-- state de l'annonce en 4eme place dans la liste des infosAd récupérer  --%>
                     <p id="hide" class = "state">état : non-visible</p>

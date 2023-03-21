@@ -11,7 +11,8 @@
 <html>
 <head>
     <title>Admin</title>
-    <link href="css/camenerve.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script src="js/view.js"></script>
 </head>
 <body>
 <nav class = "all">
@@ -142,6 +143,7 @@
         </li>
     </ul>
 </nav>
+
 <p class = "title" id = "txtAdmi" >Vous êtes administrateur !</p>
 
 
