@@ -53,6 +53,9 @@ body{
 /*  ---- haut de page ----*/
 
 /* barre de navigation */
+#logo{
+    height: 80px;
+}
 nav{
     width: auto;
     font-size: 18px;
@@ -334,4 +337,12 @@ nav > ul > li:hover > a{
     width:22px;
     height:23px;
 
+}
+#buttonUp{
+    position: sticky;
+    top: 95%;
+}
+.flecheRemonte{
+    width: 50px;
+    height: 50px;
 }

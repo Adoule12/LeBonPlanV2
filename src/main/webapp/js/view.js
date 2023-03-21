@@ -7,3 +7,14 @@ window.onload = () => {
         document.getElementById("progress").style.width = barre + "px"
     })
 }
+
+let rotate=()=>{
+    let matete = document.getElementById("logoLBP");
+    matete.style.transform ='rotate(360deg)';
+
+}
+
+let rotateback=()=>{
+    let matete = document.getElementById("logoLBP");
+    matete.style.transform ='rotate(0deg)';
+}
