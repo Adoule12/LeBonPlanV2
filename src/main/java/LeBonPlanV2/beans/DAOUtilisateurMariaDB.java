@@ -696,7 +696,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         }else{
             sql ="SELECT mail,id FROM user WHERE blacklisted=0 AND grade=0";
         }
-
+   
         try (Connection connexion = daoFactory.getConnection();
              Statement statement = connexion.createStatement();
              PreparedStatement preparedStatement = connexion.prepareStatement(

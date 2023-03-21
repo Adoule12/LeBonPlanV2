@@ -16,7 +16,9 @@
 <body>
 <div class = "frame" id = "profilFrame">
 <form action="Controller?id=moderationUser" method="post">
-<h3>utilisateurs existants :</h3>
+    <h1>Banir ou Débanir des comptes:</h1><br>
+<h3>utilisateurs existants : </h3>
+    <h4 style="color: gray">(bouton orange pour banir)</h4>
 <c:forEach var="user" items="${requestScope.listuser}">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${user}">
@@ -37,7 +39,9 @@
 
 
 <form action="Controller?id=moderationUser" method="post">
-<h3>utilisateurs banis :</h3>
+
+<h3>utilisateurs banis : </h3>
+    <h4 style="color: gray">(bouton vert pour débanir, rouge pour supprimer un compte)</h4>
 <c:forEach var="user" items="${requestScope.listblacklisted}">
     <c:set var="compteur" value="0" scope="page" />
     <c:forEach var="info" items="${user}">
