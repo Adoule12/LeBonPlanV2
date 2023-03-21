@@ -42,7 +42,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
         legalAge.setTime( c.getTime().getTime() );
         if(birthday.after(legalAge)){
             ageOk = false;
-            erreur = erreur + "vous êtes trop jeune ";
+            erreur = erreur+"vous êtes trop jeune";
         }
 
 
@@ -55,7 +55,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             if(resultat.next()){
                 if (resultat.getString("mail").equals(mail)) {
                     mailOk = false;
-                    erreur = erreur +"\n mail deja existant";
+                    erreur = erreur + " mail deja existant";
                 }
             }
         } catch (SQLException e) {
@@ -69,7 +69,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
             if(resultat.next()){
                 if (resultat.getString("phoneNumber").equals(phoneNumber)) {
                     phoneOk = false;
-                    erreur = erreur +"\n numero de telephone deja existant";
+                    erreur = erreur + " numero de telephone deja existant";
                 }
             }
         } catch (SQLException e) {
@@ -87,6 +87,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(6, phoneNumber);
                 preparedStatement.setString(7, picture);
                 preparedStatement.executeUpdate();
+                erreur = "ok";
             } catch (SQLException e) {
                 e.printStackTrace();
 
@@ -146,6 +147,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, lastname);
                 preparedStatement.setString(2, mail);
                 preparedStatement.executeUpdate();
+                erreur=erreur+"lastnameUpdate";
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -158,6 +160,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, firstname);
                 preparedStatement.setString(2, mail);
                 preparedStatement.executeUpdate();
+                erreur=erreur+"fisrtnameUpdate";
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -186,6 +189,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     preparedStatement.setDate(1, birthday);
                     preparedStatement.setString(2, mail);
                     preparedStatement.executeUpdate();
+                    erreur = erreur +"ageUpdate";
 
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -215,6 +219,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                     preparedStatement.setString(1, mailM);
                     preparedStatement.setString(2, mail);
                     preparedStatement.executeUpdate();
+                    erreur = erreur + "mailUpdate";
 
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -228,6 +233,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur{
                 preparedStatement.setString(1, picture);
                 preparedStatement.setString(2, mail);
                 preparedStatement.executeUpdate();
+                erreur = erreur +"pictureUpdate";
 
             } catch (SQLException e) {
                 e.printStackTrace();
