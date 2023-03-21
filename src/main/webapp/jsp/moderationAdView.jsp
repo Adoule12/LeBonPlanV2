@@ -16,6 +16,11 @@
 </head>
 <nav class="all">
     <ul>
+        <li>
+            <a href="#">
+                <img src="img/logo_LBP_remove_background.png" id="logo" />
+            </a>
+        </li>
         <li class="menu"><a href="#">Filtre</a>
             <ul class="sousMenu">
                 <li><a class = "title" href="#">categorie</a>
