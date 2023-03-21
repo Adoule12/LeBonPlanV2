@@ -18,3 +18,8 @@ let rotateback=()=>{
     let matete = document.getElementById("logoLBP");
     matete.style.transform ='rotate(0deg)';
 }
+let count=()=>{
+    let txt_nbAd = document.getElementById("nbAd");
+    let backup = document.getElementById("nbAd");
+}
+

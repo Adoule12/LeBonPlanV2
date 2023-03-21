@@ -12,10 +12,13 @@
     <link href="css/views.css" type="text/css" rel="stylesheet"/>
     <script src="js/view.js"></script>
 </head>
-<body>
+<body onload="count()">
+<div class="logoFrame">
+    <img class="logoHOME" id = "logoLBP" src="img/logo_LBP_remove_background.png" onmouseenter="rotate()" onmouseleave="rotateback()">
+    <p >Annonces disponible: <p id="nbAd">${requestScope.nbAd}</p></p>
+</div>
 
 <div class = "frame" id = "HomeFrame">
-    <img class="logoHOME" id = "logoLBP" src="img/logo_LBP_remove_background.png" onmouseenter="rotate()" onmouseleave="rotateback()">
     <h2 class = "title">LeBonPlan</h2>
     <section><a class = "button" id = "connexion" href="Controller?id=login" >Connexion</a></section> <br>
     <section><a class = "button" id = "inscription" href="Controller?id=signin">Inscription</a></section> <br>
